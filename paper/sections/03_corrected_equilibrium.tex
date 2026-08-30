@@ -4,25 +4,19 @@ We now solve the price subgame implied by \eqref{eq:duodemand}. If the outsider 
 \begin{equation}\label{eq:duoprofit}
  \pi_1^{F}(p_1;p_2)=p_1\left[\frac32+\frac34(p_2-p_1)\right].
 \end{equation}
-This expression is strictly concave in $p_1$. Its first-order condition is
-\[
- \frac32+\frac34p_2-\frac32p_1=0,
- \qquad\text{or}\qquad
- p_1=1+\frac{p_2}{2}.
-\]
-Thus, if the two member firms could ignore the possibility that a higher price restores outsider demand, their symmetric equilibrium price would be
+On the range in which the two active firms divide both connecting arcs, this expression is strictly concave. Its first-order condition is $p_1=1+p_2/2$, so the unconstrained symmetric two-firm price is
 \begin{equation}\label{eq:unconstrained-duopoly}
  p_1=p_2=2.
 \end{equation}
-The key issue is whether this unconstrained two-firm price is compatible with continued foreclosure.
+The issue is whether that price is compatible with continued foreclosure.
 
-At the outsider's own location, the shortest distance to either member firm is one. If both member firms charge $p_M$, a consumer located there obtains net utility $V-p_M-1$ from a member product. The outsider's lowest sustainable price is its marginal conversion cost $c$, which gives utility $V-c$ at its own location. The outsider therefore has no positive neighborhood of demand only if the member firms' delivered price is no greater than $c$:
+At the outsider's own location, the shortest distance to either member firm is one. If both members charge $p_M$, their delivered price there is $p_M+1$. The outsider can charge its marginal conversion cost $c$, so foreclosure requires
 \begin{equation}\label{eq:foreclosure-constraint}
  p_M+1\leq c,
  \qquad\text{or equivalently}\qquad
  p_M\leq c-1.
 \end{equation}
-Equality makes the consumer at the outsider's ideal point indifferent, a measure-zero event. The constraint is slack at the unconstrained duopoly price $2$ if and only if $c\geq3$. This creates a second threshold inside the foreclosure region.
+Equality makes only the consumer at the outsider's ideal point indifferent. The constraint is slack at the unconstrained price $2$ if and only if $c\geq3$.
 
 \begin{proposition}[Corrected post-foreclosure equilibrium]\label{prop:equilibrium}
 In a standardization-union member market of the quadratic-transport model, suppose $5/2<c<5$ so that the outsider is foreclosed. The symmetric equilibrium allocation satisfies
@@ -41,40 +35,27 @@ For $5/2<c<3$, the foreclosure constraint binds and the member firms engage in l
 \end{proposition}
 
 \begin{proof}
-Fix the other member price at the symmetric candidate and consider unilateral deviations by firm 1. First take $5/2<c<3$. Because $c-1<2$, the unconstrained price in \eqref{eq:unconstrained-duopoly} violates \eqref{eq:foreclosure-constraint}. A symmetric foreclosing equilibrium, if it exists, must therefore lie at or below $c-1$.
+First take $5/2<c<3$ and consider the price profile $(p_1,p_2,p_3)=(c-1,c-1,c)$. At these prices the outsider has zero demand and zero profit. We show that no member deviation is profitable globally, rather than only locally around the foreclosure boundary.
 
-For prices that maintain foreclosure, profit is \eqref{eq:duoprofit}. If $p_2=c-1$, the unconstrained maximizer of that concave function is
-\[
- 1+\frac{p_2}{2}=\frac{c+1}{2}.
-\]
-For $c<3$, this exceeds $c-1$. Hence firm 1's foreclosed-regime profit is increasing throughout the feasible interval up to the boundary $p_1=c-1$. Equivalently, the derivative at the boundary from the foreclosure side is
-\begin{equation}\label{eq:left-derivative}
- \left.\frac{\partial\pi_1}{\partial p_1}\right|_{-}
- =\frac32-\frac34(c-1)
- =\frac34(3-c)>0.
-\end{equation}
-No downward deviation can therefore improve on the boundary price.
+Fix $p_2=c-1$. For a sufficiently large downward deviation, $p_1\leq c-2$, firm 1's demand cannot exceed the total market size three. Hence its profit is at most $3(c-2)$, whereas its equilibrium profit is $3(c-1)/2$. Their difference is $3(3-c)/2>0$. For the remaining downward deviations, $c-2<p_1\leq c-1$, the outsider remains foreclosed and the two member firms continue to divide both connecting arcs. Equation \eqref{eq:duoprofit} therefore applies. Its unconstrained maximizer given $p_2=c-1$ is $(c+1)/2>c-1$, so profit is increasing throughout this interval. No downward deviation is profitable.
 
-Now consider an upward deviation. Once $p_1$ exceeds $c-1$, firm 3 regains demand near its ideal point. Holding $p_2=c-1$ and $p_3=c$, firm 1's local three-firm demand is
+Now let $p_1>c-1$. The outsider becomes active near its location. Direct comparison of delivered prices against firms 2 and 3 gives firm 1 total demand
 \[
- q_1=1+\frac{p_2+p_3-2p_1}{2}
- =c+\frac12-p_1.
+ q_1=\max\left\{c+\frac12-p_1,\,0\right\}.
 \]
-The associated profit $p_1(c+1/2-p_1)$ is strictly concave and has unconstrained maximizer $(c+1/2)/2$. For $c>5/2$, that maximizer lies strictly below $c-1$. Thus profit is already decreasing on the entry side when the boundary is crossed. The one-sided derivative is
-\begin{equation}\label{eq:right-derivative}
- \left.\frac{\partial\pi_1}{\partial p_1}\right|_{+}
- =\frac32-(c-1)
+On the positive-demand range, profit is $p_1(c+1/2-p_1)$, whose unconstrained maximizer is $(c+1/2)/2$. Because $c>5/2$, this maximizer lies strictly below $c-1$. Profit is therefore decreasing once the foreclosure boundary is crossed; for $p_1\geq c+1/2$ demand is zero. Thus no finite upward deviation is profitable either. The familiar one-sided derivatives summarize the same kink:
+\begin{equation}\label{eq:kink-derivatives}
+ \left.\frac{\partial\pi_1}{\partial p_1}\right|_-
+ =\frac34(3-c)>0,
+ \qquad
+ \left.\frac{\partial\pi_1}{\partial p_1}\right|_+
  =\frac52-c<0.
 \end{equation}
-The price $p_1=c-1$ is therefore a global kink optimum across the two relevant demand regimes: cutting price sacrifices margin while preserving an already foreclosed outsider, whereas raising price admits the outsider and reduces demand. By symmetry, $p_1=p_2=c-1$ is the member-price equilibrium for $5/2<c<3$.
+The same argument applies to firm 2. The outsider itself cannot earn positive profit by deviating: any price at or above $c$ attracts no positive-measure demand at the candidate member prices, while any below-cost price that attracts demand yields negative margin. Hence $(c-1,c-1,c)$ supports the stated allocation for $5/2<c<3$.
 
-For $c\geq3$, the unconstrained two-firm price $2$ satisfies $2\leq c-1$, so the outsider remains foreclosed at the ordinary symmetric duopoly optimum. Because \eqref{eq:duoprofit} is strictly concave, no price change that preserves foreclosure is profitable. A deviation large enough to admit the outsider cannot help either: at any given deviating price, the entrant can only weakly reduce firm 1's demand relative to the two-firm demand used in \eqref{eq:duoprofit}, whose maximum already occurs at $p_1=2$. Hence $p_M=2$ is a best response for each member firm.
+For $c\geq3$, consider $(p_1,p_2,p_3)=(2,2,c)$. The outsider is foreclosed because a member product is delivered to its ideal point at cost three, weakly below $c$. To check member deviations globally, first remove the outsider; doing so can only increase a member firm's demand and therefore provides an upper bound on its profit at every nonnegative price. With the other member price fixed at $2$, a deviating price $p_1\leq1$ yields profit at most $3p_1\leq3$. For $1\leq p_1\leq3$, the two-firm demand is $3-3p_1/4$, so profit $p_1(3-3p_1/4)$ is uniquely maximized at $p_1=2$, with value three. For $3\leq p_1\leq4$, demand is weakly below its value $3/4$ at $p_1=3$, so profit is at most three; at $p_1\geq4$ the other member weakly dominates firm 1 everywhere and its demand is zero. Thus even the two-firm upper envelope offers no profitable deviation, and adding the outsider cannot create one. The outsider again has zero profit at $p_3=c$ and no profitable deviation. Therefore $p_M=2$ is a member best response for $3\leq c<5$.
 
-Finally, symmetry gives $q_1=q_2=3/2$ whenever the outsider has zero demand. At $c=3$, the two price branches meet because $c-1=2$. At the lower boundary $c=5/2$, the limit-pricing branch converges to $p_M=3/2$, exactly the limiting member price from the three-active-firm solution in \eqref{eq:interior-su}. This completes the characterization.
+At $c=3$ the two price branches meet because $c-1=2$. At $c=5/2$ the limit-pricing branch converges to $3/2$, the limiting member price from the three-active-firm solution in \eqref{eq:interior-su}. Symmetry gives $q_1=q_2=3/2$ whenever the outsider has zero demand.\footnote{For $c\geq3$, a zero-demand outsider can have multiple best-response prices if below-cost zero-sales prices are admissible. Proposition \ref{prop:equilibrium} therefore characterizes the economically relevant member prices and allocation rather than claiming uniqueness of an arbitrary zero-sales outsider price.}
 \end{proof}
 
-Proposition \ref{prop:equilibrium} changes the post-foreclosure regime structure without changing the onset of foreclosure. As $c$ increases, the published quadratic model passes through three economically distinct phases. For $c<5/2$, all three firms are active and the outsider's demand falls continuously with $c$. At $c=5/2$ its share reaches zero. For $5/2<c<3$, the outsider remains a competitive constraint even though it makes no sales: a member firm that raises its price past $c-1$ makes entry locally profitable. The union firms therefore price at the exclusion boundary rather than at their unconstrained duopoly best response. Only once $c$ reaches three does the excluded firm cease to constrain member pricing, after which the standard two-firm price $2$ obtains.
-
-This distinction matters for the economic interpretation of the model. Foreclosure of realized sales does not immediately imply that the excluded firm is irrelevant for equilibrium conduct. Over the interval $5/2<c<3$, its potential re-entry disciplines the two active firms. The correction therefore inserts a limit-pricing phase between three-firm competition and ordinary duopoly rather than simply replacing one constant post-foreclosure price with another.
-
-A direct deviation illustrates the Nash failure of the published price away from the boundary, although it is not needed for the proof. At $c=4$, the profile $p_1=p_2=3/2$ gives firm 1 quantity $3/2$ and profit $9/4$. Raising only $p_1$ to $7/4$ leaves the outsider foreclosed; \eqref{eq:duodemand} then gives quantity $21/16$, so profit rises to $147/64$, a gain of $3/64$.\footnote{For $c\geq3$, prices of a zero-demand outsider need not be unique. Proposition \ref{prop:equilibrium} therefore characterizes the economically relevant member prices and allocation rather than asserting uniqueness of an arbitrary zero-sales outsider price.}
+The corrected equilibrium separates foreclosure of realized sales from the disappearance of competitive pressure. For $5/2<c<3$, the outsider sells nothing but constrains member prices because a price increase beyond $c-1$ restores its demand. Only at $c=3$ does that constraint cease to bind, producing the transition from three-firm competition to limit pricing and then to unconstrained duopoly. As a simple check on the published constant price, at $c=4$ the profile $p_1=p_2=3/2$ gives firm 1 profit $9/4$, while the unilateral deviation $p_1=7/4$ raises profit to $147/64$.
