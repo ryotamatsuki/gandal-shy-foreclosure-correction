@@ -2,7 +2,7 @@
 
 Private research repository for a short theory note revisiting the post-foreclosure equilibrium in Gandal and Shy (2001).
 
-**Status:** C4 research draft.  
+**Status:** C5-audited short-paper draft; GO TO C6 submission freeze.  
 **Target:** *International Economics* -- Short Paper.  
 **Research objective:** Re-solve the post-foreclosure price subgame in the published quadratic-transport specification and determine whether the corrected equilibrium changes the member-country welfare comparison in Proposition 3.
 
@@ -25,7 +25,7 @@ The generated manuscript PDF is written to `output/manuscript.pdf` and is **not 
 
 ## Structure
 
-- `docs/` -- C0-C3 provenance and source ledger
-- `paper/` -- modular LaTeX manuscript and technical appendix
+- `docs/` -- C0-C5 provenance, journal-fit audit, and source ledger
+- `paper/` -- modular self-contained LaTeX manuscript
 - `code/` -- symbolic and numerical equilibrium verification
 - `output/` -- generated manuscript output (ignored except `.gitkeep`)
