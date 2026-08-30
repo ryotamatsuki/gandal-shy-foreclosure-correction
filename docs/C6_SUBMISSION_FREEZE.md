@@ -1,79 +1,35 @@
-# C6 Submission Freeze
+# C6.1 Submission Freeze
 
 ## Status
 
-C6 theory/manuscript freeze completed. Submission package remains **CONDITIONAL GO** pending live-portal confirmation only. Author-identifying metadata has been populated from the author's prior submitted manuscript supplied on 2026-08-30.
+C6.1 journal-style finalization completed. Theory and manuscript results remain frozen. The package is ready for portal entry after any required private postal address is inserted into a local-only title-page copy.
 
 ## Target
 
 - Journal: International Economics
 - Article type: Short communication / Short paper (exact portal label to confirm manually)
 - Title: *Foreclosure and Limit Pricing in Standardization Unions: A Correction to Gandal and Shy (2001)*
-- Author: Ryota Matsuki
-- Affiliation: Independent Researcher, Matsuyama, Ehime, Japan
-- Corresponding email: ryota.matsuki@gmail.com
 
 ## Frozen propositions
 
 1. For `5/2<c<3`, `p_M=c-1`; for `3<=c<5`, `p_M=2`; after foreclosure `q_1=q_2=3/2` and `q_3=0`.
 2. `TS_M^SU=3V+1/4`, `TS^MR=3V-1/4`, so the member-country welfare gap is `1/2`.
 
-No metadata edit changes the mathematical content of either proposition.
+No C6.1 edit changes the mathematical content of either proposition.
 
-## Final manuscript metrics
+## Style/compliance changes
 
-- exactly two proposition environments
-- zero theorem/lemma/corollary environments
-- zero exhibits
-- no technical appendix
-- 7 PDF pages including references and declarations
-- bibliography: 5 references
+- ORCID added to the tracked submission title-page template.
+- Private phone and street address are explicitly excluded from version control.
+- Generative-AI research-process use in algebraic cross-checking and verification-code drafting is disclosed in addition to manuscript-preparation use.
+- The modular development source is preserved.
+- A mechanically generated flat LaTeX source package is used for Editorial Manager because Elsevier does not process TeX subfolders.
+- CRediT, funding, competing-interest, code/data, highlights and cover-letter materials remain prepared.
 
-## Submission architecture
+## Privacy policy
 
-- self-contained main manuscript
-- author name, affiliation/location, and corresponding email populated
-- secondary consistency corrections remain repository-only
-- AI declaration and code-availability statement placed before references
-- source package prepared as `output/international-economics-submission-source.zip`
-- verification supplement prepared as `output/reproducibility-supplement.zip`
-
-## Metadata/declarations
-
-Populated from the author-provided prior submitted manuscript:
-- author: Ryota Matsuki
-- affiliation/location: Independent Researcher, Matsuyama, Ehime, Japan
-- corresponding email: ryota.matsuki@gmail.com
-- competing-interest content: no competing interests
-- funding status: no funding; current Elsevier no-specific-grant wording used in the package
-
-Prepared:
-- generative-AI disclosure
-- highlights
-- cover letter
-- CRediT statement
-- code/data availability statement
-- title page
-- submission checklist
-
-Manual confirmation still required only for items not present in the prior manuscript or visible only in the live portal:
-- corresponding-author phone if required
-- ORCID if desired/required
-- Elsevier competing-interest declarations tool and generated file if required
-- exact live portal article-type label
-- suggested-reviewer field if any
-- portal fee display if any
-- OA/subscription choice and any current APC if OA is chosen
-- confirmation at submission time that the manuscript is not under consideration elsewhere
-
-## Reproducibility
-
-The metadata update does not alter the C5/C6 verification scripts or mathematical source. The prior final clean C6 run passed 22 symbolic checks, the 453-point dense numerical grid, zero outsider profitable deviation, and the exact `c=4` counterexample. The metadata-filled manuscript was rebuilt locally and remained 7 pages.
-
-## Package policy
-
-The development repository remains private during review. Verification code is prepared as a separate reproducibility supplement; no copyrighted publisher PDFs or working-paper PDFs are included.
+The private phone number is entered only in the submission portal or a local-only submission copy. A private full postal address, if required in the uploaded title page, must likewise be inserted only into a local-only copy and must not be committed.
 
 ## PR recommendation
 
-Keep PR #1 **OPEN / DRAFT / UNMERGED** until the remaining live-portal fields are checked. No further theoretical revision is required.
+Keep PR #1 Open / Draft / Unmerged until live-portal checks and the final portal preview are completed. No theoretical revision is required.

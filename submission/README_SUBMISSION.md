@@ -1,48 +1,45 @@
 # International Economics — Submission Package
 
-Status: prepared at C6. Author name, affiliation/location, corresponding email, funding statement, and competing-interest content have been populated from the author's prior submitted manuscript. Live-portal fields still require manual confirmation before upload.
-
-## Confirmed author metadata
-
-- Author: Ryota Matsuki
-- Affiliation: Independent Researcher
-- Location/address available from prior manuscript: Matsuyama, Ehime, Japan
-- Corresponding email: ryota.matsuki@gmail.com
-- Phone: not provided in the prior manuscript; confirm only if the portal requires it
-- ORCID: not provided in the prior manuscript; optional unless the portal requires it
+Status: C6.1 style finalization completed; remaining blockers are private contact insertion and live-portal checks.
 
 ## Upload files
 
-- Main manuscript source: `paper/main.tex` plus its included LaTeX files and `paper/references.bib`
-- Generated review PDF: `output/manuscript.pdf`
-- Title page: `submission/title_page.tex`
+- Main manuscript source: generated flat package `output/international-economics-submission-source.zip`
+- Review PDF: `output/manuscript.pdf`
+- Title page: `submission/title_page.tex` after inserting any required private postal address into a local-only copy
 - Highlights: `submission/highlights.txt`
 - Cover letter: `submission/cover_letter.txt`
-- Generative-AI disclosure: already inserted in the manuscript; standalone copy in `submission/generative_ai_disclosure.txt`
-- Competing-interest declaration: content recorded in `submission/competing_interest.txt`; complete Elsevier's declarations tool and upload its generated file if required
+- Generative-AI disclosure: inserted immediately before references; standalone copy in `submission/generative_ai_disclosure.txt`
+- Competing-interest declaration: complete the Elsevier declarations tool and upload its generated file if the portal requires it
 - Funding statement: `submission/funding_statement.txt`
 - CRediT statement: `submission/credit_statement.txt`
 - Code/data statement: inserted in manuscript; standalone copy in `submission/code_data_availability.txt`
-- Verification code supplement: generated separately as `output/reproducibility-supplement.zip`
+- Verification code supplement: `output/reproducibility-supplement.zip`
 
-## Portal-only / manual checks
+## Privacy boundary
 
-- exact article-type label in the live submission app
-- corresponding phone if required
-- ORCID if the author wishes to provide one
-- competing-interest declarations tool
-- suggested reviewers if the portal asks for them
-- submission fee display, if any
-- subscription versus open-access choice and any OA APC shown
-- confirmation that the manuscript is not under consideration elsewhere at actual submission time
+The tracked repository and generated public/review manuscript do not contain the author's private phone number or street address. Enter the phone in the private submission portal. If the uploaded title page requires a full private postal address, insert it only into a local submission copy and do not commit it.
 
-## Compile
+## Flat LaTeX requirement
 
-From the repository root:
+Elsevier Editorial Manager cannot process TeX submissions with subfolders. The development source remains modular under `paper/sections/`, while `make submission-flat` creates a mechanically derived, single-level source directory and ZIP under `output/`.
+
+## Build
 
 ```bash
 make clean
 make all
 ```
 
-The development repository is private. Do not claim that the GitHub repository is publicly available unless its visibility is deliberately changed.
+The `submission-flat` target independently compiles the flattened manuscript source.
+
+## Portal-only checks
+
+- exact article-type label
+- private postal address / phone fields
+- competing-interest declaration workflow
+- suggested reviewers if requested
+- submission fee display if any
+- subscription versus open-access choice and any APC shown
+- final portal-generated preview
+- confirmation that the manuscript is not under consideration elsewhere

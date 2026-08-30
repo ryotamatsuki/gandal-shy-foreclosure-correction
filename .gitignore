@@ -13,5 +13,8 @@ __pycache__/
 .venv/
 .DS_Store
 paper/main.pdf
+submission/title_page.pdf
 output/*.pdf
+output/*.zip
+output/international-economics-flat/
 !output/.gitkeep

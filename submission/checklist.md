@@ -1,32 +1,35 @@
-# C6 Manual Submission Checklist
+# C6.1 Manual Submission Checklist
 
-- [ ] Exact live article type selected
+- [ ] Exact live article type selected (`Short communication` / `Short paper`)
 - [x] Title exact
-- [x] Author metadata populated: Ryota Matsuki
-- [x] Affiliation/location populated from prior submitted manuscript: Independent Researcher, Matsuyama, Ehime, Japan
-- [x] Corresponding email populated: ryota.matsuki@gmail.com
-- [ ] Corresponding phone confirmed (not provided in prior manuscript)
-- [ ] ORCID confirmed if the author wishes to use one (not provided in prior manuscript)
+- [x] Author metadata confirmed: Ryota Matsuki
+- [x] Affiliation/location confirmed: Independent Researcher, Matsuyama, Ehime, Japan
+- [x] Corresponding email confirmed: ryota.matsuki@gmail.com
+- [x] ORCID confirmed: 0009-0005-2329-531X
+- [ ] Private full postal address inserted in local title-page copy if required
+- [ ] Corresponding phone entered in portal / local title-page copy if required
 - [x] Abstract within 250-word limit
 - [x] Five keywords frozen
 - [x] JEL decision: keep F12, F13, L13, L15
 - [x] Highlights prepared (4 bullets; each <=85 characters)
-- [x] Generative-AI disclosure prepared and inserted before references
-- [x] Funding statement populated from author-provided prior submission
-- [x] Competing-interest content populated from author-provided prior submission
+- [x] Generative-AI manuscript-preparation disclosure inserted immediately before references
+- [x] Generative-AI research-process use disclosed with verification-code information
+- [x] Funding statement populated using Elsevier no-specific-grant wording
+- [x] Competing-interest content populated: no competing interests
 - [ ] Elsevier competing-interest declarations tool completed and generated file uploaded if required
-- [x] CRediT statement populated with author name
-- [x] Data/code statement prepared
-- [x] Manuscript LaTeX source prepared
+- [x] CRediT statement populated with author name; AI assigned no CRediT role
+- [x] Data/code availability statement prepared
+- [x] Modular development LaTeX source retained
+- [x] Flat Editorial Manager LaTeX export configured
 - [x] Review PDF build configured
 - [x] Cover-letter author metadata populated
-- [x] Reproducibility supplement planned/prepared
+- [x] Reproducibility supplement configured
 - [x] Word count below short-paper ceiling
 - [x] Figures/tables/exhibits count = 0
 - [ ] Suggested-reviewer requirement checked in live portal
-- [ ] Submission fee confirmed in live portal
+- [ ] Submission fee confirmed in live portal if any
 - [ ] OA/subscription choice made
 - [ ] Final portal-generated preview inspected
 - [x] No copyrighted source PDFs included
-- [x] No private credentials/secrets included
+- [x] No private phone number, street address, credentials, or secrets included in tracked package
 - [ ] Author confirms manuscript is not under review elsewhere at submission time
