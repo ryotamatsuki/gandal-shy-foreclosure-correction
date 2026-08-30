@@ -9,6 +9,7 @@ C6 theory/manuscript freeze completed. Submission package is **CONDITIONAL GO** 
 - Journal: International Economics
 - Article type: Short communication / Short paper (exact portal label to confirm manually)
 - Title: *Foreclosure and Limit Pricing in Standardization Unions: A Correction to Gandal and Shy (2001)*
+- C6 package baseline commit: `7b73192be64f6b79314403dc1e80c8b859bcc91e`
 
 ## Frozen propositions
 
@@ -17,14 +18,23 @@ C6 theory/manuscript freeze completed. Submission package is **CONDITIONAL GO** 
 
 No C6 edit changes the mathematical content of either proposition.
 
+## Final manuscript metrics
+
+- exactly two proposition environments
+- zero theorem/lemma/corollary environments
+- zero exhibits
+- no technical appendix
+- 7 PDF pages including references and declarations
+- TeXcount: 2,154 text words in the included LaTeX files after C6 declarations (2,415 summed count including headers/caption-like text)
+- bibliography: 5 references
+
 ## Submission architecture
 
 - self-contained main manuscript
-- exactly two propositions
-- no technical appendix
-- zero exhibits
 - secondary consistency corrections remain repository-only
 - AI declaration and code-availability statement placed before references
+- source package prepared as `output/international-economics-submission-source.zip`
+- verification supplement prepared as `output/reproducibility-supplement.zip`
 
 ## Metadata/declarations
 
@@ -50,7 +60,16 @@ Manual confirmation still required:
 
 ## Reproducibility
 
-C5 global-equilibrium proof and dense numerical falsification are frozen. C6 reruns the same scripts without changing numerical tolerances.
+Final clean C6 rerun preserved C5 settings and passed:
+
+- symbolic checks: PASS (22 checks)
+- dense numerical grid: PASS on 453 `c` values over `[2.5001,4.999]`
+- maximum apparent member gain: `5.6249531e-05`, below fixed discretization bound `0.00075`
+- maximum outsider profitable gain: `0`
+- convergence: `0.0002249925` at `N=20000` to `5.6249531e-05` at `N=80000`
+- exact `c=4` counterexample: `2.25 -> 2.296875`, gain `0.046875 = 3/64`
+- final LaTeX log: zero undefined citations/references and zero overfull/underfull warnings
+- rendered visual inspection: PASS on all 7 pages
 
 ## Package policy
 
@@ -58,4 +77,4 @@ The development repository remains private during review. Verification code is p
 
 ## PR recommendation
 
-NOT READY TO MERGE until the author confirms the submission-only metadata and the package is rebuilt once with those fields completed. The theory itself requires no further revision.
+**NOT READY TO MERGE** until the author confirms the submission-only metadata and the package is rebuilt once with those fields completed. The theory itself requires no further revision.
