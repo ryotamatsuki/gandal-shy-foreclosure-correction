@@ -1,0 +1,37 @@
+\section{The foreclosure calculation}\label{sec:calculation}
+
+We retain the published model and change no primitive. Following the circular-market structure of \citet{salop1979}, in each national market three firms are located one unit apart on a Salop circle of circumference three, consumers have density one, and transportation disutility is the square of shortest-arc distance. Each consumer buys one unit. Production cost is normalized to zero. When countries 1 and 2 form a standardization union, their firms can sell in either member country without conversion costs, while the outsider firm incurs conversion cost $c$ when selling there \citep[pp.~367--368, 373--374]{gandalshy2001}. Markets are segmented, so the calculation can be done for one representative member country.
+
+Before foreclosure, the three-firm interior solution in a member market has
+\begin{equation}\label{eq:interior-su}
+ p_M=1+\frac{c}{5},\qquad p_O=1+\frac{3c}{5},\qquad
+ q_M=1+\frac{c}{5},\qquad q_O=1-\frac{2c}{5}.
+\end{equation}
+These expressions follow directly from the published three-firm price system. In particular, the outsider's interior share reaches zero at $c=5/2$. Nothing in the correction below changes this threshold. The question is what prices the two member firms choose once the outsider is no longer active.
+
+That question is geometrically different from the three-firm interior problem. With firm 3 foreclosed, firms 1 and 2 face one another across both of the arcs that previously connected the three brands. One arc has length one and the other has length two. The surviving firms therefore compete for two separate marginal consumers, and the location of each marginal consumer must be recomputed using the quadratic transportation technology in the published model.
+
+On the short arc, measure distance $x$ from firm 1 toward firm 2. The indifferent consumer solves
+\[
+ p_1+x^2=p_2+(1-x)^2,
+\]
+so the length of firm 1's short-arc market is
+\begin{equation}\label{eq:shortarc}
+ x_{12}^{S}=\frac12+\frac{p_2-p_1}{2}.
+\end{equation}
+This is the usual boundary between firms one unit apart. On the long arc, again measuring $x$ from firm 1, the corresponding condition is instead
+\[
+ p_1+x^2=p_2+(2-x)^2.
+\]
+Expanding and cancelling $x^2$ gives $4x=4+p_2-p_1$, hence
+\begin{equation}\label{eq:longarc}
+ x_{12}^{L}=1+\frac{p_2-p_1}{4}.
+\end{equation}
+The price-difference coefficient is now one quarter rather than one half because the two firms are separated by an arc of length two. This is the point at which the published post-foreclosure calculation ceases to match its quadratic transportation specification. Appendix B uses a long-arc expression with the same price coefficient as on the short arc and then obtains the constant symmetric price $3/2$ \citep[pp.~381--382]{gandalshy2001}.\footnote{An earlier working-paper version uses linear transportation costs, under which the corresponding long-arc expression is internally consistent with that specification. The published article instead uses quadratic transportation disutility, for which the same form of long-arc calculation does not apply; see \citet{gandalshy1996} and \citet[pp.~367--368]{gandalshy2001}. This comparison distinguishes the specifications and does not assert a cause for the published discrepancy.}
+
+Adding the two arcs gives the post-foreclosure demand of firm 1,
+\begin{equation}\label{eq:duodemand}
+ q_1(p_1,p_2)=x_{12}^{S}+x_{12}^{L}
+ =\frac32+\frac34(p_2-p_1),
+\end{equation}
+with the symmetric expression for firm 2. At equal prices, each surviving firm serves $3/2$ consumers, as symmetry requires. More importantly, \eqref{eq:duodemand} changes the slope of residual demand and therefore the surviving firms' optimal prices. The foreclosure threshold and the post-foreclosure price are thus separate objects: $c=5/2$ follows from the three-firm interior allocation, while pricing after foreclosure depends on competition over the short and long arcs between the two remaining firms.
