@@ -2,11 +2,11 @@
 
 Private research repository for a short theory note revisiting the post-foreclosure equilibrium in Gandal and Shy (2001).
 
-**Status:** C5-audited short-paper draft; GO TO C6 submission freeze.  
-**Target:** *International Economics* -- Short Paper.  
+**Status:** C6 submission freeze; submission package prepared subject to author metadata and live-portal confirmation.  
+**Target:** *International Economics* -- Short communication / Short paper.  
 **Research objective:** Re-solve the post-foreclosure price subgame in the published quadratic-transport specification and determine whether the corrected equilibrium changes the member-country welfare comparison in Proposition 3.
 
-The C3 freeze permits exactly two main propositions:
+The manuscript contains exactly two main propositions:
 
 1. the corrected post-foreclosure equilibrium has a limit-pricing region for `5/2 < c < 3` and the unconstrained duopoly price for `3 <= c < 5`;
 2. the member-country welfare ranking in Gandal and Shy (2001), Proposition 3, survives the equilibrium correction.
@@ -23,9 +23,17 @@ make all
 
 The generated manuscript PDF is written to `output/manuscript.pdf` and is **not committed**. Source PDFs of copyrighted articles and working papers are also not committed; bibliographic provenance is recorded in `docs/SOURCES.md`.
 
+## Submission freeze
+
+- `submission/` contains draft upload files and the manual-submission checklist.
+- `docs/C6_SUBMISSION_REQUIREMENTS.md` records the current journal requirements checked on 2026-08-30.
+- `docs/C6_SUBMISSION_FREEZE.md` records the C6 freeze and the remaining manual blockers.
+- The development repository remains private during review unless the author explicitly changes that policy.
+
 ## Structure
 
-- `docs/` -- C0-C5 provenance, journal-fit audit, and source ledger
+- `docs/` -- C0-C6 provenance, journal-fit and submission audits, source ledger
 - `paper/` -- modular self-contained LaTeX manuscript
 - `code/` -- symbolic and numerical equilibrium verification
-- `output/` -- generated manuscript output (ignored except `.gitkeep`)
+- `submission/` -- journal submission package metadata and declarations
+- `output/` -- generated manuscript/package outputs (not committed)

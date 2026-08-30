@@ -1,0 +1,3 @@
+Data and code availability
+
+No empirical data were used in this study. The symbolic and numerical verification code used to check the analytical results is supplied as supplementary material with the submission package. The development repository remains private during peer review.

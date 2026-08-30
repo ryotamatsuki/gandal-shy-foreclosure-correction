@@ -1,0 +1,61 @@
+# C6 Submission Freeze
+
+## Status
+
+C6 theory/manuscript freeze completed. Submission package is **CONDITIONAL GO** pending author metadata and live-portal confirmation only.
+
+## Target
+
+- Journal: International Economics
+- Article type: Short communication / Short paper (exact portal label to confirm manually)
+- Title: *Foreclosure and Limit Pricing in Standardization Unions: A Correction to Gandal and Shy (2001)*
+
+## Frozen propositions
+
+1. For `5/2<c<3`, `p_M=c-1`; for `3<=c<5`, `p_M=2`; after foreclosure `q_1=q_2=3/2` and `q_3=0`.
+2. `TS_M^SU=3V+1/4`, `TS^MR=3V-1/4`, so the member-country welfare gap is `1/2`.
+
+No C6 edit changes the mathematical content of either proposition.
+
+## Submission architecture
+
+- self-contained main manuscript
+- exactly two propositions
+- no technical appendix
+- zero exhibits
+- secondary consistency corrections remain repository-only
+- AI declaration and code-availability statement placed before references
+
+## Metadata/declarations
+
+Prepared:
+- generative-AI disclosure
+- highlights
+- cover-letter draft
+- CRediT draft
+- code/data availability statement
+- title-page template
+- submission checklist
+
+Manual confirmation still required:
+- legal/academic author name as it should appear in print
+- full standard institutional affiliation and postal address
+- corresponding-author email and phone number
+- ORCID if desired
+- competing-interest status through Elsevier declarations tool
+- dedicated funding status
+- exact live portal article-type label
+- portal fee display
+- OA/subscription choice
+
+## Reproducibility
+
+C5 global-equilibrium proof and dense numerical falsification are frozen. C6 reruns the same scripts without changing numerical tolerances.
+
+## Package policy
+
+The development repository remains private during review. Verification code is prepared as a separate reproducibility supplement; no copyrighted publisher PDFs or working-paper PDFs are included.
+
+## PR recommendation
+
+NOT READY TO MERGE until the author confirms the submission-only metadata and the package is rebuilt once with those fields completed. The theory itself requires no further revision.

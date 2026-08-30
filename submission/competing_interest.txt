@@ -1,0 +1,5 @@
+STATUS: AUTHOR CONFIRMATION REQUIRED.
+
+International Economics requires the Elsevier declarations tool to be completed. If the author has no competing interests, select `I have nothing to declare` in that tool and upload the resulting .doc/.docx file. If any financial or personal relationship could inappropriately influence or appear to influence the work, disclose it through the tool.
+
+Do not use this text file as a substitute for the Elsevier-generated declaration document.

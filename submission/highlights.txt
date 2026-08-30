@@ -1,0 +1,6 @@
+Highlights
+
+- Foreclosure begins at c=5/2, as in Gandal and Shy (2001).
+- For 5/2<c<3, member firms limit-price at p=c-1.
+- For c>=3, member firms charge the unconstrained duopoly price p=2.
+- The Proposition 3 member-country welfare ranking remains unchanged.

@@ -1,0 +1,5 @@
+Proposed CRediT statement for a sole-authored manuscript — author name to confirm before upload:
+
+[AUTHOR NAME TO CONFIRM]: Conceptualization; Formal analysis; Investigation; Methodology; Software; Validation; Writing – original draft; Writing – review & editing.
+
+AI tools are not authors and are not assigned CRediT roles.

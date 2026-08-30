@@ -1,0 +1,30 @@
+# C6 Manual Submission Checklist
+
+- [ ] Exact live article type selected
+- [x] Title exact
+- [ ] Author metadata confirmed
+- [ ] Full affiliation and postal address confirmed
+- [ ] Corresponding email confirmed
+- [ ] Corresponding phone confirmed
+- [x] Abstract within 250-word limit
+- [x] Five keywords frozen
+- [x] JEL decision: keep F12, F13, L13, L15
+- [x] Highlights prepared (4 bullets; each <=85 characters)
+- [x] Generative-AI disclosure prepared and inserted before references
+- [ ] Funding status confirmed
+- [ ] Competing interests completed through Elsevier declarations tool
+- [x] CRediT draft prepared
+- [x] Data/code statement prepared
+- [x] Manuscript LaTeX source prepared
+- [x] Review PDF build configured
+- [x] Cover-letter draft prepared
+- [x] Reproducibility supplement planned/prepared
+- [x] Word count below short-paper ceiling
+- [x] Figures/tables/exhibits count = 0
+- [ ] Suggested-reviewer requirement checked in live portal
+- [ ] Submission fee confirmed in live portal
+- [ ] OA/subscription choice made
+- [ ] Final portal-generated preview inspected
+- [x] No copyrighted source PDFs included
+- [x] No private credentials/secrets included
+- [ ] Author confirms manuscript is not under review elsewhere at submission time

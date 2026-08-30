@@ -1,0 +1,16 @@
+Dear Editors,
+
+Please consider the manuscript, “Foreclosure and Limit Pricing in Standardization Unions: A Correction to Gandal and Shy (2001),” for the journal's short-format track [confirm the exact live portal label: Short communication / Short paper].
+
+The note revisits a narrowly defined price subgame in Gandal and Shy (2001), a benchmark model of standards recognition and international trade. The published quadratic-transport specification correctly identifies c=5/2 as the point at which the outsider's demand in a standardization-union member market reaches zero. Re-solving the post-foreclosure subgame changes the subsequent equilibrium characterization. For 5/2<c<3, member firms charge p_M=c-1 because the foreclosure constraint binds, yielding an intermediate limit-pricing regime. For 3<=c<5, the constraint is slack and the unconstrained symmetric duopoly price p_M=2 obtains.
+
+The note also recomputes national welfare under the corrected equilibrium. The member-country ranking in Proposition 3 remains valid: the price correction changes consumer expenditure and member-firm profit, but the corresponding price terms offset in national welfare. The paper therefore makes a limited claim about the equilibrium characterization and its welfare robustness rather than challenging the foreclosure threshold or the paper's headline member-country welfare comparison.
+
+The manuscript is self-contained, contains two propositions, has no exhibits, and is accompanied by symbolic and numerical verification code. It is original work and is not under consideration elsewhere. The author takes full responsibility for the manuscript and provides the required generative-AI disclosure with the submission materials.
+
+Thank you for considering the manuscript.
+
+Sincerely,
+[AUTHOR NAME TO CONFIRM]
+[AFFILIATION TO CONFIRM]
+[CORRESPONDING EMAIL TO CONFIRM]
