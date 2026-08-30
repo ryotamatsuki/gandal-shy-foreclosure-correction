@@ -2,22 +2,24 @@
 
 - [ ] Exact live article type selected
 - [x] Title exact
-- [ ] Author metadata confirmed
-- [ ] Full affiliation and postal address confirmed
-- [ ] Corresponding email confirmed
-- [ ] Corresponding phone confirmed
+- [x] Author metadata populated: Ryota Matsuki
+- [x] Affiliation/location populated from prior submitted manuscript: Independent Researcher, Matsuyama, Ehime, Japan
+- [x] Corresponding email populated: ryota.matsuki@gmail.com
+- [ ] Corresponding phone confirmed (not provided in prior manuscript)
+- [ ] ORCID confirmed if the author wishes to use one (not provided in prior manuscript)
 - [x] Abstract within 250-word limit
 - [x] Five keywords frozen
 - [x] JEL decision: keep F12, F13, L13, L15
 - [x] Highlights prepared (4 bullets; each <=85 characters)
 - [x] Generative-AI disclosure prepared and inserted before references
-- [ ] Funding status confirmed
-- [ ] Competing interests completed through Elsevier declarations tool
-- [x] CRediT draft prepared
+- [x] Funding statement populated from author-provided prior submission
+- [x] Competing-interest content populated from author-provided prior submission
+- [ ] Elsevier competing-interest declarations tool completed and generated file uploaded if required
+- [x] CRediT statement populated with author name
 - [x] Data/code statement prepared
 - [x] Manuscript LaTeX source prepared
 - [x] Review PDF build configured
-- [x] Cover-letter draft prepared
+- [x] Cover-letter author metadata populated
 - [x] Reproducibility supplement planned/prepared
 - [x] Word count below short-paper ceiling
 - [x] Figures/tables/exhibits count = 0

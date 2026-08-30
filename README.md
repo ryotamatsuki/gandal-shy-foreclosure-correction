@@ -2,7 +2,7 @@
 
 Private research repository for a short theory note revisiting the post-foreclosure equilibrium in Gandal and Shy (2001).
 
-**Status:** C6 submission freeze; submission package prepared subject to author metadata and live-portal confirmation.  
+**Status:** C6 submission freeze; author metadata and declarations populated from the author's prior submitted manuscript; live-portal confirmation remains.  
 **Target:** *International Economics* -- Short communication / Short paper.  
 **Research objective:** Re-solve the post-foreclosure price subgame in the published quadratic-transport specification and determine whether the corrected equilibrium changes the member-country welfare comparison in Proposition 3.
 
@@ -25,9 +25,10 @@ The generated manuscript PDF is written to `output/manuscript.pdf` and is **not 
 
 ## Submission freeze
 
-- `submission/` contains draft upload files and the manual-submission checklist.
+- Author metadata now uses: Ryota Matsuki; Independent Researcher, Matsuyama, Ehime, Japan; ryota.matsuki@gmail.com.
+- `submission/` contains the draft upload files and manual-submission checklist.
 - `docs/C6_SUBMISSION_REQUIREMENTS.md` records the current journal requirements checked on 2026-08-30.
-- `docs/C6_SUBMISSION_FREEZE.md` records the C6 freeze and the remaining manual blockers.
+- `docs/C6_SUBMISSION_FREEZE.md` records the C6 freeze and remaining live-portal checks.
 - The development repository remains private during review unless the author explicitly changes that policy.
 
 ## Structure

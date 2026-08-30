@@ -1,5 +1,7 @@
-STATUS: AUTHOR CONFIRMATION REQUIRED.
+STATUS: DECLARATION CONTENT POPULATED FROM THE AUTHOR-PROVIDED PRIOR SUBMISSION.
 
-International Economics requires the Elsevier declarations tool to be completed. If the author has no competing interests, select `I have nothing to declare` in that tool and upload the resulting .doc/.docx file. If any financial or personal relationship could inappropriately influence or appear to influence the work, disclose it through the tool.
+Declaration of competing interest
 
-Do not use this text file as a substitute for the Elsevier-generated declaration document.
+The author declares that he has no competing interests.
+
+Portal action remains: complete the Elsevier declarations tool using the equivalent no-competing-interest option and upload the generated .doc/.docx file if required.
