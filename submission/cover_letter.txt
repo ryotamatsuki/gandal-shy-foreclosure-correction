@@ -1,16 +1,16 @@
 Dear Editors,
 
-Please consider the manuscript, “Foreclosure and Limit Pricing in Standardization Unions: A Correction to Gandal and Shy (2001),” for the journal's short-format track [confirm the exact live portal label: Short communication / Short paper].
+Please consider the manuscript, “Foreclosure and Limit Pricing in Standardization Unions: Revisiting Gandal and Shy (2001),” for publication in the Review of Industrial Organization. The journal’s explicit interest in shorter notes and commentaries makes it a natural outlet for this concise correction of a published oligopoly equilibrium.
 
-The note revisits a narrowly defined price subgame in Gandal and Shy (2001), a benchmark model of standards recognition and international trade. The published quadratic-transport specification correctly identifies c=5/2 as the point at which the outsider's demand in a standardization-union member market reaches zero. Re-solving the post-foreclosure subgame changes the subsequent equilibrium characterization. For 5/2<c<3, member firms charge p_M=c-1 because the foreclosure constraint binds, yielding an intermediate limit-pricing regime. For 3<=c<5, the constraint is slack and the unconstrained symmetric duopoly price p_M=2 obtains.
+The note revisits the post-foreclosure price subgame in Gandal and Shy (2001). The published quadratic-transport specification correctly identifies c=5/2 as the point at which the outsider’s equilibrium demand in a standardization-union member market reaches zero. Re-solving the subsequent price game, however, reveals an omitted equilibrium constraint. For 5/2<c<3, member firms set p_M=c-1: the outsider sells nothing, but a higher member price would restore its demand, so the exclusion constraint binds and the members engage in limit pricing. For 3<=c<5, that constraint is slack and the unconstrained symmetric duopoly price p_M=2 obtains.
 
-The note also recomputes national welfare under the corrected equilibrium. The member-country ranking in Proposition 3 remains valid: the price correction changes consumer expenditure and member-firm profit, but the corresponding price terms offset in national welfare. The paper therefore makes a limited claim about the equilibrium characterization and its welfare robustness rather than challenging the foreclosure threshold or the paper's headline member-country welfare comparison.
+The correction is therefore not a change in primitives or a new model. It is a correction of the Nash equilibrium over a nondegenerate parameter interval, with a direct industrial-organization interpretation: realized foreclosure need not imply that an excluded rival has ceased to discipline incumbent pricing. The note also recomputes national welfare under the corrected equilibrium and shows that the member-country ranking in Proposition 3 remains valid because the relevant price transfers cancel.
 
-The manuscript is self-contained, contains two propositions, has no exhibits, and is accompanied by symbolic and numerical verification code. It is original work and is not under consideration elsewhere. The author takes full responsibility for the manuscript and provides the required generative-AI disclosure with the submission materials.
+The manuscript is self-contained, contains two propositions, and is accompanied by symbolic and numerical verification code. The work is original and is not under consideration elsewhere. The author has no competing interests and received no specific research funding. Use of generative AI is disclosed in the manuscript in accordance with Springer Nature policy, and all sources, mathematical derivations, verification results, and final text were independently checked by the author.
 
 Thank you for considering the manuscript.
 
 Sincerely,
 Ryota Matsuki
-Independent Researcher, Matsuyama, Ehime, Japan
+Independent Researcher, Matsuyama, Japan
 ryota.matsuki@gmail.com
