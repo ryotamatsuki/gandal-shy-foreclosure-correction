@@ -1,0 +1,33 @@
+# RIE Submission Checklist
+
+- [x] Target journal: Review of International Economics
+- [x] RIE-specific title frozen
+- [x] Abstract reframed around international standards, foreign foreclosure, and competitive discipline
+- [x] Six keywords (<=7)
+- [x] JEL codes retained: F12, F13, L13, L15
+- [x] Double-spaced manuscript
+- [x] 12 pages, below 25-page ceiling
+- [x] LaTeX source available
+- [x] Peer-review PDF builds cleanly
+- [x] ORCID populated
+- [x] Funding statement included
+- [x] Conflict-of-interest statement included
+- [x] Data availability statement included
+- [x] AI use declaration included
+- [x] Cover letter retargeted to RIE
+- [x] Practitioner Points deliberately omitted (optional)
+- [x] No new model or extension
+- [x] Exactly two propositions retained
+- [x] Mathematical sections 2–4 unchanged from validated C6.1 base
+- [x] Core symbolic verification rerun: PASS
+- [x] 453-point numerical falsification rerun: PASS
+- [x] Boundary continuity and welfare identities: PASS
+- [x] No undefined citations/references in local final build
+- [x] No material overfull/underfull boxes in local final build
+- [x] All 12 PDF pages rendered and visually inspected
+- [ ] Confirm manuscript is not under consideration elsewhere at actual submission time
+- [ ] Enter any private postal address/phone required by the portal without committing it
+- [ ] Pay mandatory CHF 100 first-submission fee
+- [ ] Upload `.tex`, peer-review PDF, and LaTeX supplementary files using Wiley file designations
+- [ ] Inspect Research Exchange generated preview
+- [ ] Submit
