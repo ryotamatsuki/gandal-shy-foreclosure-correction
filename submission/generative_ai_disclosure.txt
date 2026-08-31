@@ -1,5 +1,3 @@
-Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
+AI use declaration statement
 
-During the preparation of this work the author used OpenAI ChatGPT to assist with source searching, LaTeX drafting, manuscript organization, and language editing. The author independently checked the cited sources, reviewed and edited all AI-assisted material, and takes full responsibility for the content of the article.
-
-Generative AI was also used in the research process to assist in drafting symbolic and numerical verification code and in cross-checking algebraic derivations. All analytical results were independently checked by the author, and the verification scripts are supplied as supplementary material.
+During August--September 2026, the author used OpenAI ChatGPT, including GPT-5.6 Sol, to assist with literature-search organization, LaTeX drafting, manuscript organization, language editing, algebraic cross-checking, and drafting portions of the symbolic and numerical verification code. The author independently checked all cited sources against bibliographic or publisher records, re-derived the analytical results, executed symbolic and numerical verification, and reviewed and edited all AI-assisted text and code. The author takes full responsibility for the content of the article.
