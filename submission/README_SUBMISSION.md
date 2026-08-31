@@ -1,45 +1,21 @@
-# International Economics — Submission Package
+# Submission Package
 
-Status: C6.1 style finalization completed; remaining blockers are private contact insertion and live-portal checks.
+The active target on this branch is **Review of International Economics (RIE)**.
 
-## Upload files
+Use:
 
-- Main manuscript source: generated flat package `output/international-economics-submission-source.zip`
-- Review PDF: `output/manuscript.pdf`
-- Title page: `submission/title_page.tex` after inserting any required private postal address into a local-only copy
-- Highlights: `submission/highlights.txt`
-- Cover letter: `submission/cover_letter.txt`
-- Generative-AI disclosure: inserted immediately before references; standalone copy in `submission/generative_ai_disclosure.txt`
-- Competing-interest declaration: complete the Elsevier declarations tool and upload its generated file if the portal requires it
-- Funding statement: `submission/funding_statement.txt`
-- CRediT statement: `submission/credit_statement.txt`
-- Code/data statement: inserted in manuscript; standalone copy in `submission/code_data_availability.txt`
-- Verification code supplement: `output/reproducibility-supplement.zip`
+- `submission/README_RIE_SUBMISSION.md` for the current upload instructions;
+- `submission/rie_checklist.md` for the current submission checklist;
+- `submission/cover_letter.txt` for the RIE cover letter;
+- `submission/title_page.tex` for the RIE title-page template.
 
-## Privacy boundary
+The older *International Economics* flat-LaTeX/export machinery is retained in this branch only as development provenance from the validated C6.1 base. It is **not** the upload workflow for Wiley Research Exchange.
 
-The tracked repository and generated public/review manuscript do not contain the author's private phone number or street address. Enter the phone in the private submission portal. If the uploaded title page requires a full private postal address, insert it only into a local submission copy and do not commit it.
-
-## Flat LaTeX requirement
-
-Elsevier Editorial Manager cannot process TeX submissions with subfolders. The development source remains modular under `paper/sections/`, while `make submission-flat` creates a mechanically derived, single-level source directory and ZIP under `output/`.
-
-## Build
+Build the current manuscript with:
 
 ```bash
-make clean
-make all
+make verify
+make pdf
 ```
 
-The `submission-flat` target independently compiles the flattened manuscript source.
-
-## Portal-only checks
-
-- exact article-type label
-- private postal address / phone fields
-- competing-interest declaration workflow
-- suggested reviewers if requested
-- submission fee display if any
-- subscription versus open-access choice and any APC shown
-- final portal-generated preview
-- confirmation that the manuscript is not under consideration elsewhere
+This produces the review PDF at `output/manuscript.pdf` in a normal local checkout. Private street-address and phone fields must be entered only in the submission portal or a local-only title-page copy and must not be committed.
