@@ -1,5 +1,5 @@
-Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
+Use of Generative AI and AI-Assisted Technologies
 
-During the preparation of this work the author used OpenAI ChatGPT to assist with source searching, LaTeX drafting, manuscript organization, and language editing. The author independently checked the cited sources, reviewed and edited all AI-assisted material, and takes full responsibility for the content of the article.
+OpenAI ChatGPT was used to assist with source searching, manuscript organization and drafting, algebraic cross-checking, and drafting symbolic and numerical verification code. The author independently verified the cited sources, mathematical derivations, numerical checks, and final manuscript, edited all AI-assisted material, and takes full responsibility for the content of the article. AI-assisted copy editing was also used for readability and language.
 
-Generative AI was also used in the research process to assist in drafting symbolic and numerical verification code and in cross-checking algebraic derivations. All analytical results were independently checked by the author, and the verification scripts are supplied as supplementary material.
+This disclosure is prepared for Review of Industrial Organization under Springer Nature's current policy requiring substantive LLM use to be documented in the Methods section or a suitable alternative part of the manuscript. The same disclosure is included in the manuscript under Statements and Declarations.
