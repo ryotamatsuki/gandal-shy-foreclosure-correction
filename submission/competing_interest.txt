@@ -1,7 +1,5 @@
-STATUS: DECLARATION CONTENT POPULATED FROM THE AUTHOR-PROVIDED PRIOR SUBMISSION.
+Competing Interests
 
-Declaration of competing interest
+The author has no relevant financial or non-financial interests to disclose.
 
-The author declares that he has no competing interests.
-
-Portal action remains: complete the Elsevier declarations tool using the equivalent no-competing-interest option and upload the generated .doc/.docx file if required.
+Review of Industrial Organization requires competing-interest information both in the manuscript under Statements and Declarations and through the submission interface. The manuscript contains the same substantive statement.
