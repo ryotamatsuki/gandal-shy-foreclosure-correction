@@ -6,8 +6,8 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "paper"
 OUT = ROOT / "output"
-FLAT = OUT / "international-economics-flat"
-ZIP_PATH = OUT / "international-economics-submission-source.zip"
+FLAT = OUT / "rio-flat"
+ZIP_PATH = OUT / "rio-submission-source.zip"
 
 SECTION_NAMES = [
     "01_introduction.tex",
