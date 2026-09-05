@@ -1,0 +1,5 @@
+# Use the normal BibTeX command when available. The fallback only handles
+# environments in which /usr/bin/bibtex is a broken alternatives symlink.
+if (system('bibtex --version >/dev/null 2>&1') != 0 && -x '/usr/bin/bibtex.original') {
+    $bibtex = '/usr/bin/bibtex.original %O %B';
+}

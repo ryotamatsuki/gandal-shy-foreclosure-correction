@@ -1,0 +1,49 @@
+\section{Welfare robustness}\label{sec:welfare}
+
+The equilibrium correction changes prices, consumer expenditure, and member-firm profits throughout the foreclosure region. It does not, however, overturn the member-country welfare ranking in Proposition 3 of Gandal and Shy (2001). The reason is not that the corrected prices are numerically close to the published price, but that the relevant price terms cancel when national welfare is recomputed under the corrected two-firm allocation.
+
+Take either union country. Under foreclosure the two active member firms each sell $3/2$ units there. With equal prices, each firm serves a half-arc of length $1/2$ and a half-arc of length $1$, so total transportation cost is
+\begin{align}\label{eq:transport-foreclosure}
+ T^{\SU}
+ &=2\int_{0}^{1/2}x^2\,dx+2\int_{0}^{1}x^2\,dx
+ =\frac34.
+\end{align}
+Aggregate demand is three and the common member price is $p_M$. Consumer surplus in a member country is therefore
+\begin{equation}\label{eq:cs-su}
+ CS_M^{\SU}=3V-3p_M-\frac34.
+\end{equation}
+
+National welfare also includes the worldwide profit of the domestic firm. It sells $3/2$ units in each of the two union markets, generating combined profit $3p_M$. In the recognition-stage behavior used in the original proof of Proposition 3, the nonmember country recognizes all standards. The member firm then faces the symmetric recognized-standard market there and earns one additional unit of profit \citep[p.~382]{gandalshy2001}. This recognition behavior is inherited from the original game rather than introduced by the correction. Hence
+\begin{equation}\label{eq:profit-su}
+ \Pi_M^{\SU}=3p_M+1.
+\end{equation}
+
+\begin{proposition}[Welfare robustness]\label{prop:welfare}
+Under the recognition behavior considered in Proposition 3 of Gandal and Shy (2001), the corrected foreclosure equilibrium yields, for either standardization-union member,
+\begin{equation}\label{eq:ts-su}
+ TS_M^{\SU}=3V+\frac14
+\end{equation}
+for $5/2<c<5$. Mutual recognition yields
+\begin{equation}\label{eq:ts-mr}
+ TS^{\MR}=3V-\frac14,
+\end{equation}
+so
+\begin{equation}\label{eq:welfare-gap}
+ TS_M^{\SU}-TS^{\MR}=\frac12>0.
+\end{equation}
+Hence the member-country welfare ranking in Gandal and Shy's Proposition 3 survives the correction of the post-foreclosure price equilibrium.
+\end{proposition}
+
+\begin{proof}
+Equations \eqref{eq:cs-su} and \eqref{eq:profit-su} give
+\[
+ TS_M^{\SU}
+ =3V-3p_M-\frac34+3p_M+1
+ =3V+\frac14.
+\]
+This calculation requires the corrected foreclosed allocation and the original recognition behavior just described, but not the particular value of $p_M$ on either branch of Proposition \ref{prop:equilibrium}.
+
+Under mutual recognition all standards are accepted in every country and all three firms are symmetric. In a representative market each firm charges $1$ and sells one unit; consumer expenditure is $3$ and transportation cost is $1/4$, so consumer surplus is $3V-13/4$. The domestic firm earns one unit in each of the three segmented markets, giving worldwide profit $3$. Thus $TS^{\MR}=3V-1/4$, and subtraction yields \eqref{eq:welfare-gap}.
+\end{proof}
+
+The cancellation has a narrow interpretation. Corrected prices redistribute surplus between consumers and the domestic producer across the symmetric union markets: consumers pay $3p_M$ in a member country while that country's firm earns $3p_M$ from its combined union-market sales. The correction therefore changes strategic pricing and the distribution of surplus, but not this particular national-welfare ranking. It is not a general invariance result for standardization unions.

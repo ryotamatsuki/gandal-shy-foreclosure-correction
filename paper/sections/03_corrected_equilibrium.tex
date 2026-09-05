@@ -1,0 +1,61 @@
+\section{Corrected post-foreclosure equilibrium}\label{sec:equilibrium}
+
+We now solve the price subgame implied by \eqref{eq:duodemand}. If the outsider remains foreclosed, firm 1's profit in a member market is
+\begin{equation}\label{eq:duoprofit}
+ \pi_1^{F}(p_1;p_2)=p_1\left[\frac32+\frac34(p_2-p_1)\right].
+\end{equation}
+On the range in which the two active firms divide both connecting arcs, this expression is strictly concave. Its first-order condition is $p_1=1+p_2/2$, so the unconstrained symmetric two-firm price is
+\begin{equation}\label{eq:unconstrained-duopoly}
+ p_1=p_2=2.
+\end{equation}
+The issue is whether that price is compatible with continued foreclosure.
+
+At the outsider's own location, the shortest distance to either member firm is one. If both members charge $p_M$, their delivered price there is $p_M+1$. The outsider can charge its marginal conversion cost $c$, so foreclosure requires
+\begin{equation}\label{eq:foreclosure-constraint}
+ p_M+1\leq c,
+ \qquad\text{or equivalently}\qquad
+ p_M\leq c-1.
+\end{equation}
+Equality makes only the consumer at the outsider's ideal point indifferent. The constraint is slack at the unconstrained price $2$ if and only if $c\geq3$.
+
+\begin{proposition}[Corrected post-foreclosure equilibrium]\label{prop:equilibrium}
+In a standardization-union member market of the quadratic-transport model, suppose $5/2<c<5$ so that the outsider is foreclosed. The symmetric equilibrium allocation satisfies
+\[
+ q_1^*=q_2^*=\frac32,\qquad q_3^*=0,
+\]
+and the member-firm price is
+\begin{equation}\label{eq:piecewise-price}
+ p_M^*(c)=
+ \begin{cases}
+ c-1, & \dfrac52<c<3,\\[4pt]
+ 2, & 3\leq c<5.
+ \end{cases}
+\end{equation}
+For $5/2<c<3$, the foreclosure constraint binds and the member firms engage in limit pricing. For $3\leq c<5$, the constraint is slack and the member price equals the unconstrained symmetric duopoly price.
+\end{proposition}
+
+\begin{proof}
+First take $5/2<c<3$ and consider the price profile $(p_1,p_2,p_3)=(c-1,c-1,c)$. At these prices the outsider has zero demand and zero profit. We show that no member deviation is profitable globally, rather than only locally around the foreclosure boundary.
+
+Fix $p_2=c-1$. For a sufficiently large downward deviation, $p_1\leq c-2$, firm 1's demand cannot exceed the total market size three. Hence its profit is at most $3(c-2)$, whereas its equilibrium profit is $3(c-1)/2$. Their difference is $3(3-c)/2>0$. For the remaining downward deviations, $c-2<p_1\leq c-1$, the outsider remains foreclosed and the two member firms continue to divide both connecting arcs. Equation \eqref{eq:duoprofit} therefore applies. Its unconstrained maximizer given $p_2=c-1$ is $(c+1)/2>c-1$, so profit is increasing throughout this interval. No downward deviation is profitable.
+
+Now let $p_1>c-1$. The outsider becomes active near its location. Direct comparison of delivered prices against firms 2 and 3 gives firm 1 total demand
+\[
+ q_1=\max\left\{c+\frac12-p_1,\,0\right\}.
+\]
+On the positive-demand range, profit is $p_1(c+1/2-p_1)$, whose unconstrained maximizer is $(c+1/2)/2$. Because $c>5/2$, this maximizer lies strictly below $c-1$. Profit is therefore decreasing once the foreclosure boundary is crossed; for $p_1\geq c+1/2$ demand is zero. Thus no finite upward deviation is profitable either. The familiar one-sided derivatives summarize the same kink:
+\begin{equation}\label{eq:kink-derivatives}
+ \left.\frac{\partial\pi_1}{\partial p_1}\right|_-
+ =\frac34(3-c)>0,
+ \qquad
+ \left.\frac{\partial\pi_1}{\partial p_1}\right|_+
+ =\frac52-c<0.
+\end{equation}
+The same argument applies to firm 2. The outsider itself cannot earn positive profit by deviating: any price at or above $c$ attracts no positive-measure demand at the candidate member prices, while any below-cost price that attracts demand yields negative margin. Hence $(c-1,c-1,c)$ supports the stated allocation for $5/2<c<3$.
+
+For $c\geq3$, consider $(p_1,p_2,p_3)=(2,2,c)$. The outsider is foreclosed because a member product is delivered to its ideal point at cost three, weakly below $c$. To check member deviations globally, first remove the outsider; doing so can only increase a member firm's demand and therefore provides an upper bound on its profit at every nonnegative price. With the other member price fixed at $2$, a deviating price $p_1\leq1$ yields profit at most $3p_1\leq3$. For $1\leq p_1\leq3$, the two-firm demand is $3-3p_1/4$, so profit $p_1(3-3p_1/4)$ is uniquely maximized at $p_1=2$, with value three. For $3\leq p_1\leq4$, demand is weakly below its value $3/4$ at $p_1=3$, so profit is at most three; at $p_1\geq4$ the other member weakly dominates firm 1 everywhere and its demand is zero. Thus even the two-firm upper envelope offers no profitable deviation, and adding the outsider cannot create one. The outsider again has zero profit at $p_3=c$ and no profitable deviation. Therefore $p_M=2$ is a member best response for $3\leq c<5$.
+
+At $c=3$ the two price branches meet because $c-1=2$. At $c=5/2$ the limit-pricing branch converges to $3/2$, the limiting member price from the three-active-firm solution in \eqref{eq:interior-su}. Symmetry gives $q_1=q_2=3/2$ whenever the outsider has zero demand.\footnote{For $c\geq3$, a zero-demand outsider can have multiple best-response prices if below-cost zero-sales prices are admissible. Proposition \ref{prop:equilibrium} therefore characterizes the economically relevant member prices and allocation rather than claiming uniqueness of an arbitrary zero-sales outsider price.}
+\end{proof}
+
+The corrected equilibrium separates foreclosure of realized sales from the disappearance of competitive pressure. For $5/2<c<3$, the outsider sells nothing but constrains member prices because a price increase beyond $c-1$ restores its demand. Only at $c=3$ does that constraint cease to bind, producing the transition from three-firm competition to limit pricing and then to unconstrained duopoly. As a simple check on the published constant price, at $c=4$ the profile $p_1=p_2=3/2$ gives firm 1 profit $9/4$, while the unilateral deviation $p_1=7/4$ raises profit to $147/64$.
