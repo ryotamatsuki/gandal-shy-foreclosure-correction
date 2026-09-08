@@ -1,0 +1,4 @@
+Corrects post-foreclosure pricing in a standardization-union benchmark.
+A zero-sales outsider binds member prices for 5/2<c<3.
+The correction adds a nondegenerate limit-pricing regime.
+The original member-country welfare ranking remains unchanged.
