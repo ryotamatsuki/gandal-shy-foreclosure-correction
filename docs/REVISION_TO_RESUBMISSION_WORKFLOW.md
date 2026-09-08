@@ -4,7 +4,8 @@
 **Status date:** 2026-09-09  
 **Purpose:** Project-specific recovery workflow after the independent Astra referee audit.  
 **Canonical generic workflow:** `ryotamatsuki/research-paper-workflow` v2.1.  
-**Project baseline before reopening:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`.
+**Project baseline before reopening:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`.  
+**Execution status:** `C0–C1R PASS`; `C2R PASS`; **NEXT: `C2R-L Lean Formal Certification`**.
 
 ---
 
@@ -21,7 +22,7 @@ The Astra finding does **not** eliminate the correction itself. Direct inspectio
 3. the published price profile `(3/2, 3/2, c)` is not a Nash equilibrium in the relevant range; but
 4. under the unrestricted price strategy space, other zero-sales outsider prices can support additional member-price equilibria, so the current manuscript confuses equilibrium existence with equilibrium characterization.
 
-The immediate scientific task is therefore to characterize exactly what is true in the unrestricted game and what becomes true only after an explicit cost-floor restriction.
+C0–C1R has now analytically characterized the symmetric foreclosed pure-strategy equilibrium set in the unrestricted game and the corresponding cost-floor restricted class. C2R has rebuilt and passed the symbolic/numerical falsification layer, including three-price global-deviation checks and permanent Astra/published-profile regressions. The immediate task is now formal certification of the settled claims in Lean before any revised theory freeze.
 
 ---
 
@@ -88,11 +89,11 @@ Do not claim that the original policy conclusion is reversed without solving the
 The project-specific sequence is:
 
 ```text
-C0–C1R  Targeted Equilibrium-Set Reaudit
+C0–C1R  Targeted Equilibrium-Set Reaudit                 [PASS]
    ↓
-C2R     Symbolic / Numerical Counterexample and Global-Deviation Audit
+C2R     Symbolic / Numerical Counterexample Audit        [PASS]
    ↓
-C2R-L   Lean Formal Certification
+C2R-L   Lean Formal Certification                        [NEXT]
    ↓
 C3R     Revised Canonical Theory Freeze
    ↓
@@ -114,6 +115,10 @@ Stage 15   Submission Freeze / Authenticated Portal Preflight / Submit
 ---
 
 ## 3. C0–C1R — Targeted Equilibrium-Set Reaudit
+
+### Status
+
+`PASS` — authoritative analytic record: `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`.
 
 ### Objective
 
@@ -141,23 +146,18 @@ This is enough to refute the published claim that that complete price profile is
 
 Characterize, within the stated theorem class, what symmetric foreclosed pure-strategy equilibria exist when the published strategy space is left unrestricted.
 
-At minimum, the audit must handle analytically the candidate family
+The completed C0–C1R characterization is:
 
-`(p_1,p_2,p_3) = (s,s,s+1)`
+- `3/2 <= s < 2`, `r=s+1`, `c>=s+1`; or
+- `s=2`, `r>=3`, `c>=3`.
 
-for
+For `c>=5/2`, the admissible member price therefore satisfies
 
-`3/2 <= s <= min{2,c-1}`.
+`3/2 <= s <= min{2,c-1}`,
 
-Do not freeze this family as the **complete** characterization until necessity has been proved for the exact theorem class.
+with the outsider-price conditions above.
 
-The audit must answer:
-
-1. which `s` values are sufficient for equilibrium;
-2. whether any other symmetric foreclosed pure equilibria exist;
-3. what happens at `c=5/2` and `c=3`;
-4. how outsider-price nonuniqueness changes member best responses;
-5. whether any theorem requires asymmetric pure equilibria to be checked rather than merely searched for counterexamples.
+No claim is made about all asymmetric or mixed equilibria.
 
 ### 3.3 Cost-floor game
 
@@ -169,29 +169,27 @@ in the market in question.
 
 For a union member market, this means member prices are nonnegative and the outsider satisfies `p_3 >= c`.
 
-Within **symmetric foreclosed pure-strategy equilibria**, prove both necessity and sufficiency of the member-price characterization, if true:
+Within **symmetric foreclosed pure-strategy equilibria**, C0–C1R establishes:
 
 `p_M = c-1` for `5/2 < c < 3`,
 
 `p_M = 2` for `3 <= c < 5`.
 
-The result must identify precisely what remains nonunique, especially the zero-sales outsider price when `c >= 3`.
+For `c>=3`, the member price is unique within the stated class while the zero-sales outsider quote remains nonunique with `p_3>=c`.
 
 Do not state “the unique Nash equilibrium” unless all prices and all equilibria in the relevant strategy class have actually been proved unique.
 
 ### 3.4 Welfare scope
 
-Re-derive welfare from the published welfare definition, including worldwide profit of the domestic firm.
-
-For a common symmetric member price `s` in both union markets, verify:
+For a common symmetric member price `s` in both union markets,
 
 `TS_M^SU = 3V + 1/4`.
 
-For potentially different symmetric continuation prices `s_A` and `s_B`, verify the relevant country-specific expression, currently expected to be
+For potentially different symmetric continuation prices `s_A` and `s_B`,
 
 `TS_A^SU = 3V + 1/4 + (3/2)(s_B-s_A)`.
 
-Then state exactly which equilibrium selection supports the original Proposition-3 ranking.
+The original Proposition-3 ranking therefore survives under a common symmetric continuation and in particular under the symmetric cost-floor continuation, but it is not selection-free over arbitrary unrestricted market-by-market continuations.
 
 ### C0–C1R PASS criteria
 
@@ -202,11 +200,15 @@ C0–C1R passes only if the project can answer, in theorem-ready form:
 3. Under exactly what additional cost-floor restriction is the piecewise member price characterized?
 4. Under what equilibrium-selection condition does the welfare ranking survive?
 
-If any answer is unknown, C0–C1R remains open.
+All four have been answered in `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`.
 
 ---
 
 ## 4. C2R — Symbolic / Numerical Counterexample and Global-Deviation Audit
+
+### Status
+
+`PASS` — authoritative falsification/regression record: `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`.
 
 ### Objective
 
@@ -214,9 +216,9 @@ Build a falsification layer that searches the strategy space relevant to the rev
 
 ### Required changes to verification
 
-The previous numerical verifier fixed `p_3=c`; this is no longer sufficient.
+The previous numerical verifier fixed `p_3=c`; this was insufficient and has now been replaced.
 
-The revised verifier must be able to:
+The revised verifier can:
 
 - vary `p_1`, `p_2`, and `p_3`;
 - include zero-sales below-cost outsider prices in unrestricted mode;
@@ -228,12 +230,26 @@ The revised verifier must be able to:
 - preserve the Astra counterexample and the published-profile counterexample as permanent regression tests;
 - distinguish `candidate verified` from `equilibrium set characterized`.
 
+### C2R execution result
+
+The high-resolution run uses `N=80,000` consumer cells and tests 91 valid-family profiles. The maximum apparent equilibrium gain is `5.6249531e-05`, below the fixed discretization allowance `0.0009`.
+
+The verifier also:
+
+- rejects the published `c=4` profile with a discretized gain `0.046924219`;
+- retains the Astra `(3/2,3/2,5/2)` profile at `c=4` as an unrestricted equilibrium within grid error;
+- detects violations of the C0–C1R necessity conditions;
+- rejects representative asymmetric perturbations of the symmetric restricted equilibria;
+- verifies convergence of the grid artifact from `0.0002249925` at `N=20,000` to `5.6249531e-05` at `N=80,000`.
+
 ### C2R PASS criteria
 
 - Every analytic theorem has dedicated numerical falsification tests.
 - No counterexample is found in a domain the theorem claims to cover.
 - Every discovered counterexample is retained as a regression test.
 - Numerical PASS is never used as a substitute for necessity/globality proofs.
+
+All C2R criteria are satisfied. Proceed to C2R-L.
 
 ---
 
@@ -242,6 +258,8 @@ The revised verifier must be able to:
 ### Timing
 
 Lean enters **after the analytic theorem statements are fixed by C0–C1R and after the falsification design is stabilized in C2R, but before C3R theory freeze**.
+
+This is now the active stage.
 
 Do not formalize a moving theorem statement.
 
@@ -535,9 +553,9 @@ Suggested branch names:
 - [x] Astra independent referee identified equilibrium-characterization defect.
 - [x] Published Gandal–Shy (2001) PDF directly confirms quadratic specification and Appendix-B long-arc inconsistency.
 - [x] Stage 14 halted.
-- [ ] **C0–C1R Targeted Equilibrium-Set Reaudit** — NEXT.
-- [ ] C2R Symbolic/Numerical Audit.
-- [ ] C2R-L Lean Formal Certification.
+- [x] C0–C1R Targeted Equilibrium-Set Reaudit.
+- [x] C2R Symbolic/Numerical Audit.
+- [ ] **C2R-L Lean Formal Certification — NEXT.**
 - [ ] C3R Revised Canonical Theory Freeze.
 - [ ] C4R Hostile Scientific Self-Audit.
 - [ ] Stage 12R2 Journal Significance/Fit Recheck.
