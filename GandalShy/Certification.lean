@@ -15,14 +15,14 @@ game, and the welfare identities.  The scientific scope is recorded in
 -/
 
 /-- Candidate member profit at a symmetric foreclosed price `s`. -/
-def candidateProfit (s : ℝ) : ℝ := (3 / 2) * s
+noncomputable def candidateProfit (s : ℝ) : ℝ := (3 / 2) * s
 
 /-- Member profit on the regular two-member branch against rival member price `s`. -/
-def regularProfit (s p : ℝ) : ℝ :=
+noncomputable def regularProfit (s p : ℝ) : ℝ :=
   p * (3 / 2 + (3 / 4) * (s - p))
 
 /-- Member profit on the outsider-relevant upward-deviation branch. -/
-def entryProfit (s p : ℝ) : ℝ :=
+noncomputable def entryProfit (s p : ℝ) : ℝ :=
   p * (s + 3 / 2 - p)
 
 /-- The corrected long-arc indifference equation has price coefficient `1/4`. -/
