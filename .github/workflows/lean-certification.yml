@@ -27,11 +27,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Install Lean and restore mathlib cache
+      - name: Install pinned Lean toolchain
         uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           auto-config: false
-          use-mathlib-cache: true
+          build: false
+          test: false
+          lint: false
+          use-github-cache: false
+          use-mathlib-cache: false
 
       - name: Resolve pinned dependencies
         run: lake update
