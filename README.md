@@ -2,52 +2,72 @@
 
 Research repository for a short theory note revisiting the post-foreclosure equilibrium in Gandal and Shy (2001).
 
-**Current workflow status:** Stage 12R journal positioning completed; **International Economics — Short paper / Short communication** selected as the primary next target under a zero-fee hard gate.  
+**Current workflow status:** Stage 13R full-paper integration completed on the active branch; ready for Stage 14 submission QA after merge.  
+**Current primary target:** *International Economics* — Short paper / Short communication, exact live portal label to be verified.  
+**Canonical Stage-13R title:** *Standardization Unions, Foreclosure, and Limit Pricing: Revisiting Gandal and Shy (2001)*.  
 **Previous submission:** *Review of Industrial Organization* (RIO), submitted 2026-09-04 (JST) and rejected at editorial screening on 2026-09-09 (JST) before external review.  
 **RIO submission ID:** `2d499871-b72e-4168-94c9-e179a47abc8e`.  
-**RIO submitted package SHA:** `57b9515e3db3419835d404d9c8ea21ff170422cf`.  
-**Current primary target:** *International Economics* — short-format route.  
-**Canonical manuscript title entering Stage 13R:** *Foreclosure and Limit Pricing in Standardization Unions: Revisiting Gandal and Shy (2001)*.  
-**Research objective:** Re-solve the post-foreclosure price subgame in the published quadratic-transport specification and determine whether the corrected equilibrium changes the member-country welfare comparison in Proposition 3.
+**Author-cost hard gate:** zero submission fee and zero mandatory publication/page/APC charge under the standard non-OA route.
 
 The manuscript contains exactly two main propositions:
 
 1. the corrected post-foreclosure equilibrium has a limit-pricing region for `5/2 < c < 3` and the unconstrained duopoly price for `3 <= c < 5`;
 2. the member-country welfare ranking in Gandal and Shy (2001), Proposition 3, survives the equilibrium correction.
 
-The RIO editorial decision identified audience/journal fit rather than a mathematical defect. No external RIO referee reports exist. Stage 12R therefore keeps the theory frozen and retargets the completed contribution to international economics rather than adding a new model extension.
+The RIO editorial decision identified audience/journal fit rather than a mathematical defect. No external RIO referee reports exist. The theory remains frozen.
 
-## Canonical Stage 12R route
+## Canonical Stage 12R–15 route
 
-The active post-RIO workflow follows `ryotamatsuki/research-paper-workflow` v2.1:
+The active workflow follows `ryotamatsuki/research-paper-workflow` v2.1:
 
 1. **Stage 12R — Journal Positioning:** complete. Primary target: *International Economics* short-format route.
-2. **Stage 13R — Full-Paper Integration:** next. Reframe the RIO manuscript for international standards/trade policy and rebuild the Elsevier submission package without changing the theory.
-3. **Stage 14 — Submission QA:** mandatory current Guide-for-Authors and authenticated-portal compliance recheck under fail-closed rules.
-4. **Stage 15 — Submission Freeze / Portal Preflight:** freeze and submit only after portal metadata/file reconciliation and generated-PDF inspection.
+2. **Stage 13R — Full-Paper Integration:** complete on the active branch. The paper is recentered on international product standards, recognition policy, and the standardization-union welfare comparison while retaining the stronger zero-sales-rival/limit-pricing mechanism explanation developed for RIO.
+3. **Stage 14 — Submission QA:** next. Refresh all material journal requirements from current official sources, reconcile the authenticated portal, build the exact required package, and fail closed on unresolved requirements.
+4. **Stage 15 — Submission Freeze / Portal Preflight:** freeze and submit only after portal metadata/file reconciliation and page-by-page inspection of the portal-generated PDF.
 
-Author-cost hard gate: **no submission fee and no mandatory publication/page/APC charge**. Paid open access will not be selected. If the live portal presents a mandatory charge, stop and move to the next zero-fee journal.
+If the live submission system presents any mandatory author charge, stop and move to the next zero-fee journal in the Stage-12R ladder.
 
-Stage-12 records:
+Current workflow records:
 
 - `docs/STAGE_12R_INTERNATIONAL_ECONOMICS_POSITIONING.md`
 - `docs/JOURNAL_REQUIREMENTS_LEDGER_INTERNATIONAL_ECONOMICS.md`
+- `docs/STAGE_13R_INTERNATIONAL_ECONOMICS_INTEGRATION.md`
+
+## Stage 13R manuscript integration
+
+The Stage-13R manuscript now:
+
+- opens with international product standards, recognition rules, and foreign-market access;
+- treats the standardization union as the institutional object and foreclosure/limit pricing as the mechanism;
+- makes Costinot (2008) and Klimenko (2009) visible in the international-standards genealogy;
+- retains the global deviation proof and the `5/2<c<3` binding-exclusion interpretation;
+- presents the Proposition-3 welfare ranking as a separately verified robustness result;
+- uses international-economics-first keywords and JEL ordering;
+- adds an International Economics cover-letter draft, highlights, title-page draft, CRediT draft, reproducibility package builder, and flat LaTeX source-package builder.
+
+No equation, proposition, parameter restriction, welfare definition, or verification script is changed by Stage 13R.
 
 ## Build and verification
-
-The mathematical and computational verification baseline remains unchanged:
 
 ```bash
 python -m pip install -r requirements.txt
 make verify
 make pdf
+make packages
+make title-page
 # or
 make all
 ```
 
-At the Stage-12R branch, the production manuscript and build configuration are intentionally still the **RIO-framed** version. Stage 12 selects the journal but does not rewrite the manuscript. Stage 13R is responsible for the International Economics integration and exact Elsevier source-package rebuild.
+Generated outputs are not committed:
 
-The existing RIO build writes `output/rio-manuscript.pdf` and `output/rio-submission-source.zip`; these remain historical production artifacts until Stage 13R replaces the active submission configuration. Generated PDFs and source archives are not committed.
+- `output/international-economics-manuscript.pdf`
+- `output/international-economics-submission-source.zip`
+- `output/reproducibility-supplement.zip`
+- `output/international-economics-flat/`
+- `submission/title_page.pdf`
+
+The flat source package contains a single-level LaTeX source tree and is designed to preserve the modular manuscript exactly. Whether this exact archive structure is the operative journal requirement remains a Stage-14 live-compliance question.
 
 ## Frozen mathematical results
 
@@ -59,21 +79,17 @@ The existing RIO build writes `output/rio-manuscript.pdf` and `output/rio-submis
 - Mutual-recognition benchmark: `TS^MR=3V-1/4`.
 - Welfare gap: `1/2`.
 
-No Stage-12R edit changes these results.
-
 ## RIO submission provenance
 
 - Springer Nature SNAPP accepted the RIO submission on 2026-09-04 (JST).
 - Submission ID: `2d499871-b72e-4168-94c9-e179a47abc8e`.
-- The submitted manuscript package was independently built and visually checked before submission.
 - RIO rejected the manuscript at editorial screening on 2026-09-09 (JST), before external peer review.
-- The decision is retained as submission provenance; it does not reopen the verified mathematics.
-- `docs/RIO_SUBMISSION_RECORD.md` retains the RIO closeout evidence where present in the repository history.
+- The decision is retained as submission provenance and does not reopen the verified mathematics.
 
 ## Structure
 
-- `docs/` — C0–C6 historical provenance, RIO records, and current Stage-12R positioning/compliance ledger
-- `paper/` — modular self-contained LaTeX manuscript; RIO-framed until Stage 13R
+- `docs/` — mathematical provenance, RIO records, Stage-12R positioning/requirements ledger, and Stage-13R integration audit
+- `paper/` — modular self-contained LaTeX manuscript
 - `code/` — symbolic and numerical equilibrium verification
-- `submission/` — existing RIO and superseded historical submission materials; Stage 13R will create the active International Economics package
+- `submission/` — current International Economics working package and package builders
 - `output/` — generated manuscript/package outputs, not committed
