@@ -7,6 +7,7 @@ on:
       - '**/*.lean'
       - 'lean-toolchain'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - '.github/workflows/lean-certification.yml'
   push:
     branches: [main]
@@ -14,6 +15,7 @@ on:
       - '**/*.lean'
       - 'lean-toolchain'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - '.github/workflows/lean-certification.yml'
   workflow_dispatch:
 
@@ -27,18 +29,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Install pinned Lean toolchain
+      - name: Build with pinned Lean/mathlib
         uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           auto-config: false
-          build: false
+          build: true
+          build-args: GandalShy
           test: false
           lint: false
-          use-github-cache: false
-          use-mathlib-cache: false
-
-      - name: Resolve pinned dependencies
-        run: lake update
+          use-mathlib-cache: true
 
       - name: Reject admitted proofs
         shell: bash
@@ -48,6 +47,3 @@ jobs:
             echo 'Admitted proof token found.' >&2
             exit 1
           fi
-
-      - name: Build formal certification
-        run: lake build GandalShy
