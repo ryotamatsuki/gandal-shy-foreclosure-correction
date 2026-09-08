@@ -1,7 +1,7 @@
 # C3 Canonical Freeze
 
-> **HISTORICAL / REOPENED AFTER ASTRA-1.**  
-> This freeze is retained only as provenance. It is no longer the controlling theory specification because Astra-1 identified equilibrium multiplicity in the unrestricted price game and continuation-selection dependence in welfare. The controlling recovery documents are `docs/REVISION_TO_RESUBMISSION_WORKFLOW.md` and, after C0–C1R, `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`. A new `C3R` freeze is prohibited until C2R and C2R-L pass.
+> **HISTORICAL / SUPERSEDED AFTER ASTRA-1.**  
+> This freeze is retained only as provenance. It is no longer the controlling theory specification because Astra-1 identified equilibrium multiplicity in the unrestricted price game and continuation-selection dependence in welfare. The controlling scientific freeze is now `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`, supported by `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`, `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`, and `docs/C2R_L_LEAN_CERTIFICATION.md`.
 
 ## Paper identity at the historical freeze
 
@@ -27,7 +27,7 @@ For `5/2<c<5`, the outsider is foreclosed, member quantities are `3/2`, and
 - `p_M=c-1` for `5/2<c<3`;
 - `p_M=2` for `3<=c<5`.
 
-**Reopened issue:** this is not a characterization of the unrestricted original price game. The current C0–C1R analysis separates unrestricted equilibrium multiplicity from an explicit cost-floor game under which the member price can be characterized within symmetric foreclosed pure strategies.
+**Superseded issue:** this is not a characterization of the unrestricted original price game. The revised C3R freeze separates unrestricted equilibrium multiplicity from an explicit cost-floor game under which the member price is characterized within symmetric foreclosed pure strategies.
 
 ### Proposition 2
 
@@ -37,7 +37,7 @@ Under the recognition behavior used in Gandal and Shy Proposition 3,
 - `TS^MR=3V-1/4`;
 - the welfare difference is `1/2>0`.
 
-**Reopened issue:** the cancellation is valid under a common symmetric continuation price across the two segmented union markets, but not under arbitrary market-by-market continuation selection in the unrestricted game.
+**Superseded issue:** the cancellation is valid under a common symmetric continuation price across the two segmented union markets, but not under arbitrary market-by-market continuation selection in the unrestricted game.
 
 ## Historical scope
 
@@ -50,4 +50,4 @@ Appendix only: boundary/nonuniqueness details, Table 2 correction, country-size 
 Do not claim that the main result or Proposition 3 is false, that limit pricing is new to economics, that the original article is invalid, that author intent is known, that all citing papers are affected, or that world-welfare conclusions reverse.
 
 Historical C3 verdict: **GO TO C4**.  
-Current status: **REOPENED — NO FREEZE IN FORCE**.
+Current status: **SUPERSEDED — SEE `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`.**
