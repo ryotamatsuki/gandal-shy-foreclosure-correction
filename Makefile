@@ -9,11 +9,11 @@ verify:
 
 pdf:
 	cd paper && $(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
-	cp paper/main.pdf output/rio-manuscript.pdf
+	cp paper/main.pdf output/international-economics-manuscript.pdf
 
 submission-flat:
 	$(PYTHON) submission/build_flat_package.py
-	cd output/rio-flat && $(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
+	cd output/international-economics-flat && $(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
 
 reproducibility-package:
 	$(PYTHON) submission/build_reproducibility_package.py
@@ -26,7 +26,9 @@ packages: submission-flat reproducibility-package
 clean:
 	cd paper && $(LATEXMK) -C main.tex || true
 	cd submission && $(LATEXMK) -C title_page.tex || true
-	rm -f output/rio-manuscript.pdf output/rio-submission-source.zip output/reproducibility-supplement.zip
-	rm -rf output/rio-flat
+	rm -f output/international-economics-manuscript.pdf
+	rm -f output/international-economics-submission-source.zip
+	rm -f output/reproducibility-supplement.zip
+	rm -rf output/international-economics-flat
 
 all: verify pdf packages title-page
