@@ -1,0 +1,50 @@
+name: Lean formal certification
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '**/*.lean'
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - '.github/workflows/lean-certification.yml'
+  push:
+    branches: [main]
+    paths:
+      - '**/*.lean'
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - '.github/workflows/lean-certification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Build with pinned Lean/mathlib
+        uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          auto-config: false
+          build: true
+          build-args: GandalShy
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          leanchecker: false
+
+      - name: Reject admitted proofs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -R -nE '(^|[^A-Za-z])(sorry|admit)([^A-Za-z]|$)' GandalShy.lean GandalShy/; then
+            echo 'Admitted proof token found.' >&2
+            exit 1
+          fi

@@ -4,27 +4,30 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 
 > **CURRENT SCIENTIFIC STATUS — 2026-09-09**  
 > The pre-Astra Stage-13R manuscript is **not cleared for submission**. Stage 14 remains blocked.  
-> `C0–C1R — Targeted Equilibrium-Set Reaudit` has passed.  
-> `C2R — Symbolic / Numerical Counterexample and Global-Deviation Audit` has also passed with a rebuilt three-price verifier.  
-> **Next stage:** `C2R-L — Lean Formal Certification`.
+> `C0–C1R — Targeted Equilibrium-Set Reaudit`: **PASS**.  
+> `C2R — Symbolic / Numerical Counterexample and Global-Deviation Audit`: **PASS**.  
+> `C2R-L — Lean Formal Certification`: **PASS** with CI-backed compilation and no `sorry`/`admit`.  
+> **Next stage:** `C3R — Revised Canonical Theory Freeze`.
 
-The authoritative project-specific recovery route is:
+The authoritative recovery records are:
 
 - [`docs/REVISION_TO_RESUBMISSION_WORKFLOW.md`](docs/REVISION_TO_RESUBMISSION_WORKFLOW.md) — full revision-to-resubmission sequence and return rules;
-- [`docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`](docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md) — current theorem-ready analytic results;
-- [`docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`](docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md) — rebuilt falsification/regression audit entering Lean.
+- [`docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`](docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md) — analytic equilibrium-set reconstruction;
+- [`docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`](docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md) — rebuilt falsification/regression audit;
+- [`docs/C2R_L_LEAN_CERTIFICATION.md`](docs/C2R_L_LEAN_CERTIFICATION.md) — formal certification scope, theorem inventory, CI evidence, and limitations.
 
 **Pre-reopening manuscript baseline:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`.  
 **Recovery-plan baseline:** `main@40e4e76721534c39bfe3f13ad97cea1183732d48`.  
-**C0–C1R merge baseline for C2R:** `main@8b4432017ea0662147c23c8946804750225a74dd`.  
+**C0–C1R merge:** `8b4432017ea0662147c23c8946804750225a74dd`.  
+**C2R merge:** `7bb77278152d803ada52ac02ca0d70c70fa9a71c`.  
 **Provisional journal target:** *International Economics* — short-format route, subject to Stage 12R2 re-evaluation after revised theory freeze.  
 **Pre-Astra working title:** *Standardization Unions, Foreclosure, and Limit Pricing: Revisiting Gandal and Shy (2001)*.  
 **Previous submission:** *Review of Industrial Organization* (RIO), editorially rejected before external review.  
 **Author-cost hard gate:** zero submission fee and zero mandatory publication/page/APC charge under the standard non-OA route.
 
-## Current scientific result after C0–C1R
+## Current scientific result
 
-The correction itself survives, but its scope has changed.
+The correction survives, but the scope is narrower and more precise than in the pre-Astra manuscript.
 
 ### 1. Published profile
 
@@ -32,7 +35,7 @@ The published article uses quadratic transportation cost, but Appendix B uses an
 
 `x^L = 1 + (p_2-p_1)/4`.
 
-At `c=4`, the complete published profile `(3/2,3/2,4)` is not Nash: a member deviation to `7/4` raises profit from `9/4` to `147/64`.
+At `c=4`, the complete published profile `(3/2,3/2,4)` is not Nash: a member deviation to `7/4` raises profit from `9/4` to `147/64`, a gain of `3/64`.
 
 The correction is therefore to the **complete published profile**, not a claim that member price `3/2` can never occur in any equilibrium.
 
@@ -86,7 +89,7 @@ If the two markets select different symmetric continuation prices `s_A` and `s_B
 
 Therefore the Proposition-3 ranking is **not selection-free across arbitrary unrestricted continuation selections**. It survives under a common symmetric continuation price and, in particular, under the symmetric cost-floor continuation characterized above.
 
-No claim is made yet about all asymmetric pure equilibria, mixed equilibria, or the full government-stage game under unrestricted multiplicity.
+No claim is made about all asymmetric pure equilibria, mixed equilibria, or the full government-stage game under unrestricted multiplicity.
 
 ## C2R verification status
 
@@ -102,18 +105,38 @@ The current numerical verifier:
 - checks necessity violations and representative asymmetric perturbations;
 - performs a `N=20,000 -> 80,000` convergence check.
 
-The high-resolution C2R run tested 91 valid-family profiles. The maximum apparent equilibrium gain was `5.6249531e-05`, below the fixed discretization allowance `0.0009`. The published profile was correctly rejected with a discretized gain `0.046924219`, while the Astra equilibrium remained within the grid-error bound. Details are in `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`.
+The high-resolution C2R run tested 91 valid-family profiles. The maximum apparent equilibrium gain was `5.6249531e-05`, below the fixed discretization allowance `0.0009`. The published profile was correctly rejected with a discretized gain `0.046924219`, while the Astra equilibrium remained within the grid-error bound. C2R remains a falsification/regression layer, not a proof of equilibrium-set completeness.
 
-C2R remains a falsification/regression layer, not a proof of equilibrium-set completeness.
+## C2R-L Lean certification status
+
+The repository now contains a pinned Lake/Lean project:
+
+- `lean-toolchain`: `leanprover/lean4:v4.34.0-rc2`;
+- `lakefile.toml`: mathlib pinned to commit `74828d59824ed9c1e3002f796aaf53cec5ffb47c`;
+- `GandalShy/Certification.lean`: formal theorem source;
+- `.github/workflows/lean-certification.yml`: CI compilation and admitted-proof gate.
+
+Lean formally certifies the proof-critical algebraic core, including:
+
+- the corrected long-arc coefficient `1/4`;
+- the exact `c=4` profitable-deviation counterexample;
+- regular-branch and outsider-relevant profit-gap factorizations;
+- global no-gain inequalities used in the unrestricted lower-price family;
+- necessity sign checks for `s<3/2`, `s>2`, and outsider-threshold failure;
+- multiplicity of the analytic Theorem-U condition set;
+- exact cost-floor reduction and piecewise member-price characterization;
+- common-price and cross-market welfare identities.
+
+GitHub Actions run `34291397450` completed successfully: `lake build GandalShy` passed and the repository scan found no `sorry` or `admit` token. The formal record explicitly does **not** claim that Lean has reconstructed the entire continuum Salop demand game or independently derived every Nash equilibrium from primitives. See `docs/C2R_L_LEAN_CERTIFICATION.md`.
 
 ## Recovery route
 
 The project follows this overlay on `ryotamatsuki/research-paper-workflow` v2.1:
 
-1. **C0–C1R — Targeted Equilibrium-Set Reaudit:** **PASS.** Analytic characterization completed.
-2. **C2R — Symbolic / Numerical Audit:** **PASS.** Three-price unrestricted/cost-floor falsification layer rebuilt; known counterexamples preserved as regression tests.
-3. **C2R-L — Lean Formal Certification:** **NEXT.** Formalize the settled high-stakes claims and exact quantifiers before theory freeze.
-4. **C3R — Revised Canonical Theory Freeze:** freeze exact games, equilibrium classes, quantifiers, parameter domains, and prohibited stronger claims.
+1. **C0–C1R — Targeted Equilibrium-Set Reaudit:** **PASS**.
+2. **C2R — Symbolic / Numerical Audit:** **PASS**.
+3. **C2R-L — Lean Formal Certification:** **PASS**.
+4. **C3R — Revised Canonical Theory Freeze:** **NEXT**. Freeze exact games, equilibrium classes, quantifiers, parameter domains, Lean-certified claims, analytic-only claims, and prohibited stronger wording.
 5. **C4R — Hostile Scientific Self-Audit:** attack the revised frozen theory for hidden equilibria, boundary failures, strategy-space errors, and welfare-selection overclaims.
 6. **Stage 12R2 — Journal Significance / Fit Recheck:** reassess *International Economics* after the contribution changes.
 7. **Stage 13R2 — Revised Full-Paper Integration:** rewrite Sections 2–4 first, then Abstract/Introduction/Conclusion and submission materials.
@@ -123,55 +146,57 @@ The project follows this overlay on `ryotamatsuki/research-paper-workflow` v2.1:
 
 **Do not skip directly to Stage 14.**
 
-## Historical records now explicitly superseded
+## Historical records explicitly superseded
 
 The following remain useful as provenance but are not current theory authority:
 
 - `docs/C0_C1_MATHEMATICAL_AUDIT.md` — historical/superseded;
-- `docs/C3_CANONICAL_FREEZE.md` — reopened; no current freeze is in force;
+- `docs/C3_CANONICAL_FREEZE.md` — reopened; no current freeze is in force until C3R;
 - `docs/STAGE_12R_INTERNATIONAL_ECONOMICS_POSITIONING.md`;
 - `docs/JOURNAL_REQUIREMENTS_LEDGER_INTERNATIONAL_ECONOMICS.md`;
 - `docs/STAGE_13R_INTERNATIONAL_ECONOMICS_INTEGRATION.md`.
 
 The pre-Astra manuscript and submission package are retained as baselines only. They are not the resubmission version.
 
-## Lean timing
-
-Lean now becomes the active stage:
+## Formal-proof timing
 
 ```text
 C0–C1R analytic audit  [PASS]
     ↓
 C2R symbolic/numerical falsification  [PASS]
     ↓
-C2R-L Lean formal certification  [NEXT]
+C2R-L Lean formal certification  [PASS]
     ↓
-C3R revised theory freeze
+C3R revised theory freeze  [NEXT]
 ```
 
-The Lean theorem statements must match the exact C0–C1R quantifiers: parameter interval, strategy domain, symmetry, foreclosure condition, pure-strategy class, and existence/necessity/uniqueness status. If Lean exposes a mathematical gap, return to C0–C1R rather than weakening only the prose.
+If C3R or a later hostile audit changes a mathematical quantifier, strategy domain, equilibrium class, or substantive theorem statement, the affected Lean theorem must be updated and recompiled before another freeze is valid.
 
 ## Build and verification
+
+Python/symbolic/numerical verification:
 
 ```bash
 python -m pip install -r requirements.txt
 make verify
-make pdf
-make packages
-make title-page
-# or
-make all
 ```
 
-`make verify` now executes the C2R symbolic checks and the rebuilt three-price numerical falsification suite.
+Lean formal verification:
+
+```bash
+lake build GandalShy
+```
+
+Manuscript/package commands remain available for the pre-Astra baseline, but the paper itself is not rewritten until Stage 13R2.
 
 ## Structure
 
 - `docs/REVISION_TO_RESUBMISSION_WORKFLOW.md` — authoritative recovery route
-- `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md` — current analytic theorem set
-- `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md` — current falsification/regression record
-- `docs/` — historical mathematical provenance, RIO records, and journal-positioning records
+- `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md` — analytic theorem set
+- `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md` — falsification/regression record
+- `docs/C2R_L_LEAN_CERTIFICATION.md` — Lean certification record
+- `GandalShy/` — formal Lean source
+- `code/` — C2R symbolic/numerical verification
 - `paper/` — pre-Astra LaTeX baseline until Stage 13R2
-- `code/` — current C2R symbolic/numerical verification; next formalized in Lean
 - `submission/` — pre-Astra working package; rebuilt only after revised theory freeze
 - `output/` — generated manuscript/package outputs, not committed

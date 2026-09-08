@@ -4,98 +4,113 @@
 **Status date:** 2026-09-09  
 **Purpose:** Project-specific recovery workflow after the independent Astra referee audit.  
 **Canonical generic workflow:** `ryotamatsuki/research-paper-workflow` v2.1.  
-**Project baseline before reopening:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`.  
-**Execution status:** `C0–C1R PASS`; `C2R PASS`; **NEXT: `C2R-L Lean Formal Certification`**.
+**Pre-reopening manuscript baseline:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`.  
+**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → **NEXT: `C3R Revised Canonical Theory Freeze`**.
 
 ---
 
-## 0. Current status and stop condition
+## 0. Current stop condition
 
-Stage 12R and Stage 13R were completed for an intended submission to *International Economics*. An independent Astra hostile referee audit then identified a substantive equilibrium-characterization problem that was not detected by the existing verification code.
+The pre-Astra Stage-13R manuscript is **not cleared for submission**. Stage 14 remains blocked.
 
-**Stage 14 is therefore BLOCKED. Do not perform submission QA, portal preflight, or submission until the scientific recovery sequence below is completed and passes.**
+Astra identified a substantive equilibrium-characterization defect: the pre-Astra manuscript proved important candidate equilibria but overstated them as a characterization even though the unrestricted original price game admits additional symmetric foreclosed equilibria supported by zero-sales outsider quotes.
 
-The Astra finding does **not** eliminate the correction itself. Direct inspection of the published Gandal and Shy (2001) article confirms that:
+The correction itself survives. Direct inspection of the published Gandal and Shy (2001) article confirms that:
 
 1. the published model uses quadratic transportation costs;
 2. Appendix B uses an inconsistent long-arc price-difference coefficient;
-3. the published price profile `(3/2, 3/2, c)` is not a Nash equilibrium in the relevant range; but
-4. under the unrestricted price strategy space, other zero-sales outsider prices can support additional member-price equilibria, so the current manuscript confuses equilibrium existence with equilibrium characterization.
+3. the complete published price profile `(3/2,3/2,c)` is not a Nash equilibrium in the relevant range;
+4. the unrestricted original price game has additional symmetric foreclosed equilibria;
+5. an explicit cost-floor restriction changes the strategy set and yields the previously derived piecewise member price within the stated equilibrium class;
+6. the welfare result is conditional on continuation-equilibrium selection.
 
-C0–C1R has now analytically characterized the symmetric foreclosed pure-strategy equilibrium set in the unrestricted game and the corresponding cost-floor restricted class. C2R has rebuilt and passed the symbolic/numerical falsification layer, including three-price global-deviation checks and permanent Astra/published-profile regressions. The immediate task is now formal certification of the settled claims in Lean before any revised theory freeze.
+Scientific recovery has now passed three gates:
+
+- `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md` — analytic equilibrium-set reconstruction;
+- `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md` — three-price symbolic/numerical falsification and regression audit;
+- `docs/C2R_L_LEAN_CERTIFICATION.md` — Lean formal certification of the proof-critical algebraic and quantified inequality core.
+
+The next task is to freeze the revised theory exactly as supported by those three records.
 
 ---
 
-## 1. Governing principles for the revision
+## 1. Governing principles
 
-### 1.1 Preserve the valid correction; narrow overclaims
+### 1.1 Correct the complete published profile, not an isolated member price
 
-The target of the correction is the **complete published price profile**, not the isolated statement that a member price of `3/2` can never occur.
+The defensible correction is:
 
-The defensible criticism is:
+> Appendix B's claimed profile `(3/2,3/2,c)` is not a Nash equilibrium under the published quadratic-transport specification.
 
-> Appendix B's claimed profile `(3/2, 3/2, c)` is not a Nash equilibrium under the published quadratic-transport specification.
+Do **not** claim that member price `3/2` can never occur in another equilibrium unless such a stronger statement is separately proved.
 
-Do **not** claim that no equilibrium can support member price `3/2` unless that stronger statement is separately proved.
-
-### 1.2 Separate two games explicitly
+### 1.2 Keep the unrestricted original game and the cost-floor game separate
 
 The revision must distinguish:
 
-1. **Unrestricted original price game:** use the strategy space actually stated in the published model, including zero-sales below-cost prices when not explicitly prohibited.
-2. **Cost-floor price game:** impose explicitly
+1. **Unrestricted original price game:** the price strategy space stated in the published model, including zero-sales below-cost quotes when not explicitly prohibited.
+2. **Cost-floor price game:** the explicitly restricted strategy space
    `p_i >= marginal cost in that market`.
 
-The cost-floor restriction is an additional strategy restriction. It must **not** be described as:
+The cost-floor restriction must not be described as:
 
-- “without loss of generality”;
-- an implication of Nash equilibrium itself;
-- “elimination of all weakly dominated strategies”; or
-- a condition already imposed by Gandal and Shy (2001), unless new primary-source evidence proves that statement.
+- without loss of generality;
+- an implication of Nash equilibrium;
+- generic elimination of weakly dominated strategies; or
+- a condition stated by Gandal and Shy (2001).
 
-### 1.3 Keep the logical categories separate
+### 1.3 Separate logical strength
 
-Every theorem and prose claim must distinguish:
+Every theorem and every manuscript sentence must distinguish:
 
 - `EXISTS`;
 - `IS A NASH EQUILIBRIUM`;
 - `CHARACTERIZES ALL EQUILIBRIA IN THE STATED CLASS`;
 - `UNIQUE WITHIN THE STATED CLASS`.
 
-No existence proof may be described as a characterization or uniqueness result.
+An existence proof may not be upgraded to characterization or uniqueness.
 
 ### 1.4 State the equilibrium class exactly
 
-The recovery work should focus first on **symmetric, foreclosed, pure-strategy equilibria**. It is not necessary to solve every asymmetric or mixed equilibrium unless a theorem is written broadly enough to require doing so.
+The current characterization is for **symmetric, foreclosed, pure-strategy equilibria in one union-member market**.
 
-If asymmetric equilibria are not fully characterized, the manuscript must say so and must not use language that quantifies over all Nash equilibria.
+No current theorem claims to characterize:
+
+- all asymmetric pure equilibria;
+- mixed equilibria; or
+- the government-stage equilibrium under unrestricted continuation multiplicity.
+
+The manuscript must not quantify beyond the class actually proved.
 
 ### 1.5 Welfare claims must match equilibrium selection
 
-The previous welfare cancellation is valid under a common symmetric member price across the two union markets. It is not automatically selection-free when different continuation equilibria can be selected market by market.
+The common-price cancellation is not selection-free when segmented member markets choose different continuation equilibria.
 
-The revision must state exactly:
+The manuscript must distinguish:
 
-- which equilibrium selection is used;
-- when `TS_M^SU = 3V + 1/4` is price-independent; and
-- when cross-market price differences create additional transfer terms.
+- a common symmetric continuation price across the two union markets; and
+- arbitrary market-by-market continuation selections.
 
-Do not claim that the original policy conclusion is reversed without solving the relevant government-stage equilibrium.
+Do not claim that the original policy conclusion reverses without solving the relevant government-stage equilibrium.
+
+### 1.6 Lean scope must not be overstated
+
+Lean certifies the proof-critical algebraic and quantified inequality core. It does **not** independently reconstruct the entire continuum Salop demand game from measure-theoretic consumer primitives.
+
+Any formal-certification claim must follow `docs/C2R_L_LEAN_CERTIFICATION.md` exactly.
 
 ---
 
 ## 2. Mandatory recovery sequence
 
-The project-specific sequence is:
-
 ```text
-C0–C1R  Targeted Equilibrium-Set Reaudit                 [PASS]
+C0–C1R  Targeted Equilibrium-Set Reaudit                  [PASS]
    ↓
-C2R     Symbolic / Numerical Counterexample Audit        [PASS]
+C2R     Symbolic / Numerical Counterexample Audit         [PASS]
    ↓
-C2R-L   Lean Formal Certification                        [NEXT]
+C2R-L   Lean Formal Certification                         [PASS]
    ↓
-C3R     Revised Canonical Theory Freeze
+C3R     Revised Canonical Theory Freeze                    [NEXT]
    ↓
 C4R     Hostile Scientific Self-Audit
    ↓
@@ -110,371 +125,322 @@ Stage 14   Submission QA
 Stage 15   Submission Freeze / Authenticated Portal Preflight / Submit
 ```
 
-**No stage may be skipped merely because an earlier version had previously passed.**
+No stage may be skipped merely because an earlier manuscript version previously passed a corresponding gate.
 
 ---
 
 ## 3. C0–C1R — Targeted Equilibrium-Set Reaudit
 
-### Status
-
-`PASS` — authoritative analytic record: `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`.
-
-### Objective
-
-Re-open only the affected scientific core: post-foreclosure price equilibrium, equilibrium multiplicity, strategy restrictions, and the welfare scope that depends on equilibrium selection.
+**Status:** `PASS`  
+**Authority:** `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`
 
 ### 3.1 Published-profile correction
 
-Re-derive from primitives:
+Under quadratic transportation costs, the long-arc indifference equation
 
 `p_1 + x^2 = p_2 + (2-x)^2`
 
-and confirm
+implies
 
-`x = 1 + (p_2-p_1)/4`.
+`x^L = 1 + (p_2-p_1)/4`.
 
-Keep a direct counterexample to the published profile. The canonical simple checkpoint is `c=4`:
-
-- published profile: `(3/2, 3/2, 4)`;
-- member deviation: `p_1 = 7/4`;
-- profit rises from `9/4` to `147/64`.
-
-This is enough to refute the published claim that that complete price profile is a Nash equilibrium.
+At `c=4`, the published complete profile `(3/2,3/2,4)` admits the member deviation `p_1=7/4`, raising profit from `9/4` to `147/64`, a gain of `3/64`.
 
 ### 3.2 Unrestricted original game
 
-Characterize, within the stated theorem class, what symmetric foreclosed pure-strategy equilibria exist when the published strategy space is left unrestricted.
+Within symmetric foreclosed pure-strategy profiles `(s,s,r)`, the analytic equilibrium set is:
 
-The completed C0–C1R characterization is:
+**U1 — lower-price family**
 
-- `3/2 <= s < 2`, `r=s+1`, `c>=s+1`; or
-- `s=2`, `r>=3`, `c>=3`.
+- `3/2 <= s < 2`;
+- `r=s+1`;
+- `c>=s+1`.
 
-For `c>=5/2`, the admissible member price therefore satisfies
+**U2 — duopoly-price family**
+
+- `s=2`;
+- `r>=3`;
+- `c>=3`.
+
+For `c>=5/2`, admissible member prices therefore satisfy
 
 `3/2 <= s <= min{2,c-1}`,
 
-with the outsider-price conditions above.
+subject to the outsider-price conditions above.
 
-No claim is made about all asymmetric or mixed equilibria.
+### 3.3 Explicit cost-floor game
 
-### 3.3 Cost-floor game
+Impose the separate strategy restriction
 
-Define an explicit restricted game in which each firm must satisfy
+`p_i >= mc_i`.
 
-`p_i >= mc_i`
+Within symmetric foreclosed pure-strategy equilibria:
 
-in the market in question.
+- `5/2 <= c < 3`: `(p_1,p_2,p_3)=(c-1,c-1,c)`;
+- `c>=3`: `p_1=p_2=2`, with any `p_3>=c`.
 
-For a union member market, this means member prices are nonnegative and the outsider satisfies `p_3 >= c`.
+For the paper's strict range `5/2<c<5`, the member price is therefore
 
-Within **symmetric foreclosed pure-strategy equilibria**, C0–C1R establishes:
+`p_M=c-1` for `5/2<c<3`,
 
-`p_M = c-1` for `5/2 < c < 3`,
+`p_M=2` for `3<=c<5`.
 
-`p_M = 2` for `3 <= c < 5`.
-
-For `c>=3`, the member price is unique within the stated class while the zero-sales outsider quote remains nonunique with `p_3>=c`.
-
-Do not state “the unique Nash equilibrium” unless all prices and all equilibria in the relevant strategy class have actually been proved unique.
+At `c=3`, the branches meet at `p_M=2`; strict slack begins only for `c>3`.
 
 ### 3.4 Welfare scope
 
-For a common symmetric member price `s` in both union markets,
+For a common symmetric member price `s` in both union markets:
 
-`TS_M^SU = 3V + 1/4`.
+`TS_M^SU = 3V + 1/4`,
 
-For potentially different symmetric continuation prices `s_A` and `s_B`,
+`TS^MR = 3V - 1/4`,
+
+so the gap is `1/2`.
+
+For market-specific symmetric continuation prices `s_A` and `s_B`:
 
 `TS_A^SU = 3V + 1/4 + (3/2)(s_B-s_A)`.
 
-The original Proposition-3 ranking therefore survives under a common symmetric continuation and in particular under the symmetric cost-floor continuation, but it is not selection-free over arbitrary unrestricted market-by-market continuations.
-
-### C0–C1R PASS criteria
-
-C0–C1R passes only if the project can answer, in theorem-ready form:
-
-1. What equilibria exist in the unrestricted original game within the stated equilibrium class?
-2. What is and is not unique?
-3. Under exactly what additional cost-floor restriction is the piecewise member price characterized?
-4. Under what equilibrium-selection condition does the welfare ranking survive?
-
-All four have been answered in `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`.
+Thus the original member-country ranking survives under a common symmetric continuation and, in particular, the symmetric cost-floor continuation, but is not selection-free over arbitrary unrestricted continuation choices.
 
 ---
 
-## 4. C2R — Symbolic / Numerical Counterexample and Global-Deviation Audit
+## 4. C2R — Symbolic / Numerical Audit
 
-### Status
+**Status:** `PASS`  
+**Authority:** `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`
 
-`PASS` — authoritative falsification/regression record: `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`.
+The old verifier fixed `p_3=c` and could not discover the Astra multiplicity. C2R replaced it with a three-price global-deviation architecture.
 
-### Objective
+The revised verifier:
 
-Build a falsification layer that searches the strategy space relevant to the revised theorems. The numerical code is evidence and regression protection, not the proof itself.
+- varies `p_1`, `p_2`, and `p_3`;
+- separates unrestricted and cost-floor modes;
+- computes unilateral best responses from primitive delivered-price thresholds;
+- searches global member and outsider deviations;
+- preserves the published-profile failure and Astra equilibrium as permanent regressions;
+- checks necessity violations and representative asymmetric perturbations;
+- stresses `c=5/2`, `c=3`, and nearby values;
+- distinguishes candidate verification from equilibrium-set characterization.
 
-### Required changes to verification
-
-The previous numerical verifier fixed `p_3=c`; this was insufficient and has now been replaced.
-
-The revised verifier can:
-
-- vary `p_1`, `p_2`, and `p_3`;
-- include zero-sales below-cost outsider prices in unrestricted mode;
-- switch the cost-floor restriction ON/OFF;
-- search global member deviations, not only local deviations;
-- search outsider deviations;
-- test representative asymmetric member-price perturbations;
-- stress `c=5/2`, `c=3`, and near-boundary values;
-- preserve the Astra counterexample and the published-profile counterexample as permanent regression tests;
-- distinguish `candidate verified` from `equilibrium set characterized`.
-
-### C2R execution result
-
-The high-resolution run uses `N=80,000` consumer cells and tests 91 valid-family profiles. The maximum apparent equilibrium gain is `5.6249531e-05`, below the fixed discretization allowance `0.0009`.
-
-The verifier also:
-
-- rejects the published `c=4` profile with a discretized gain `0.046924219`;
-- retains the Astra `(3/2,3/2,5/2)` profile at `c=4` as an unrestricted equilibrium within grid error;
-- detects violations of the C0–C1R necessity conditions;
-- rejects representative asymmetric perturbations of the symmetric restricted equilibria;
-- verifies convergence of the grid artifact from `0.0002249925` at `N=20,000` to `5.6249531e-05` at `N=80,000`.
-
-### C2R PASS criteria
-
-- Every analytic theorem has dedicated numerical falsification tests.
-- No counterexample is found in a domain the theorem claims to cover.
-- Every discovered counterexample is retained as a regression test.
-- Numerical PASS is never used as a substitute for necessity/globality proofs.
-
-All C2R criteria are satisfied. Proceed to C2R-L.
+The high-resolution run used `N=80,000`, tested 91 valid-family profiles, and found no counterexample to the exact C0–C1R theorem class. Numerical evidence remains falsification/regression protection, not a substitute for analytic necessity and sufficiency.
 
 ---
 
 ## 5. C2R-L — Lean Formal Certification
 
-### Timing
+**Status:** `PASS`  
+**Authority:** `docs/C2R_L_LEAN_CERTIFICATION.md`  
+**Formal source:** `GandalShy/Certification.lean`
 
-Lean enters **after the analytic theorem statements are fixed by C0–C1R and after the falsification design is stabilized in C2R, but before C3R theory freeze**.
+### 5.1 Reproducible environment
 
-This is now the active stage.
+- Lean: `leanprover/lean4:v4.34.0-rc2`;
+- mathlib: pinned commit `74828d59824ed9c1e3002f796aaf53cec5ffb47c`;
+- dependency lock: `lake-manifest.json`;
+- CI workflow: `.github/workflows/lean-certification.yml`.
 
-Do not formalize a moving theorem statement.
+### 5.2 Certified targets
 
-### Minimum Lean targets
+Lean compiles formal proofs of the proof-critical core, including:
 
-Formalize at least the following high-stakes objects where feasible:
+- corrected long-arc coefficient `1/4`;
+- exact `c=4` published-profile profitable deviation and gain `3/64`;
+- regular and outsider-relevant profit-gap factorizations;
+- global no-gain inequalities used in the U1 sufficiency proof;
+- necessity sign checks for `s<3/2`, `s>2`, and outsider-threshold failure;
+- multiplicity of the analytic `UCond` condition set;
+- exact cost-floor reduction and piecewise member-price characterization within that condition set;
+- common-price and cross-market welfare identities.
 
-1. **Long-arc correction**
-   - derive the coefficient `1/4` from the quadratic indifference equation.
-2. **Published-profile counterexample**
-   - certify the exact rational profit improvement at `c=4`.
-3. **Unrestricted-game multiplicity result**
-   - certify the sufficient global best-response inequalities for the additional symmetric foreclosed equilibrium family.
-4. **Cost-floor characterization**
-   - formalize both existence and the necessity direction for the member price within the exact theorem class.
-5. **Welfare identities**
-   - common-price cancellation;
-   - cross-market price-difference expression if retained in the paper/theory record.
+### 5.3 CI evidence
 
-### Lean scope discipline
+GitHub Actions run `34291397450` completed successfully:
 
-The Lean theorem statement must reproduce the manuscript quantifiers exactly:
+- `lake build GandalShy` passed;
+- the formal source compiled;
+- the explicit admitted-proof scan found no `sorry` or `admit`;
+- `#print axioms` diagnostics show only standard Lean/mathlib logical axioms used by the proof machinery, not project-specific axioms or admitted theorems.
 
-- parameter interval;
-- strategy domain;
-- symmetry;
-- foreclosure condition;
-- pure-strategy restriction;
-- existence versus necessity versus uniqueness.
+The successful formal/configuration commit was `d311a285d816de57e8df0a1637e14a4b43a24652`; later commits in the C2R-L PR are documentation/status updates only.
 
-A theorem that proves only a restricted algebraic lemma may not be cited internally as formal certification of a broader equilibrium claim.
+### 5.4 Explicit limitations
 
-### C2R-L PASS criteria
+Lean does not certify independently:
 
-- All designated headline formal theorems compile without `sorry`/admitted gaps.
-- The Lean statements match the intended C3R freeze claims exactly.
-- Any theorem not formalized is explicitly labeled as such rather than implicitly treated as Lean-certified.
+- the full continuum consumer demand correspondence from primitives;
+- tie-breaking and measure-zero consumer details;
+- all asymmetric pure equilibria;
+- mixed equilibria;
+- the government-stage equilibrium;
+- prior art or publication significance.
 
-If later audits change a theorem's mathematical content or quantifiers, return to C2R-L before refreezing.
+The analytic equivalence between `UCond` and the symmetric foreclosed pure-strategy Nash set is the C0–C1R theorem. Lean certifies the algebraic/inequality core and subsequent exact logical reductions.
 
 ---
 
 ## 6. C3R — Revised Canonical Theory Freeze
 
+**Status:** `NEXT / ACTIVE AFTER C2R-L MERGE`
+
 ### Objective
 
-Freeze only the strongest claims supported by the completed analytic, numerical, and Lean certificates.
+Freeze only claims jointly supported by:
 
-A likely compact theorem architecture is:
+1. C0–C1R analytic proof;
+2. C2R symbolic/numerical falsification;
+3. C2R-L Lean certification.
 
-### Proposition 1 — Post-foreclosure pricing
+### Required freeze contents
 
-Potential components, subject to proof:
+The C3R record must state explicitly:
 
-1. the published Appendix-B profile `(3/2,3/2,c)` is not Nash under the published quadratic specification;
-2. the unrestricted original game admits additional symmetric foreclosed equilibria, so the published uniqueness claim fails more deeply than a single price correction;
-3. under the explicit cost-floor strategy restriction, the member price within symmetric foreclosed pure equilibria is characterized by the piecewise formula.
-
-### Proposition 2 — Welfare
-
-State separately:
-
-- the common symmetric continuation under which the original member-country welfare ranking survives; and
-- the fact that unrestricted market-by-market equilibrium selection need not preserve the same price-transfer cancellation.
-
-### Freeze record must state
-
-- exact game definition for each proposition;
+- exact game definition for every proposition;
+- unrestricted versus cost-floor strategy space;
 - exact equilibrium class;
-- exact parameter domain;
-- existence/necessity/uniqueness status;
-- which claims are Lean-certified;
-- which claims are analytic-only but independently falsified numerically;
+- exact parameter interval and boundary treatment;
+- existence versus necessity versus characterization versus uniqueness;
+- which statements are Lean-certified;
+- which statements remain analytic model facts;
+- welfare-selection conditions;
 - prohibited stronger wording.
 
-No manuscript rewrite should outrun this freeze.
+### Expected proposition architecture, subject to C3R wording audit
+
+**Proposition 1 — Post-foreclosure pricing**
+
+1. the published Appendix-B profile `(3/2,3/2,c)` is not Nash under the published quadratic specification;
+2. the unrestricted original game admits multiple symmetric foreclosed pure-strategy equilibria;
+3. under the explicit cost-floor strategy restriction, the member price within symmetric foreclosed pure-strategy equilibria is characterized by the piecewise formula.
+
+**Proposition 2 — Welfare**
+
+1. under a common symmetric continuation, the member-country welfare ranking in Proposition 3 survives;
+2. arbitrary unrestricted market-by-market equilibrium selection need not preserve the same price-transfer cancellation.
+
+No manuscript rewrite may outrun the new freeze.
+
+### C3R PASS condition
+
+Proceed only when every frozen sentence can be mapped to its exact analytic, numerical, and/or Lean support without quantifier drift.
 
 ---
 
 ## 7. C4R — Hostile Scientific Self-Audit
 
-### Objective
+After C3R, attempt to destroy the revised frozen theory.
 
-Attempt to destroy the revised frozen theory before journal positioning resumes.
-
-Mandatory attacks:
+Mandatory attacks include:
 
 - hidden outsider-price equilibria;
-- hidden asymmetric pure equilibria insofar as they threaten the stated theorem scope;
+- asymmetric pure equilibria insofar as they threaten a stated theorem scope;
 - below-cost and zero-demand strategies;
-- boundary cases `c=5/2` and `c=3`;
-- domain of the two-firm demand formula;
+- `c=5/2` and `c=3` boundaries;
+- domain of the two-member demand formula;
 - tie-breaking / measure-zero consumers;
-- exact meaning of “foreclosed” and “limit pricing”;
+- exact meaning of foreclosure and limit pricing;
 - cost-floor restriction versus the original model;
 - cross-market equilibrium selection and welfare;
-- any sentence that upgrades existence to characterization or characterization to uniqueness.
+- any wording that upgrades existence to characterization or characterization to uniqueness;
+- any claim that overstates Lean's scope.
 
-### C4R verdicts
+Verdicts:
 
-- `PASS — GO TO STAGE 12R2`
-- `CONDITIONAL — BOUNDED SCIENTIFIC REPAIR`
-- `FAIL — RETURN TO C0–C1R`
+- `PASS — GO TO STAGE 12R2`;
+- `CONDITIONAL — BOUNDED SCIENTIFIC REPAIR`;
+- `FAIL — RETURN TO EARLIEST AFFECTED SCIENTIFIC STAGE`.
 
-A mathematical change to a frozen theorem requires re-running affected C2R and C2R-L checks.
+A mathematical change to a Lean-certified theorem requires affected C2R/C2R-L checks to be rerun before refreezing.
 
 ---
 
 ## 8. Stage 12R2 — Journal Significance / Fit Recheck
 
-### Why this stage must be repeated
+The contribution has materially changed. Reassess publication significance and journal fit from scratch after C4R.
 
-The contribution has changed materially. The revised paper may no longer be merely:
+The likely revised story is:
 
-`wrong post-foreclosure price -> corrected piecewise price -> welfare ranking survives`.
+`published claimed unique equilibrium is false`
+→ `unrestricted game has equilibrium multiplicity`
+→ `explicit cost-floor restriction characterizes the member price within the stated class`
+→ `welfare robustness is equilibrium-selection conditional`.
 
-It may instead become:
+*International Economics* remains the provisional first target, subject to this recheck and the zero-fee hard gate.
 
-`published claimed unique equilibrium is false -> unrestricted game has multiplicity -> an explicit cost-floor restriction characterizes the economically disciplined member price -> welfare robustness depends on equilibrium selection`.
+Required verdict:
 
-That change may improve or weaken publication significance; it must be assessed from scratch rather than inherited from the prior Stage 12R.
-
-### Primary journal
-
-*International Economics* remains the provisional target, subject to the Stage-12R2 significance/fit audit and the author's zero-fee hard gate.
-
-### Stage 12R2 outputs
-
-- updated contribution statement;
-- updated desk-reject risk;
-- updated International Economics fit;
-- updated short-paper publication-significance assessment;
-- zero-fee ladder refresh if needed;
-- `GO TO STAGE 13R2`, `REPOSITION`, or `CHANGE JOURNAL TARGET`.
+- `GO TO STAGE 13R2`;
+- `REPOSITION`; or
+- `CHANGE JOURNAL TARGET`.
 
 ---
 
 ## 9. Stage 13R2 — Revised Full-Paper Integration
 
-### Required order of revision
-
-Do **not** start with the Introduction.
+Do not start with the Introduction.
 
 Revise in this order:
 
-1. **Section 2:** published specification, long-arc error, and exact published-profile failure.
-2. **Section 3:** unrestricted equilibrium multiplicity and cost-floor characterization.
-3. **Section 4:** welfare under the exact equilibrium-selection conditions.
-4. **Only then:** Abstract, Introduction, Conclusion, title, keywords/JEL, cover letter and submission materials.
+1. Section 2 — published specification, long-arc error, exact published-profile failure;
+2. Section 3 — unrestricted multiplicity and explicit cost-floor characterization;
+3. Section 4 — welfare under exact continuation-selection conditions;
+4. only then Abstract, Introduction, Conclusion, title, keywords/JEL, cover letter, highlights, and submission materials.
 
-### Writing discipline
+Writing rules:
 
-- Say exactly which game is being discussed in every key proposition.
-- Do not imply the cost-floor restriction was part of the published model.
-- Do not hide multiplicity in a footnote.
-- Do not say “the equilibrium price” where only one equilibrium or one restricted equilibrium class has been established.
-- At `c=3`, describe the branches as meeting at the boundary; do not call the exclusion constraint strictly slack there.
-- Keep “limit pricing” only with the explicit static exclusion-maintenance interpretation; do not imply informational signaling or a separate entry stage.
-
-### Stage 13R2 PASS criteria
-
-- Abstract / Introduction / Conclusion match C3R exactly.
-- No stale pre-Astra claim remains.
-- All theorem qualifiers are visible where needed.
-- Submission package is structurally ready for Stage 14 but still treats live journal rules as unverified until Stage 14.
+- name the game/strategy space where needed;
+- do not imply the cost floor belonged to the original model;
+- do not hide multiplicity in a footnote;
+- do not write “the equilibrium price” when the theorem establishes only an equilibrium or a restricted-class characterization;
+- at `c=3`, describe a boundary, not strict slack;
+- use “limit pricing” only in the static exclusion-maintenance sense;
+- describe Lean certification only at the scope actually formalized.
 
 ---
 
 ## 10. Astra-2 — Second Independent Hostile Referee Gate
 
-### Timing
+Run Astra only after the complete Stage-13R2 manuscript exists and before Stage 14.
 
-Run Astra only **after Stage 13R2 produces the complete revised manuscript** and before Stage 14.
+Astra-2 must independently attack:
 
-Astra-2 must be given the revised paper as a fresh hostile referee and instructed to check:
-
-- the unrestricted-game equilibrium characterization;
-- the cost-floor result and its necessity proof;
-- existence versus characterization versus uniqueness language;
+- unrestricted equilibrium characterization;
+- cost-floor result and its necessity proof;
+- existence / characterization / uniqueness language;
 - welfare-selection scope;
 - original-paper correction validity;
-- publication significance for *International Economics*;
-- whether any new overclaim has been introduced during rewriting.
-
-### Astra-2 gate
+- Lean-certification scope;
+- publication significance for the chosen journal;
+- any new overclaim introduced during rewriting.
 
 Proceed only on:
 
 - `ACCEPTABLE FOR SUBMISSION`; or
-- `MINOR EXPOSITION REPAIR`, after those bounded repairs are completed and checked.
+- `MINOR EXPOSITION REPAIR`, after bounded repair and recheck.
 
-If Astra-2 identifies a substantive theory defect, return to C0–C1R/C2R/C2R-L as applicable.
+A substantive theory defect returns to the earliest affected scientific stage.
 
 ---
 
 ## 11. Stage 14 — Submission QA
 
-Stage 14 remains the canonical v2.1 submission-compliance gate. It begins **only after Astra-2 scientific clearance**.
+Stage 14 begins only after Astra-2 scientific clearance.
 
-Re-open all current *International Economics* rules from official sources and the authenticated portal, including:
+Refresh current official journal and authenticated-portal requirements, including:
 
 - exact article type;
-- anonymity / author placement;
-- title page;
-- editable source requirements;
-- abstract / keywords / JEL / highlights;
-- funding / competing interests / CRediT / generative-AI statement;
+- anonymity and title-page rules;
+- editable-source requirements;
+- abstract, keywords, JEL, highlights;
+- funding, competing interests, CRediT, generative-AI statement;
 - data/code/supplement handling;
 - reviewer fields and attestations;
-- submission fee and any mandatory publication charge;
+- submission fee and mandatory publication charges;
 - portal-generated PDF behavior.
 
-Any material `UNVERIFIED` or unresolved `CONFLICT` blocks `SUBMISSION QA PASS`.
+Any material `UNVERIFIED` or unresolved `CONFLICT` blocks PASS.
 
-The zero-fee hard gate remains in force: if a mandatory author charge appears, stop and do not submit under the current target choice.
+The zero-fee hard gate remains in force.
 
 ---
 
@@ -484,79 +450,76 @@ Only after Stage 14 passes:
 
 1. freeze exact manuscript and submission artifacts;
 2. record commit/tag/SHA provenance;
-3. reconcile all metadata in the authenticated portal;
+3. reconcile portal metadata;
 4. upload the exact frozen files;
 5. generate the portal PDF if supported;
 6. inspect the generated PDF page by page;
-7. verify equations, citations, author information/anonymity, declarations and supplements;
-8. confirm no mandatory fee violates the hard gate;
+7. verify equations, citations, author/anonymity information, declarations, and supplements;
+8. confirm the zero-fee hard gate;
 9. submit;
 10. record journal confirmation and submission ID.
 
-`SUBMITTED` may not be declared before journal confirmation is received.
+Do not declare `SUBMITTED` before journal confirmation is received.
 
 ---
 
 ## 13. Return rules
 
-Use the earliest affected-stage rule.
-
-| New problem discovered | Return to |
+| New problem | Return to |
 |---|---|
 | New equilibrium counterexample / false theorem | C0–C1R |
-| Numerical verifier misses relevant strategy region | C2R |
-| Lean theorem fails or theorem quantifiers change | C2R-L after analytic repair |
-| Freeze wording exceeds proof but theory itself is correct | C3R |
-| Hostile audit finds scientific overclaim | earliest scientific stage affected |
-| Journal significance/fit problem only | Stage 12R2 |
-| Exposition/organization only | Stage 13R2 |
-| Astra-2 finds mathematical defect | C0–C1R or C2R-L as applicable |
-| Submission-format/metadata defect only | Stage 14 |
-| Portal-only mismatch after QA | Stage 14/15 preflight |
+| Falsification code misses relevant strategy region | C2R |
+| Lean theorem fails or mathematical quantifiers change | analytic repair, then C2R-L |
+| Freeze wording exceeds valid theory while theory itself is sound | C3R |
+| Hostile audit finds scientific overclaim | earliest affected scientific stage |
+| Journal significance/fit issue only | Stage 12R2 |
+| Exposition/organization issue only | Stage 13R2 |
+| Astra-2 finds mathematical defect | C0–C1R / C2R / C2R-L as applicable |
+| Submission-format/metadata issue only | Stage 14 |
+| Portal-only mismatch | Stage 14/15 preflight |
 
-Do not repair a scientific defect only in prose if the underlying theorem or quantifier must change.
+Do not repair a scientific defect only in prose when the underlying theorem or quantifier must change.
 
 ---
 
 ## 14. Branch / PR discipline
 
-To keep provenance auditable:
-
-- use one branch per recovery stage where substantive files change;
-- do not edit the historical pre-Astra baseline retroactively;
+- one branch per recovery stage where substantive files change;
+- do not retroactively rewrite the historical pre-Astra baseline;
 - record the exact base commit in each stage report;
-- keep mathematical changes separate from later journal-formatting changes where practical;
-- merge only after that stage's stated PASS/GO condition is satisfied;
-- update this file and the root `README.md` whenever the active stage changes;
-- preserve Astra reports/counterexamples as permanent scientific provenance rather than deleting them after repair.
+- separate scientific changes from later journal-formatting changes where practical;
+- merge only after the stage's PASS/GO condition is satisfied;
+- update this workflow and the root README when the active stage changes;
+- retain Astra reports and counterexamples permanently as scientific provenance;
+- retain Lean source, dependency pins, and CI workflow as part of the reproducibility record.
 
 Suggested branch names:
 
-- `reopen/c0-c1r-equilibrium-set`
-- `reopen/c2r-verification`
-- `formal/c2r-lean-certification`
-- `freeze/c3r-revised-theory`
-- `audit/c4r-hostile`
-- `stage12r2/journal-recheck`
-- `stage13r2/revised-integration`
-- `audit/astra2`
-- `stage14/submission-qa`
-- `stage15/submission-freeze`
+- `reopen/c0-c1r-equilibrium-set`;
+- `reopen/c2r-verification`;
+- `formal/c2r-lean-certification`;
+- `freeze/c3r-revised-theory`;
+- `audit/c4r-hostile`;
+- `stage12r2/journal-recheck`;
+- `stage13r2/revised-integration`;
+- `audit/astra2`;
+- `stage14/submission-qa`;
+- `stage15/submission-freeze`.
 
 ---
 
 ## 15. Current checklist
 
 - [x] RIO submission closed with editorial audience-fit rejection.
-- [x] International Economics selected provisionally at Stage 12R.
+- [x] International Economics selected provisionally at initial Stage 12R.
 - [x] Initial International Economics integration completed at Stage 13R.
-- [x] Astra independent referee identified equilibrium-characterization defect.
-- [x] Published Gandal–Shy (2001) PDF directly confirms quadratic specification and Appendix-B long-arc inconsistency.
+- [x] Astra identified the equilibrium-characterization defect.
+- [x] Published Gandal–Shy (2001) PDF directly confirmed the quadratic specification and Appendix-B inconsistency.
 - [x] Stage 14 halted.
 - [x] C0–C1R Targeted Equilibrium-Set Reaudit.
 - [x] C2R Symbolic/Numerical Audit.
-- [ ] **C2R-L Lean Formal Certification — NEXT.**
-- [ ] C3R Revised Canonical Theory Freeze.
+- [x] C2R-L Lean Formal Certification.
+- [ ] **C3R Revised Canonical Theory Freeze — NEXT.**
 - [ ] C4R Hostile Scientific Self-Audit.
 - [ ] Stage 12R2 Journal Significance/Fit Recheck.
 - [ ] Stage 13R2 Revised Full-Paper Integration.
@@ -568,13 +531,13 @@ Suggested branch names:
 
 ## 16. Definition of recovery success
 
-The scientific recovery is complete only when the revised project can answer, without qualification drift:
+The scientific recovery is complete only when the revised project can answer without qualification drift:
 
-1. **Original game:** What symmetric foreclosed pure equilibria exist, and what is not unique?
-2. **Restricted game:** Under exactly what explicit cost-floor condition is the piecewise member price characterized?
-3. **Original correction:** Exactly which published price profile is false and why?
-4. **Welfare:** For exactly which continuation-equilibrium selection does the Proposition-3 member-country ranking survive?
-5. **Formal certification:** Which of those statements have been Lean-certified with matching quantifiers?
-6. **Publication significance:** After the stronger equilibrium-selection correction is known, is *International Economics* still the correct target?
+1. **Original game:** what symmetric foreclosed pure equilibria exist, and what is nonunique?
+2. **Restricted game:** under exactly what explicit cost-floor restriction is the piecewise member price characterized?
+3. **Original correction:** exactly which published price profile is false and why?
+4. **Welfare:** for exactly which continuation-equilibrium selection does the Proposition-3 member-country ranking survive?
+5. **Formal certification:** which statements are Lean-certified, and which economic/model facts remain analytic?
+6. **Publication significance:** after the stronger equilibrium-selection correction is known, is *International Economics* still the right target?
 
-The revision objective is **not** to make the Astra counterexample disappear. The objective is to make the counterexample part of a complete and correctly scoped account of the model.
+The objective is not to make the Astra counterexample disappear. The objective is to make it part of a complete, correctly quantified, reproducible account of the model.
