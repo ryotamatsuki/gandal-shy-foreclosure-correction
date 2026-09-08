@@ -7,25 +7,28 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 > `C0–C1R — Targeted Equilibrium-Set Reaudit`: **PASS**.  
 > `C2R — Symbolic / Numerical Counterexample and Global-Deviation Audit`: **PASS**.  
 > `C2R-L — Lean Formal Certification`: **PASS** with CI-backed compilation and no `sorry`/`admit`.  
-> **Next stage:** `C3R — Revised Canonical Theory Freeze`.
+> `C3R — Revised Canonical Theory Freeze`: **PASS**.  
+> **Next stage:** `C4R — Hostile Scientific Self-Audit`.
 
 The authoritative recovery records are:
 
 - [`docs/REVISION_TO_RESUBMISSION_WORKFLOW.md`](docs/REVISION_TO_RESUBMISSION_WORKFLOW.md) — full revision-to-resubmission sequence and return rules;
 - [`docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`](docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md) — analytic equilibrium-set reconstruction;
 - [`docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`](docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md) — rebuilt falsification/regression audit;
-- [`docs/C2R_L_LEAN_CERTIFICATION.md`](docs/C2R_L_LEAN_CERTIFICATION.md) — formal certification scope, theorem inventory, CI evidence, and limitations.
+- [`docs/C2R_L_LEAN_CERTIFICATION.md`](docs/C2R_L_LEAN_CERTIFICATION.md) — formal certification scope, theorem inventory, CI evidence, and limitations;
+- [`docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`](docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md) — controlling revised theory freeze and prohibited stronger claims.
 
 **Pre-reopening manuscript baseline:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`.  
 **Recovery-plan baseline:** `main@40e4e76721534c39bfe3f13ad97cea1183732d48`.  
 **C0–C1R merge:** `8b4432017ea0662147c23c8946804750225a74dd`.  
 **C2R merge:** `7bb77278152d803ada52ac02ca0d70c70fa9a71c`.  
-**Provisional journal target:** *International Economics* — short-format route, subject to Stage 12R2 re-evaluation after revised theory freeze.  
-**Pre-Astra working title:** *Standardization Unions, Foreclosure, and Limit Pricing: Revisiting Gandal and Shy (2001)*.  
+**C2R-L merge:** `19630342fec2fc0a4b0ba4e900d3d8358581f74c`.  
+**Provisional journal target:** *International Economics* — short-format route, subject to Stage 12R2 re-evaluation after revised theory freeze and C4R.  
+**Pre-Astra working title:** *Standardization Unions, Foreclosure, and Limit Pricing: Revisiting Gandal and Shy (2001)*. The title is not frozen by C3R.  
 **Previous submission:** *Review of Industrial Organization* (RIO), editorially rejected before external review.  
 **Author-cost hard gate:** zero submission fee and zero mandatory publication/page/APC charge under the standard non-OA route.
 
-## Current scientific result
+## Current frozen scientific result
 
 The correction survives, but the scope is narrower and more precise than in the pre-Astra manuscript.
 
@@ -87,7 +90,7 @@ If the two markets select different symmetric continuation prices `s_A` and `s_B
 
 `TS_A^SU = 3V + 1/4 + (3/2)(s_B-s_A)`.
 
-Therefore the Proposition-3 ranking is **not selection-free across arbitrary unrestricted continuation selections**. It survives under a common symmetric continuation price and, in particular, under the symmetric cost-floor continuation characterized above.
+Therefore the Proposition-3 ranking is **not selection-free across arbitrary unrestricted continuation selections**. It is preserved under a common symmetric continuation price and, in particular, under the symmetric cost-floor continuation characterized above.
 
 No claim is made about all asymmetric pure equilibria, mixed equilibria, or the full government-stage game under unrestricted multiplicity.
 
@@ -109,7 +112,7 @@ The high-resolution C2R run tested 91 valid-family profiles. The maximum apparen
 
 ## C2R-L Lean certification status
 
-The repository now contains a pinned Lake/Lean project:
+The repository contains a pinned Lake/Lean project:
 
 - `lean-toolchain`: `leanprover/lean4:v4.34.0-rc2`;
 - `lakefile.toml`: mathlib pinned to commit `74828d59824ed9c1e3002f796aaf53cec5ffb47c`;
@@ -129,6 +132,21 @@ Lean formally certifies the proof-critical algebraic core, including:
 
 GitHub Actions run `34291397450` completed successfully: `lake build GandalShy` passed and the repository scan found no `sorry` or `admit` token. The formal record explicitly does **not** claim that Lean has reconstructed the entire continuum Salop demand game or independently derived every Nash equilibrium from primitives. See `docs/C2R_L_LEAN_CERTIFICATION.md`.
 
+## C3R freeze status
+
+`docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md` is now the controlling scientific specification. It freezes:
+
+- the exact unrestricted and cost-floor game definitions;
+- the symmetric, foreclosed, pure-strategy equilibrium class;
+- the U1/U2 unrestricted characterization and member-price multiplicity;
+- the F1/F2 cost-floor characterization;
+- the `c=5/2` and `c=3` boundary treatment;
+- the common-price and cross-market welfare statements;
+- the exact scope of Lean certification;
+- a prohibited-claims list preventing existence/characterization/uniqueness drift.
+
+The pre-Astra `docs/C3_CANONICAL_FREEZE.md` is historical provenance only.
+
 ## Recovery route
 
 The project follows this overlay on `ryotamatsuki/research-paper-workflow` v2.1:
@@ -136,8 +154,8 @@ The project follows this overlay on `ryotamatsuki/research-paper-workflow` v2.1:
 1. **C0–C1R — Targeted Equilibrium-Set Reaudit:** **PASS**.
 2. **C2R — Symbolic / Numerical Audit:** **PASS**.
 3. **C2R-L — Lean Formal Certification:** **PASS**.
-4. **C3R — Revised Canonical Theory Freeze:** **NEXT**. Freeze exact games, equilibrium classes, quantifiers, parameter domains, Lean-certified claims, analytic-only claims, and prohibited stronger wording.
-5. **C4R — Hostile Scientific Self-Audit:** attack the revised frozen theory for hidden equilibria, boundary failures, strategy-space errors, and welfare-selection overclaims.
+4. **C3R — Revised Canonical Theory Freeze:** **PASS**.
+5. **C4R — Hostile Scientific Self-Audit:** **NEXT**. Attack the revised frozen theory for hidden equilibria, boundary failures, strategy-space errors, welfare-selection overclaims, and Lean-scope drift.
 6. **Stage 12R2 — Journal Significance / Fit Recheck:** reassess *International Economics* after the contribution changes.
 7. **Stage 13R2 — Revised Full-Paper Integration:** rewrite Sections 2–4 first, then Abstract/Introduction/Conclusion and submission materials.
 8. **Astra-2 — Independent Hostile Referee Gate:** review the complete revised paper before submission QA.
@@ -151,7 +169,7 @@ The project follows this overlay on `ryotamatsuki/research-paper-workflow` v2.1:
 The following remain useful as provenance but are not current theory authority:
 
 - `docs/C0_C1_MATHEMATICAL_AUDIT.md` — historical/superseded;
-- `docs/C3_CANONICAL_FREEZE.md` — reopened; no current freeze is in force until C3R;
+- `docs/C3_CANONICAL_FREEZE.md` — historical/superseded by C3R;
 - `docs/STAGE_12R_INTERNATIONAL_ECONOMICS_POSITIONING.md`;
 - `docs/JOURNAL_REQUIREMENTS_LEDGER_INTERNATIONAL_ECONOMICS.md`;
 - `docs/STAGE_13R_INTERNATIONAL_ECONOMICS_INTEGRATION.md`.
@@ -167,10 +185,12 @@ C2R symbolic/numerical falsification  [PASS]
     ↓
 C2R-L Lean formal certification  [PASS]
     ↓
-C3R revised theory freeze  [NEXT]
+C3R revised theory freeze  [PASS]
+    ↓
+C4R hostile scientific self-audit  [NEXT]
 ```
 
-If C3R or a later hostile audit changes a mathematical quantifier, strategy domain, equilibrium class, or substantive theorem statement, the affected Lean theorem must be updated and recompiled before another freeze is valid.
+If C4R or a later hostile audit changes a mathematical quantifier, strategy domain, equilibrium class, or substantive theorem statement, the affected analytic result and Lean theorem must be updated and rechecked before another freeze is valid.
 
 ## Build and verification
 
@@ -195,6 +215,7 @@ Manuscript/package commands remain available for the pre-Astra baseline, but the
 - `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md` — analytic theorem set
 - `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md` — falsification/regression record
 - `docs/C2R_L_LEAN_CERTIFICATION.md` — Lean certification record
+- `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md` — controlling revised scientific freeze
 - `GandalShy/` — formal Lean source
 - `code/` — C2R symbolic/numerical verification
 - `paper/` — pre-Astra LaTeX baseline until Stage 13R2
