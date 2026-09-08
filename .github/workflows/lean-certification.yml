@@ -38,6 +38,7 @@ jobs:
           test: false
           lint: false
           use-mathlib-cache: true
+          leanchecker: true
 
       - name: Reject admitted proofs
         shell: bash
