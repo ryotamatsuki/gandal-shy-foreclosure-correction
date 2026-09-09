@@ -1,11 +1,13 @@
 # Stage 13R2 — Revised Full-Paper Integration
 
 **Date:** 2026-09-10  
-**Status:** **PASS**  
+**Status:** **PASS — POST-ASTRA-2 CLEARED**  
 **Branch:** `stage13r2/revised-integration`  
 **Base:** `main@a312babe551c87afd203678215bb2467b36a1bff`  
 **Integration PR:** `#13`  
 **Pre-bookkeeping verified head:** `d9fc2a60b44b867794b5f53822e9aeb24e9a8500`  
+**Bounded Astra-2 repair PR:** `#14`  
+**Astra-2 limited-recheck baseline:** `main@ec164d092c5be14df12dbf44c40c8d947d7cdc7d`  
 **Canonical workflow:** `ryotamatsuki/research-paper-workflow`, `templates/STAGE_13_FULL_PAPER_INTEGRATION.md`  
 **Scientific authority:** `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`  
 **Hostile-audit authority:** `docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md`  
@@ -86,29 +88,28 @@ The integrated manuscript, abstract, introduction, conclusion, cover letter, and
 
 The Stage-12 requirements ledger remains an integration input, not permanent truth. Stage 13R2 keeps the working manuscript identified and retains provisional title-page/highlight/declaration artifacts without treating any unresolved anonymity, article-type, source-package, declaration-placement, or portal rule as verified.
 
-All such unresolved items remain explicitly delegated to Stage 14 after Astra-2. No unresolved journal rule was silently converted into a definitive submission-format assumption.
+All such unresolved items remain explicitly delegated to Stage 14. No unresolved journal rule was silently converted into a definitive submission-format assumption.
 
 ## 6. Verification and build record
 
 The integration PR added `.github/workflows/manuscript-integration.yml` and reran the integrated package on GitHub Actions.
 
-Final successful verification run:
+Initial integration verification:
 
 - workflow: `Manuscript integration`;
 - run ID: `34373368719`;
 - head: `d9fc2a60b44b867794b5f53822e9aeb24e9a8500`;
-- job: `verify-and-build`;
 - conclusion: **success**;
 - symbolic verification: **PASS**;
 - numerical falsification/regression verification: **PASS**;
 - manuscript LaTeX build: **PASS**;
 - flat LaTeX source build: **PASS**;
 - title-page build: **PASS**;
-- final LaTeX clean-log gate: **PASS** — no final undefined citation/reference or overfull-box failure;
+- final LaTeX clean-log gate: **PASS**;
 - generated artifact existence checks: **PASS**;
 - build artifact: `stage13r2-build`, artifact ID `10112910001`, digest `sha256:9c342cc3616623edeb2d66d44e40f7a6b3a5078683c623c8fe57b1c28049722c`.
 
-The final integrated manuscript is **9 pages**. The modular and flat-source builds were independently rendered and compared at 150 dpi, with **9/9 pages pixel-identical**. All nine manuscript pages and the one-page title page were visually inspected; no clipping, overlap, broken equation, broken citation, or reference-layout defect was identified.
+The final integrated manuscript was **9 pages**. The modular and flat-source builds were independently rendered and compared at 150 dpi, with **9/9 pages pixel-identical**. All nine manuscript pages and the one-page title page were visually inspected; no clipping, overlap, broken equation, broken citation, or reference-layout defect was identified.
 
 Previously computed Stage-13R2 manuscript metrics are retained for integration QA:
 
@@ -119,7 +120,9 @@ Previously computed Stage-13R2 manuscript metrics are retained for integration Q
 - displayed math: `21`;
 - Abstract: `190` words.
 
-These counts are integration diagnostics, not a substitute for the fresh journal-rule audit required at Stage 14.
+The bounded Astra-2 repair subsequently passed manuscript-integration run `34379361638` on repaired manuscript head `72ed861e3460cbcaf5eaf0a763f789c70ed07332`, including symbolic/numerical verification, package build, clean-log gate, generated-artifact checks, and upload.
+
+These counts and build results are integration diagnostics, not a substitute for the fresh journal-rule audit required at Stage 14.
 
 ## 7. Section-role audit
 
@@ -137,11 +140,11 @@ The integrated contribution is bounded to four claims: correction of the publish
 
 `Limit pricing` is not presented as the paper's primary novelty. The manuscript does not claim general novelty for foreclosure, potential competition, or limit pricing. Existing standards/trade and limit-pricing references remain supporting context rather than evidence for an inflated novelty claim.
 
-**Result:** PASS for Stage 13 integration. Prior-art freshness remains subject to Astra-2 attack and any later submission-stage source refresh that becomes material.
+**Result:** PASS for Stage 13 integration. Astra-2 subsequently assessed publication significance as **MODERATE** and found no scientific blocker after bounded repair and limited recheck.
 
 ## 9. Abstract / Introduction / Conclusion alignment
 
-The title, Abstract, Introduction, two propositions, welfare section, Conclusion, highlights, and cover letter all use the same contribution hierarchy:
+The title, Abstract, Introduction, two propositions, welfare section, Conclusion, highlights, and cover letter use the same contribution hierarchy:
 
 `published continuation claim fails`
 → `unrestricted symmetric-foreclosed continuation is multiple`
@@ -149,6 +152,8 @@ The title, Abstract, Introduction, two propositions, welfare section, Conclusion
 → `welfare robustness is continuation-selection conditional`.
 
 **Result:** PASS.
+
+Astra-2 initially identified two submission-artifact wording issues: the third highlight lacked the stated equilibrium-class qualifier and the cover letter overstated the common-price welfare condition. Both were repaired in PR `#14`, and the actual limited recheck on `main@ec164d092c5be14df12dbf44c40c8d947d7cdc7d` returned **PASS** on both items.
 
 ## 10. Figure/Table Architecture reconciliation
 
@@ -183,28 +188,42 @@ Carried forward as **UNVERIFIED / portal-dependent** for Stage 14:
 
 No Stage-14 item is declared resolved by inference from the Stage-13 build.
 
-## 12. Changes made
+## 12. Astra-2 bounded repair closure
 
-Stage 13R2 revised the full manuscript and submission package, including Sections 1–5, title/Abstract/keywords/JEL, cover letter, highlights, title page, package README, reproducibility builder, project README/workflow records, and manuscript-integration CI. The scientific rewrite follows C3R/C4R without introducing a new theoretical extension.
+Astra-2 first audited `main@ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6` and returned **B. MINOR EXPOSITION REPAIR**. The required repairs were:
+
+1. add the missing cost-floor proof bridge;
+2. qualify the third highlight by the symmetric, foreclosed, pure-strategy scope;
+3. narrow the cover-letter welfare wording.
+
+All three were implemented and merged in PR `#14`. Astra-2 then performed the actual limited recheck on `main@ec164d092c5be14df12dbf44c40c8d947d7cdc7d` and returned:
+
+- Repair 1 — **PASS**;
+- Repair 2 — **PASS**;
+- Repair 3 — **PASS**;
+- new defect introduced — **NO**;
+- final verdict — **A. ASTRA-2 CLEARED — GO TO STAGE 14**.
+
+No theorem statement, numerical verifier, Lean theorem, title, abstract, or journal target changed during the bounded repair.
 
 ## 13. Remaining blockers
 
-There is **no known Stage-13R2 integration blocker**.
+There is **no known Stage-13R2 or Astra-2 scientific blocker**.
 
-Submission QA remains blocked for one deliberate reason: **Astra-2, the second independent hostile referee gate, has not yet been completed.** Astra-2 must attack the revised manuscript's correction validity, U1/U2 characterization, cost-floor scope, welfare-selection statement, terminology, Lean scope, and publication significance before Stage 14 begins.
+The remaining work is submission QA only. Stage 14 must independently refresh *International Economics* article-type, anonymity, file/package, declaration, fee, and portal requirements. Any material `UNVERIFIED` or unresolved `CONFLICT` blocks Stage-14 PASS.
 
 ## 14. Final verdict and next-stage contract
 
 ### Executive integration verdict
 
-**PASS.** The revised paper is internally coherent, scope-disciplined, reproducible, and build-clean at the full-paper integration level.
+**PASS.** The revised paper is internally coherent, scope-disciplined, reproducible, build-clean, and Astra-2 cleared.
 
-### Final Stage-13R2 verdict
+### Final Stage-13R2 / Astra-2 verdict
 
-`REVISED INTEGRATED MANUSCRIPT READY FOR ASTRA-2`
+`REVISED INTEGRATED MANUSCRIPT CLEARED FOR STAGE 14 SUBMISSION QA`
 
 ### Next-stage contract
 
-Proceed to **Astra-2 — Second Independent Hostile Referee Gate**.
+Proceed to **Stage 14 — Submission QA**.
 
-Do **not** begin Stage 14 until Astra-2 returns `ACCEPTABLE FOR SUBMISSION`, or a bounded `MINOR EXPOSITION REPAIR` has been repaired and re-cleared. Any substantive mathematical defect found by Astra-2 returns the project to the earliest affected scientific stage. Stage 14 must then freshly verify all material *International Economics* requirements from current official sources and the authenticated portal and remain fail-closed on any material `UNVERIFIED` or `CONFLICT`.
+Stage 14 is not a theory-development stage. It must freshly verify all material *International Economics* requirements from current official sources and, where required, the authenticated portal, remaining fail-closed on any material `UNVERIFIED` or `CONFLICT`. If a Stage-14 format or metadata change would alter a theorem or scientific claim, return to the earliest affected scientific stage rather than silently modifying the frozen result.
