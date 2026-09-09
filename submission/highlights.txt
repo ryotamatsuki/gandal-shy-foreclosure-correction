@@ -1,4 +1,4 @@
-Corrects post-foreclosure pricing in a standardization-union benchmark.
-A zero-sales outsider binds member prices for 5/2<c<3.
-The correction adds a nondegenerate limit-pricing regime.
-The original member-country welfare ranking remains unchanged.
+Published post-foreclosure profile is not Nash under quadratic transport.
+Unrestricted pricing admits a continuum of symmetric foreclosed equilibria.
+A no-below-cost restriction yields the piecewise member-price benchmark.
+Welfare ranking is preserved under common symmetric continuation prices.
