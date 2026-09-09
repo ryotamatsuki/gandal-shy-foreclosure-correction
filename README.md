@@ -9,10 +9,9 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 > `C3R Revised Canonical Theory Freeze`: **PASS**  
 > `C4R Hostile Scientific Self-Audit`: **PASS**  
 > `Stage 12R2 Journal Significance / Fit Recheck`: **PASS**  
-> `Stage 13R2 Revised Full-Paper Integration`: **REOPENED FOR BOUNDED ASTRA-2 REPAIR**  
-> `Astra-2`: **B. MINOR EXPOSITION REPAIR** on `main@ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`  
-> **Next gate:** limited Astra-2 recheck after the three bounded repairs pass CI.  
-> Stage 14 remains blocked until Astra-2 re-clearance.
+> `Stage 13R2 Revised Full-Paper Integration`: **PASS after bounded Astra-2 repair**  
+> `Astra-2`: **CLEARED — GO TO STAGE 14**  
+> **Next stage:** `Stage 14 — Submission QA`.
 
 Authoritative records:
 
@@ -33,10 +32,12 @@ Key provenance:
 - C3R merge: `5f0a57fe99b94deb51f229254a7f5882ac21ad49`
 - C4R merge: `20a05cb9499eb8865e1ca3df77a5758b62765864`
 - Stage 12R2 merge: `a312babe551c87afd203678215bb2467b36a1bff`
-- Stage 13R2 merge: `ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`
-- Astra-2 audited baseline: `main@ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`
-- Astra-2 verdict: `B. MINOR EXPOSITION REPAIR`
-- bounded repair branch: `stage13r2/astra2-minor-repair`
+- Stage 13R2 merge / Astra-2 initial audited baseline: `ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`
+- bounded Astra-2 repair PR: `#14`
+- repaired manuscript CI head: `72ed861e3460cbcaf5eaf0a763f789c70ed07332`
+- successful repair CI: run `34379361638`
+- Astra-2 limited-recheck head: `abe2706ca824790c00a6c21cc01dd1b8ef8decbc`
+- Astra-2 limited recheck: all three repairs **PASS**, no new defect introduced.
 
 ## Frozen scientific result
 
@@ -72,7 +73,7 @@ Within the same symmetric, foreclosed, pure-strategy class:
 
 For `5/2<c<5`, the member price is therefore `c-1` below `3` and `2` from `3` onward **within this stated class only**. This is not a global equilibrium-uniqueness result.
 
-Astra-2 confirmed the result but identified a missing proof bridge in the Stage-13R2 manuscript: before intersecting U1/U2 with the cost-floor restriction, the text must explain why deleting below-cost deviations cannot create additional restricted-game equilibria. The bounded repair now makes that argument explicit; it does not change the theorem.
+The Stage-13R2 repair explicitly proves why the cost-floor restriction does not generate additional equilibria within the stated class: deleted deviations have prices below marginal cost and therefore nonpositive profit against nonnegative demand, while cost-floor-feasible candidate profits are nonnegative.
 
 ### 4. Welfare scope
 
@@ -94,7 +95,7 @@ C2R varies all three posted prices and performs global unilateral-deviation fals
 
 The pinned Lean/mathlib project in `GandalShy/Certification.lean` certifies the proof-critical algebraic and quantified-inequality core, including the long-arc correction, exact `c=4` counterexample, global-deviation inequalities, encoded multiplicity, cost-floor logical reduction, and welfare identities. Lean does not claim to reconstruct the entire Salop demand game or all Nash equilibria from primitives.
 
-Stage 13R2 added `.github/workflows/manuscript-integration.yml` to rerun symbolic/numerical verification and build the manuscript, flat source package, title page, and reproducibility package on integration PRs. The bounded Astra-2 repair must pass the same CI before limited re-clearance.
+Stage 13R2 added `.github/workflows/manuscript-integration.yml` to rerun symbolic/numerical verification and build the manuscript, flat source package, title page, and reproducibility package. The bounded Astra-2 repair passed the same integration workflow at run `34379361638`.
 
 ## Journal positioning
 
@@ -111,7 +112,7 @@ Integrated working title:
 
 > **Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)**
 
-Astra-2 assessed publication significance as **MODERATE** and found no new substantive theory defect. The principal remaining editorial risk is publication significance/narrowness, not a known mathematical defect. No new model extension is authorized solely to improve journal fit.
+Astra-2 assessed publication significance as **MODERATE** and found no remaining substantive scientific blocker after the bounded repair. The principal editorial risk remains publication significance/narrowness.
 
 Author-cost hard gate remains: zero submission fee and zero mandatory standard-route publication/page/APC charge. Stage 14 must recheck the current Guide and authenticated portal before submission.
 
@@ -137,15 +138,15 @@ C4R         [PASS]
    ↓
 Stage 12R2  [PASS]
    ↓
-Stage 13R2  Initial Full-Paper Integration  [PASS]
+Stage 13R2  Initial integration [PASS]
    ↓
-Astra-2     Independent Hostile Referee Gate [MINOR REPAIR]
+Astra-2     First pass [MINOR REPAIR]
    ↓
-Stage 13R2  Bounded Astra-2 Repair            [ACTIVE]
+Stage 13R2  Bounded repair [PASS]
    ↓
-Astra-2     Limited Recheck                    [NEXT AFTER CI]
+Astra-2     Limited recheck [CLEARED]
    ↓
-Stage 14    Submission QA
+Stage 14    Submission QA [NEXT]
    ↓
 Stage 15    Submission Freeze / Portal Preflight / Submit
 ```
