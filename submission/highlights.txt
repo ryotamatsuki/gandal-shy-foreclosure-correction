@@ -1,4 +1,4 @@
 Published post-foreclosure profile is not Nash under quadratic transport.
 Unrestricted pricing admits a continuum of symmetric foreclosed equilibria.
-A no-below-cost restriction yields the piecewise member-price benchmark.
+Within symmetric foreclosed pure equilibria, a cost floor pins down member prices.
 Welfare ranking is preserved under common symmetric continuation prices.
