@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 \input{preamble}
 
-\title{Standardization Unions, Foreclosure, and Limit Pricing:\\Revisiting Gandal and Shy (2001)}
+\title{Equilibrium Multiplicity and Welfare in Standardization Unions:\\Revisiting Gandal and Shy (2001)}
 \author{Ryota Matsuki\\
 Independent Researcher, Matsuyama, Japan\\
 \texttt{ryota.matsuki@gmail.com}}
@@ -11,10 +11,10 @@ Independent Researcher, Matsuyama, Japan\\
 \maketitle
 
 \begin{abstract}
-International product standards can shape cross-border market access by changing the conversion costs faced by foreign firms. This note revisits the post-foreclosure price equilibrium in the standardization-union model of Gandal and Shy (2001). In the published quadratic-transport specification, $c=5/2$ correctly marks the point at which the outsider's equilibrium demand falls to zero, but the reported constant post-foreclosure price is not a Nash equilibrium throughout the foreclosure region. Re-solving the price subgame yields two regimes. For $5/2<c<3$, member firms set $p_M=c-1$: the outsider makes no sales, yet a higher member price would restore its demand, so the exclusion constraint binds and members engage in limit pricing. For $3\leq c<5$, the constraint is slack and the unconstrained symmetric duopoly price $p_M=2$ obtains. The corrected benchmark therefore moves from three-firm competition to binding-exclusion limit pricing and then to unconstrained duopoly. Recomputing national welfare under the corrected equilibrium leaves the member-country ranking in Proposition 3 unchanged because the relevant price transfers cancel. Thus the correction changes the strategic implementation of the standardization-union regime while confirming the robustness of its original welfare comparison.
+International product standards can shape cross-border market access by changing the conversion costs faced by foreign firms. This note revisits the post-foreclosure price subgame in the standardization-union model of Gandal and Shy (2001). The published quadratic-transport specification correctly places the outsider-foreclosure threshold at $c=5/2$, but Appendix B uses an inconsistent long-arc price response and its claimed complete price profile is not Nash in the strict foreclosure range. Correcting the geometry does not yield a unique replacement price. Within symmetric, foreclosed, pure-strategy profiles, the unrestricted price game admits a continuum of equilibria, with member prices from $3/2$ up to $\min\{2,c-1\}$ subject to the corresponding outsider-price conditions. If prices are instead explicitly restricted to be no lower than marginal cost, the member price within the same equilibrium class is $c-1$ for $5/2<c<3$ and $2$ for $3\leq c<5$. This is a separate restricted game, not a condition imposed in the published model. Under a common symmetric continuation across the two union markets, member-country welfare remains $3V+1/4$, one half above mutual recognition; under market-specific continuation prices, a cross-market transfer term remains. The correction therefore changes the equilibrium correspondence and makes the welfare comparison continuation-selection dependent.
 \end{abstract}
 
-\noindent\textbf{Keywords:} product standards; mutual recognition; standardization unions; foreclosure; limit pricing; trade policy.\\
+\noindent\textbf{Keywords:} product standards; standardization unions; equilibrium multiplicity; mutual recognition; foreclosure; trade policy.\\
 \textbf{JEL codes:} F13; L13; L15.
 
 \input{sections/01_introduction}
@@ -32,7 +32,7 @@ This research did not receive any specific grant from funding agencies in the pu
 The author has no relevant financial or non-financial interests to disclose.
 
 \subsection*{Data and code availability}
-No empirical data were used in this study. The symbolic and numerical verification scripts supporting the analytical results are available in the accompanying reproducibility materials.
+No empirical data were used in this study. The symbolic, numerical, and Lean formal-verification materials supporting the analytical results are available in the accompanying reproducibility materials.
 
 \subsection*{Declaration of generative AI and AI-assisted technologies}
 OpenAI ChatGPT was used during preparation of this work to assist with source searching, manuscript organization and drafting, algebraic cross-checking, and drafting symbolic and numerical verification code. The author independently checked the cited sources, mathematical derivations, computational results, and final text, revised all AI-assisted material, and takes full responsibility for the article.

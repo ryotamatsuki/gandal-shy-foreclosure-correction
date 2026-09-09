@@ -1,14 +1,16 @@
 Dear Editor,
 
-Please consider the manuscript **“Standardization Unions, Foreclosure, and Limit Pricing: Revisiting Gandal and Shy (2001)”** for the short-format route at *International Economics*.
+Please consider the manuscript **“Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)”** for the short-format route at *International Economics*.
 
-The paper revisits the standardization-union benchmark of Gandal and Shy (2001), in which international product-standard recognition and conversion costs determine market access. The published quadratic-transport specification correctly identifies the outsider-foreclosure threshold at $c=5/2$, but its constant post-foreclosure member price does not characterize the Nash equilibrium throughout the foreclosure region.
+The paper revisits the standardization-union benchmark of Gandal and Shy (2001), in which international product-standard recognition and conversion costs determine foreign-market access. The published quadratic-transport specification correctly identifies the outsider-foreclosure threshold at $c=5/2$, but Appendix B uses an inconsistent long-arc price response. The complete post-foreclosure profile it reports, $(3/2,3/2,c)$, is not a Nash equilibrium in the strict foreclosure range.
 
-Re-solving the price subgame yields a piecewise equilibrium. For $5/2<c<3$, the outsider has zero equilibrium sales but remains a binding competitive constraint: a higher member price restores outsider demand, so member firms engage in limit pricing and set $p_M=c-1$. For $3\leq c<5$, the exclusion constraint is slack and the unconstrained symmetric-duopoly price $p_M=2$ obtains. Recomputing national welfare under this corrected equilibrium leaves the member-country ranking in Proposition 3 unchanged because the relevant price transfers cancel.
+Correcting the demand geometry reveals a broader equilibrium issue rather than a single replacement price. Within symmetric, foreclosed, pure-strategy profiles, the unrestricted original price game admits a continuum of equilibria supported by different zero-sales outsider quotes. A separate explicit no-below-cost strategy restriction collapses this member-price multiplicity within that stated class to the piecewise benchmark $p_M=c-1$ for $5/2<c<3$ and $p_M=2$ for $3\leq c<5$. The paper is explicit that this restriction changes the strategy set and is not a condition imposed in the published model.
 
-The contribution is intentionally narrow and self-contained. It corrects the equilibrium characterization of a published international-standards benchmark, identifies the omitted nondegenerate limit-pricing region, and verifies the robustness of the original welfare comparison. The manuscript changes no primitives and claims no general novelty for foreclosure or limit pricing.
+The equilibrium multiplicity also qualifies the original welfare result. Under a common symmetric continuation across the two union markets, member-country welfare remains $3V+1/4$, one half above the mutual-recognition benchmark. Under market-specific continuation prices, a cross-market transfer term remains, so the unrestricted welfare comparison is continuation-selection dependent. The paper does not infer a government-stage policy reversal or claim to characterize asymmetric or mixed equilibria.
 
-The manuscript is not under consideration elsewhere and has not been published. No empirical data are used. Symbolic and numerical verification materials are available to support the analytical derivations.
+The contribution is intentionally compact and self-contained: it corrects a published international-standards benchmark at the level of the equilibrium correspondence and identifies the exact continuation conditions under which its original member-country welfare comparison is preserved. No empirical data are used. Symbolic, numerical, and Lean formal-verification materials accompany the analytical derivations.
+
+The manuscript is not under consideration elsewhere and has not been published.
 
 Thank you for considering the manuscript.
 

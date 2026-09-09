@@ -1,61 +1,64 @@
-\section{Corrected post-foreclosure equilibrium}\label{sec:equilibrium}
+\section{Equilibrium multiplicity and a cost-floor benchmark}\label{sec:equilibrium}
 
-We now solve the price subgame implied by \eqref{eq:duodemand}. If the outsider remains foreclosed, firm 1's profit in a member market is
-\begin{equation}\label{eq:duoprofit}
- \pi_1^{F}(p_1;p_2)=p_1\left[\frac32+\frac34(p_2-p_1)\right].
-\end{equation}
-On the range in which the two active firms divide both connecting arcs, this expression is strictly concave. Its first-order condition is $p_1=1+p_2/2$, so the unconstrained symmetric two-firm price is
-\begin{equation}\label{eq:unconstrained-duopoly}
- p_1=p_2=2.
-\end{equation}
-The issue is whether that price is compatible with continued foreclosure.
+The failure of the published profile does not by itself select a replacement equilibrium. The reason is that a foreclosed outsider can post a price that attracts no demand, and such a quote can alter the active firms' deviation incentives even though the outsider sells nothing. We therefore distinguish the price game stated in the published model from a separate price game that explicitly rules out below-cost prices.
 
-At the outsider's own location, the shortest distance to either member firm is one. If both members charge $p_M$, their delivered price there is $p_M+1$. The outsider can charge its marginal conversion cost $c$, so foreclosure requires
-\begin{equation}\label{eq:foreclosure-constraint}
- p_M+1\leq c,
- \qquad\text{or equivalently}\qquad
- p_M\leq c-1.
-\end{equation}
-Equality makes only the consumer at the outsider's ideal point indifferent. The constraint is slack at the unconstrained price $2$ if and only if $c\geq3$.
-
-\begin{proposition}[Corrected post-foreclosure equilibrium]\label{prop:equilibrium}
-In a standardization-union member market of the quadratic-transport model, suppose $5/2<c<5$ so that the outsider is foreclosed. The symmetric equilibrium allocation satisfies
+Write a symmetric foreclosed pure-strategy profile in one union-member market as
 \[
- q_1^*=q_2^*=\frac32,\qquad q_3^*=0,
+ (p_1,p_2,p_3)=(s,s,r),
 \]
-and the member-firm price is
+where the outsider has zero demand up to a zero-measure tie. The characterization below is deliberately limited to this class. It does not characterize asymmetric pure equilibria, mixed equilibria, or the government-stage equilibrium under continuation multiplicity.
+
+At the outsider's ideal location, either member product is delivered at price $s+1$. Hence foreclosure requires $r\geq s+1$. In the unrestricted game, zero outsider demand can be a best response only if $c\geq s+1$: when $c<s+1$, the outsider can quote a price strictly between $c$ and $s+1$, obtain positive demand near its ideal location, and earn strictly positive profit.
+
+\begin{proposition}[Pricing and multiplicity]\label{prop:equilibrium}
+Consider the published quadratic-transport price game in the strict post-foreclosure range $5/2<c<5$.
+
+\begin{enumerate}
+\item The Appendix-B profile $(3/2,3/2,c)$ is not a Nash equilibrium.
+
+\item Within symmetric, foreclosed, pure-strategy profiles $(s,s,r)$, the unrestricted original price game has a Nash equilibrium if and only if either
+\begin{align*}
+ &\frac32\leq s<2,\qquad r=s+1,\qquad c\geq s+1, \tag{U1}\\
+ &s=2,\qquad r\geq3,\qquad c\geq3. \tag{U2}
+\end{align*}
+Thus the admissible member price spans
+\begin{equation}\label{eq:unrestricted-member-set}
+ \frac32\leq s\leq \min\{2,c-1\},
+\end{equation}
+subject to the outsider-price conditions in U1--U2. The unrestricted game therefore has genuine member-price multiplicity.
+
+\item Define a separate cost-floor price game by imposing $p_i\geq mc_i$ in the market under study. Within symmetric, foreclosed, pure-strategy equilibria of that restricted game,
 \begin{equation}\label{eq:piecewise-price}
- p_M^*(c)=
+ p_M(c)=
  \begin{cases}
  c-1, & \dfrac52<c<3,\\[4pt]
  2, & 3\leq c<5.
  \end{cases}
 \end{equation}
-For $5/2<c<3$, the foreclosure constraint binds and the member firms engage in limit pricing. For $3\leq c<5$, the constraint is slack and the member price equals the unconstrained symmetric duopoly price.
+For $5/2<c<3$, the complete symmetric foreclosed profile is $(c-1,c-1,c)$. For $3\leq c<5$, the member price is $2$ and any outsider quote $r\geq c$ is compatible with the stated equilibrium class.
+\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-First take $5/2<c<3$ and consider the price profile $(p_1,p_2,p_3)=(c-1,c-1,c)$. At these prices the outsider has zero demand and zero profit. We show that no member deviation is profitable globally, rather than only locally around the foreclosure boundary.
+Part 1 follows from \eqref{eq:published-profile-gain}. We prove part 2 by necessity and sufficiency within the stated symmetric foreclosed class.
 
-Fix $p_2=c-1$. For a sufficiently large downward deviation, $p_1\leq c-2$, firm 1's demand cannot exceed the total market size three. Hence its profit is at most $3(c-2)$, whereas its equilibrium profit is $3(c-1)/2$. Their difference is $3(3-c)/2>0$. For the remaining downward deviations, $c-2<p_1\leq c-1$, the outsider remains foreclosed and the two member firms continue to divide both connecting arcs. Equation \eqref{eq:duoprofit} therefore applies. Its unconstrained maximizer given $p_2=c-1$ is $(c+1)/2>c-1$, so profit is increasing throughout this interval. No downward deviation is profitable.
-
-Now let $p_1>c-1$. The outsider becomes active near its location. Direct comparison of delivered prices against firms 2 and 3 gives firm 1 total demand
+For U1, fix $p_2=s$ and $p_3=s+1$ with $3/2\leq s<2$ and $c\geq s+1$. The outsider has no profitable deviation: any quote that attracts positive-measure demand must fall below $s+1\leq c$, while a zero-demand quote yields zero profit. Consider a deviation $p$ by firm 1. Negative prices cannot improve profit. If $0\leq p\leq s-1$, total demand is at most three, so profit is at most $3(s-1)\leq3s/2$, the candidate profit. If $s-1<p\leq s$, the outsider remains foreclosed and \eqref{eq:duodemand} applies, giving
 \[
- q_1=\max\left\{c+\frac12-p_1,\,0\right\}.
+ \pi_1(p)=p\left[\frac32+\frac34(s-p)\right].
 \]
-On the positive-demand range, profit is $p_1(c+1/2-p_1)$, whose unconstrained maximizer is $(c+1/2)/2$. Because $c>5/2$, this maximizer lies strictly below $c-1$. Profit is therefore decreasing once the foreclosure boundary is crossed; for $p_1\geq c+1/2$ demand is zero. Thus no finite upward deviation is profitable either. The familiar one-sided derivatives summarize the same kink:
-\begin{equation}\label{eq:kink-derivatives}
- \left.\frac{\partial\pi_1}{\partial p_1}\right|_-
- =\frac34(3-c)>0,
- \qquad
- \left.\frac{\partial\pi_1}{\partial p_1}\right|_+
- =\frac52-c<0.
-\end{equation}
-The same argument applies to firm 2. The outsider itself cannot earn positive profit by deviating: any price at or above $c$ attracts no positive-measure demand at the candidate member prices, while any below-cost price that attracts demand yields negative margin. Hence $(c-1,c-1,c)$ supports the stated allocation for $5/2<c<3$.
+Its derivative is $3/2+3s/4-3p/2$, which is strictly positive throughout this interval because $s<2$. Hence no downward deviation is profitable. If $p>s$, the outsider becomes relevant on the long side and direct delivered-price comparison gives
+\[
+ q_1(p)=\max\left\{s+\frac32-p,0\right\}.
+\]
+On the positive-demand part, profit is $p(s+3/2-p)$. Its unconstrained maximizer $(s+3/2)/2$ is weakly below $s$ because $s\geq3/2$, so profit cannot increase once $p$ crosses $s$. Thus U1 is sufficient.
 
-For $c\geq3$, consider $(p_1,p_2,p_3)=(2,2,c)$. The outsider is foreclosed because a member product is delivered to its ideal point at cost three, weakly below $c$. To check member deviations globally, first remove the outsider; doing so can only increase a member firm's demand and therefore provides an upper bound on its profit at every nonnegative price. With the other member price fixed at $2$, a deviating price $p_1\leq1$ yields profit at most $3p_1\leq3$. For $1\leq p_1\leq3$, the two-firm demand is $3-3p_1/4$, so profit $p_1(3-3p_1/4)$ is uniquely maximized at $p_1=2$, with value three. For $3\leq p_1\leq4$, demand is weakly below its value $3/4$ at $p_1=3$, so profit is at most three; at $p_1\geq4$ the other member weakly dominates firm 1 everywhere and its demand is zero. Thus even the two-firm upper envelope offers no profitable deviation, and adding the outsider cannot create one. The outsider again has zero profit at $p_3=c$ and no profitable deviation. Therefore $p_M=2$ is a member best response for $3\leq c<5$.
+For U2, take $(2,2,r)$ with $r\geq3$ and $c\geq3$. The outsider cannot earn positive profit by attracting demand because positive demand requires a quote below three, weakly below its marginal cost. For a member deviation, removing the outsider can only weakly increase the deviator's demand and therefore gives an upper envelope for profit. Against the other member's price $2$, the two-member problem is globally maximized at $p=2$: for low prices profit is bounded by total market demand, on the interior two-member branch profit is the concave expression $p(3-3p/4)$ with unique maximizer $2$, and sufficiently high prices yield no gain. Hence U2 is sufficient.
 
-At $c=3$ the two price branches meet because $c-1=2$. At $c=5/2$ the limit-pricing branch converges to $3/2$, the limiting member price from the three-active-firm solution in \eqref{eq:interior-su}. Symmetry gives $q_1=q_2=3/2$ whenever the outsider has zero demand.\footnote{For $c\geq3$, a zero-demand outsider can have multiple best-response prices if below-cost zero-sales prices are admissible. Proposition \ref{prop:equilibrium} therefore characterizes the economically relevant member prices and allocation rather than claiming uniqueness of an arbitrary zero-sales outsider price.}
+Now let $(s,s,r)$ be any symmetric foreclosed Nash equilibrium of the unrestricted game. Foreclosure requires $r\geq s+1$, and outsider optimality requires $c\geq s+1$. A member price $s>2$ is impossible because a sufficiently small downward deviation remains on the regular foreclosed branch and raises profit. If $s<2$ and $r>s+1$, a sufficiently small upward member deviation also remains foreclosed and raises profit, so $r=s+1$ is necessary whenever $s<2$. Given $r=s+1$, a price $s<3/2$ is impossible because the right derivative after the outsider becomes relevant is $3/2-s>0$. Thus $3/2\leq s<2$ implies U1. If $s=2$, foreclosure and outsider optimality require $r\geq3$ and $c\geq3$, which is U2. These conditions exhaust the stated class and prove part 2.
+
+For part 3, the cost-floor game imposes $p_1,p_2\geq0$ and $p_3\geq c$. Intersect U1 with $r\geq c$. Since U1 also requires $r=s+1$ and $c\geq s+1$, both inequalities bind: $r=c=s+1$, so $s=c-1$. The conditions $3/2\leq s<2$ give $5/2\leq c<3$. Intersect U2 with $r\geq c$: the member price remains $2$, while the outsider may choose any $r\geq c$ for $c\geq3$. Restricting to $5/2<c<5$ yields \eqref{eq:piecewise-price}.
 \end{proof}
 
-The corrected equilibrium separates foreclosure of realized sales from the disappearance of competitive pressure. For $5/2<c<3$, the outsider sells nothing but constrains member prices because a price increase beyond $c-1$ restores its demand. Only at $c=3$ does that constraint cease to bind, producing the transition from three-firm competition to limit pricing and then to unconstrained duopoly. As a simple check on the published constant price, at $c=4$ the profile $p_1=p_2=3/2$ gives firm 1 profit $9/4$, while the unilateral deviation $p_1=7/4$ raises profit to $147/64$.
+The cost floor is an explicit modification of the strategy set, not a condition stated in \citet{gandalshy2001}, not an implication of Nash equilibrium, and not a claim that below-cost prices can be removed without loss of generality. Its role is narrower: within the symmetric foreclosed pure-strategy class, it removes the below-cost zero-sales outsider quotes that support the lower-price continuum and thereby pins down the member price in \eqref{eq:piecewise-price}.
+
+For $5/2<c<3$ in the cost-floor game, the outsider has zero sales at $p_3=c$ but constrains the members' price at $c-1$: a higher member price restores outsider demand. In this limited static sense, the branch can be described as limit pricing or exclusion-maintenance pricing. This is not the informational signaling mechanism of \citet{milgromroberts1982}. At $c=3$ the two member-price branches meet at $2$ and the cost-based exclusion condition holds with equality; strict slack begins only for $c>3$.

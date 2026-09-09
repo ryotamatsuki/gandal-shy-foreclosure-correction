@@ -10,18 +10,31 @@ FILES = [
     ROOT / "code" / "verify_symbolic.py",
     ROOT / "code" / "verify_numerical.py",
     ROOT / "requirements.txt",
+    ROOT / "GandalShy.lean",
+    ROOT / "GandalShy" / "Certification.lean",
+    ROOT / "lakefile.toml",
+    ROOT / "lake-manifest.json",
+    ROOT / "lean-toolchain",
 ]
 
 README = """Reproducibility materials for
-Standardization Unions, Foreclosure, and Limit Pricing: Revisiting Gandal and Shy (2001)
+Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)
 
-The package contains the symbolic and numerical verification scripts used to cross-check
-the analytical equilibrium and welfare results. No empirical data are used.
+The package contains the symbolic and numerical verification scripts and the pinned Lean
+formal-certification project used to cross-check the analytical equilibrium and welfare
+results. No empirical data are used.
 
-Suggested commands:
+Suggested Python commands:
   python -m pip install -r requirements.txt
   python code/verify_symbolic.py
   python code/verify_numerical.py
+
+Suggested Lean command from the package root, with elan/Lake available:
+  lake build GandalShy
+
+The Lean source certifies the proof-critical algebraic and quantified-inequality core at
+the scope documented in the manuscript project. It does not independently formalize the
+entire continuum Salop demand correspondence or all Nash equilibria from consumer primitives.
 
 The manuscript remains self-contained; these files are verification support rather than
 an appendix required to understand or assess the propositions.
