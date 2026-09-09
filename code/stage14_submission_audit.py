@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import re
-import sys
 import zipfile
 from pathlib import Path
 
@@ -24,24 +23,44 @@ def tex_plain_words(text: str) -> list[str]:
     return [token for token in text.split() if token]
 
 
+def between(text: str, start: str, end: str, label: str) -> str:
+    start_pos = text.find(start)
+    if start_pos < 0:
+        fail(f"{label}: start marker not found")
+    start_pos += len(start)
+    end_pos = text.find(end, start_pos)
+    if end_pos < 0:
+        fail(f"{label}: end marker not found")
+    return text[start_pos:end_pos]
+
+
 def main() -> None:
     main_tex = (PAPER / "main.tex").read_text(encoding="utf-8")
 
-    abstract_match = re.search(
-        r"\\begin\{abstract\}(.*?)\\end\{abstract\}", main_tex, flags=re.S
+    abstract_text = between(
+        main_tex, r"\begin{abstract}", r"\end{abstract}", "abstract environment"
     )
-    if not abstract_match:
-        fail("abstract environment not found")
-    abstract_words = tex_plain_words(abstract_match.group(1))
+    abstract_words = tex_plain_words(abstract_text)
 
-    keywords_match = re.search(r"\\textbf\{Keywords:\}\s*(.*?)\\\\", main_tex, flags=re.S)
-    if not keywords_match:
+    keyword_prefix = r"\noindent\textbf{Keywords:}"
+    keyword_start = main_tex.find(keyword_prefix)
+    if keyword_start < 0:
         fail("keywords line not found")
-    keywords = [item.strip() for item in keywords_match.group(1).split(";") if item.strip()]
+    keyword_start += len(keyword_prefix)
+    keyword_end = main_tex.find(r"\\", keyword_start)
+    if keyword_end < 0:
+        fail("keywords line terminator not found")
+    keywords = [
+        item.strip()
+        for item in main_tex[keyword_start:keyword_end].split(";")
+        if item.strip()
+    ]
 
     highlights = [
         line.strip()
-        for line in (SUBMISSION / "highlights.txt").read_text(encoding="utf-8").splitlines()
+        for line in (SUBMISSION / "highlights.txt")
+        .read_text(encoding="utf-8")
+        .splitlines()
         if line.strip()
     ]
     highlight_lengths = [len(item) for item in highlights]
@@ -54,24 +73,30 @@ def main() -> None:
         fail(f"keyword count is {len(keywords)}, expected at most 6")
 
     required_fragments = [
-        r"\\subsection\*\{Funding\}",
-        r"\\subsection\*\{Declaration of competing interest\}",
-        r"\\subsection\*\{CRediT authorship contribution statement\}",
-        r"\\subsection\*\{Data and code availability\}",
-        r"\\subsection\*\{Use of generative AI in research and verification\}",
-        r"\\subsection\*\{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process\}",
+        r"\subsection*{Funding}",
+        r"\subsection*{Declaration of competing interest}",
+        r"\subsection*{CRediT authorship contribution statement}",
+        r"\subsection*{Data and code availability}",
+        r"\subsection*{Use of generative AI in research and verification}",
+        r"\subsection*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}",
     ]
     for fragment in required_fragments:
-        if not re.search(fragment, main_tex):
+        if fragment not in main_tex:
             fail(f"required disclosure missing: {fragment}")
 
     forbidden_markers = ["TODO", "TBD", "PLACEHOLDER", "FIXME"]
-    source_paths = [PAPER / "main.tex", *sorted((PAPER / "sections").glob("*.tex"))]
+    section_paths = sorted((PAPER / "sections").glob("*.tex"))
+    source_paths = [PAPER / "main.tex", *section_paths]
     for path in source_paths:
         source = path.read_text(encoding="utf-8")
         for marker in forbidden_markers:
             if marker in source:
                 fail(f"{marker} remains in {path.relative_to(ROOT)}")
+
+    diagnostic_text = main_tex + "\n" + "\n".join(
+        path.read_text(encoding="utf-8") for path in section_paths
+    )
+    manuscript_word_diagnostic = len(tex_plain_words(diagnostic_text))
 
     source_zip = OUTPUT / "international-economics-submission-source.zip"
     if not source_zip.exists():
@@ -96,6 +121,7 @@ def main() -> None:
 
     print("Stage 14 submission-package audit: PASS")
     print(f"Abstract word count (Python diagnostic): {len(abstract_words)}")
+    print(f"Full manuscript source-token diagnostic: {manuscript_word_diagnostic}")
     print(f"Keyword count: {len(keywords)}")
     print(f"Highlight count: {len(highlights)}")
     print(f"Highlight character counts: {highlight_lengths}")
