@@ -9,9 +9,10 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 > `C3R Revised Canonical Theory Freeze`: **PASS**  
 > `C4R Hostile Scientific Self-Audit`: **PASS**  
 > `Stage 12R2 Journal Significance / Fit Recheck`: **PASS**  
-> `Stage 13R2 Revised Full-Paper Integration`: **PASS**  
-> **Next gate:** `Astra-2 — Second Independent Hostile Referee Gate`  
-> Stage 14 remains blocked until Astra-2 clears the revised manuscript.
+> `Stage 13R2 Revised Full-Paper Integration`: **REOPENED FOR BOUNDED ASTRA-2 REPAIR**  
+> `Astra-2`: **B. MINOR EXPOSITION REPAIR** on `main@ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`  
+> **Next gate:** limited Astra-2 recheck after the three bounded repairs pass CI.  
+> Stage 14 remains blocked until Astra-2 re-clearance.
 
 Authoritative records:
 
@@ -23,6 +24,7 @@ Authoritative records:
 - [`docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md`](docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md)
 - [`docs/STAGE_12R2_JOURNAL_SIGNIFICANCE_FIT_RECHECK.md`](docs/STAGE_12R2_JOURNAL_SIGNIFICANCE_FIT_RECHECK.md)
 - [`docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`](docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md)
+- [`docs/ASTRA_2_HOSTILE_REFEREE_GATE.md`](docs/ASTRA_2_HOSTILE_REFEREE_GATE.md)
 
 Key provenance:
 
@@ -31,9 +33,10 @@ Key provenance:
 - C3R merge: `5f0a57fe99b94deb51f229254a7f5882ac21ad49`
 - C4R merge: `20a05cb9499eb8865e1ca3df77a5758b62765864`
 - Stage 12R2 merge: `a312babe551c87afd203678215bb2467b36a1bff`
-- Stage 13R2 integration PR: `#13`
-- Stage 13R2 verified manuscript head before bookkeeping: `d9fc2a60b44b867794b5f53822e9aeb24e9a8500`
-- Stage 13R2 successful integration CI: run `34373368719`
+- Stage 13R2 merge: `ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`
+- Astra-2 audited baseline: `main@ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`
+- Astra-2 verdict: `B. MINOR EXPOSITION REPAIR`
+- bounded repair branch: `stage13r2/astra2-minor-repair`
 
 ## Frozen scientific result
 
@@ -69,6 +72,8 @@ Within the same symmetric, foreclosed, pure-strategy class:
 
 For `5/2<c<5`, the member price is therefore `c-1` below `3` and `2` from `3` onward **within this stated class only**. This is not a global equilibrium-uniqueness result.
 
+Astra-2 confirmed the result but identified a missing proof bridge in the Stage-13R2 manuscript: before intersecting U1/U2 with the cost-floor restriction, the text must explain why deleting below-cost deviations cannot create additional restricted-game equilibria. The bounded repair now makes that argument explicit; it does not change the theorem.
+
 ### 4. Welfare scope
 
 If both union markets use the same symmetric member price `s`,
@@ -81,7 +86,7 @@ If market A and B choose different symmetric continuation prices,
 
 `TS_A^SU = 3V + 1/4 + (3/2)(s_B-s_A)`.
 
-Therefore welfare robustness is continuation-selection conditional in the unrestricted game.
+Therefore welfare robustness is continuation-selection conditional in the unrestricted game. A common continuation recovers the exact original `1/2` gap; it is not asserted to be the necessary condition for preserving the welfare ranking.
 
 ## Verification
 
@@ -89,9 +94,7 @@ C2R varies all three posted prices and performs global unilateral-deviation fals
 
 The pinned Lean/mathlib project in `GandalShy/Certification.lean` certifies the proof-critical algebraic and quantified-inequality core, including the long-arc correction, exact `c=4` counterexample, global-deviation inequalities, encoded multiplicity, cost-floor logical reduction, and welfare identities. Lean does not claim to reconstruct the entire Salop demand game or all Nash equilibria from primitives.
 
-Stage 13R2 adds `.github/workflows/manuscript-integration.yml` to rerun symbolic/numerical verification and build the manuscript, flat source package, title page, and reproducibility package on the integration PR. The reproducibility package includes the pinned Lean source/project files as well as the Python checks.
-
-Stage 13R2 closed after successful CI, clean final LaTeX logs, successful source/package builds, and visual inspection of the nine-page manuscript. The controlling Stage-13R2 record is `docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`.
+Stage 13R2 added `.github/workflows/manuscript-integration.yml` to rerun symbolic/numerical verification and build the manuscript, flat source package, title page, and reproducibility package on integration PRs. The bounded Astra-2 repair must pass the same CI before limited re-clearance.
 
 ## Journal positioning
 
@@ -108,7 +111,7 @@ Integrated working title:
 
 > **Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)**
 
-The principal remaining editorial risk is publication significance/narrowness, not a known mathematical defect. No new model extension is authorized solely to improve journal fit.
+Astra-2 assessed publication significance as **MODERATE** and found no new substantive theory defect. The principal remaining editorial risk is publication significance/narrowness, not a known mathematical defect. No new model extension is authorized solely to improve journal fit.
 
 Author-cost hard gate remains: zero submission fee and zero mandatory standard-route publication/page/APC charge. Stage 14 must recheck the current Guide and authenticated portal before submission.
 
@@ -134,9 +137,13 @@ C4R         [PASS]
    ↓
 Stage 12R2  [PASS]
    ↓
-Stage 13R2  Revised Full-Paper Integration  [PASS]
+Stage 13R2  Initial Full-Paper Integration  [PASS]
    ↓
-Astra-2     Independent Hostile Referee Gate  [NEXT]
+Astra-2     Independent Hostile Referee Gate [MINOR REPAIR]
+   ↓
+Stage 13R2  Bounded Astra-2 Repair            [ACTIVE]
+   ↓
+Astra-2     Limited Recheck                    [NEXT AFTER CI]
    ↓
 Stage 14    Submission QA
    ↓
