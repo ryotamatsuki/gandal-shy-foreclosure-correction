@@ -9,8 +9,9 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 > `C3R Revised Canonical Theory Freeze`: **PASS**  
 > `C4R Hostile Scientific Self-Audit`: **PASS**  
 > `Stage 12R2 Journal Significance / Fit Recheck`: **PASS**  
-> `Stage 13R2 Revised Full-Paper Integration`: **ACTIVE**  
-> Stage 14 remains blocked. The complete Stage-13R2 manuscript must pass **Astra-2** first.
+> `Stage 13R2 Revised Full-Paper Integration`: **PASS**  
+> **Next gate:** `Astra-2 — Second Independent Hostile Referee Gate`  
+> Stage 14 remains blocked until Astra-2 clears the revised manuscript.
 
 Authoritative records:
 
@@ -30,6 +31,9 @@ Key provenance:
 - C3R merge: `5f0a57fe99b94deb51f229254a7f5882ac21ad49`
 - C4R merge: `20a05cb9499eb8865e1ca3df77a5758b62765864`
 - Stage 12R2 merge: `a312babe551c87afd203678215bb2467b36a1bff`
+- Stage 13R2 integration PR: `#13`
+- Stage 13R2 verified manuscript head before bookkeeping: `d9fc2a60b44b867794b5f53822e9aeb24e9a8500`
+- Stage 13R2 successful integration CI: run `34373368719`
 
 ## Frozen scientific result
 
@@ -85,7 +89,9 @@ C2R varies all three posted prices and performs global unilateral-deviation fals
 
 The pinned Lean/mathlib project in `GandalShy/Certification.lean` certifies the proof-critical algebraic and quantified-inequality core, including the long-arc correction, exact `c=4` counterexample, global-deviation inequalities, encoded multiplicity, cost-floor logical reduction, and welfare identities. Lean does not claim to reconstruct the entire Salop demand game or all Nash equilibria from primitives.
 
-Stage 13R2 adds `.github/workflows/manuscript-integration.yml` to rerun symbolic/numerical verification and build the manuscript, flat source package, title page, and reproducibility package on the integration PR. The reproducibility package now includes the pinned Lean source/project files as well as the Python checks.
+Stage 13R2 adds `.github/workflows/manuscript-integration.yml` to rerun symbolic/numerical verification and build the manuscript, flat source package, title page, and reproducibility package on the integration PR. The reproducibility package includes the pinned Lean source/project files as well as the Python checks.
+
+Stage 13R2 closed after successful CI, clean final LaTeX logs, successful source/package builds, and visual inspection of the nine-page manuscript. The controlling Stage-13R2 record is `docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`.
 
 ## Journal positioning
 
@@ -128,9 +134,9 @@ C4R         [PASS]
    ↓
 Stage 12R2  [PASS]
    ↓
-Stage 13R2  Revised Full-Paper Integration  [ACTIVE]
+Stage 13R2  Revised Full-Paper Integration  [PASS]
    ↓
-Astra-2     Independent Hostile Referee Gate
+Astra-2     Independent Hostile Referee Gate  [NEXT]
    ↓
 Stage 14    Submission QA
    ↓
