@@ -1,8 +1,11 @@
 # Stage 13R2 — Revised Full-Paper Integration
 
 **Date:** 2026-09-10  
+**Status:** **PASS**  
 **Branch:** `stage13r2/revised-integration`  
 **Base:** `main@a312babe551c87afd203678215bb2467b36a1bff`  
+**Integration PR:** `#13`  
+**Pre-bookkeeping verified head:** `d9fc2a60b44b867794b5f53822e9aeb24e9a8500`  
 **Canonical workflow:** `ryotamatsuki/research-paper-workflow`, `templates/STAGE_13_FULL_PAPER_INTEGRATION.md`  
 **Scientific authority:** `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`  
 **Hostile-audit authority:** `docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md`  
@@ -12,23 +15,23 @@
 
 Stage 13R2 converts the revised frozen theory into one coherent short paper for the provisional primary target, *International Economics*. It is an integration stage, not a research-extension stage.
 
-The required order is followed deliberately:
+The required order was followed deliberately:
 
 1. Section 2 — published quadratic specification, corrected long-arc geometry, and exact failure of the published complete profile;
 2. Section 3 — unrestricted symmetric-foreclosed multiplicity first, then the separate cost-floor characterization;
 3. Section 4 — welfare under common versus market-specific continuation selection;
-4. only after Sections 2–4 are aligned: title, Abstract, Introduction, Conclusion, highlights, cover letter, title page, and package notes.
+4. only after Sections 2–4 were aligned: title, Abstract, Introduction, Conclusion, highlights, cover letter, title page, and package notes.
 
-No new equilibrium class, comparative static, government-stage result, refinement claim, or journal requirement is introduced here.
+No new equilibrium class, comparative static, government-stage result, refinement claim, or journal requirement was introduced here.
 
 ## 2. Controlling scientific scope
 
-The revised manuscript must distinguish two games:
+The revised manuscript distinguishes two games:
 
 - **unrestricted original price game**, which does not exclude zero-sales below-cost outsider quotes;
 - **cost-floor price game**, a separate modified game imposing `p_i >= marginal cost in that market`.
 
-The current equilibrium characterization is limited to **symmetric, foreclosed, pure-strategy equilibria in one union-member market**. The manuscript must not imply characterization of all asymmetric pure equilibria, mixed equilibria, or the government-stage equilibrium under continuation multiplicity.
+The current equilibrium characterization is limited to **symmetric, foreclosed, pure-strategy equilibria in one union-member market**. The manuscript does not imply characterization of all asymmetric pure equilibria, mixed equilibria, or the government-stage equilibrium under continuation multiplicity.
 
 The correction target is the complete Appendix-B profile `(3/2,3/2,c)`, not the claim that member price `3/2` can never arise in equilibrium.
 
@@ -38,11 +41,11 @@ The welfare result is conditional: the original member-country `1/2` gap is pres
 
 ### Title direction
 
-Primary integrated title:
+Final integrated working title:
 
 > **Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)**
 
-This moves `limit pricing` out of the headline because the stronger revised contribution is equilibrium multiplicity and continuation selection. The term remains available in the text only for the static exclusion-maintenance interpretation of the cost-floor lower branch.
+This moves `limit pricing` out of the headline because the stronger revised contribution is equilibrium multiplicity and continuation selection. The term remains in the text only for the bounded static exclusion-maintenance interpretation of the cost-floor lower branch.
 
 ### Proposition architecture
 
@@ -66,34 +69,142 @@ No figure or table is added. The headline objects are compact theorem statements
 
 ## 4. Cross-document claim discipline
 
-The integrated manuscript, abstract, introduction, conclusion, cover letter, and highlights must all obey the following:
+The integrated manuscript, abstract, introduction, conclusion, cover letter, and highlights were audited against the following controls:
 
-- do not write that the original game's post-foreclosure equilibrium is unique;
-- do not write that member price `3/2` is impossible in equilibrium;
-- do not describe the cost floor as WLOG, implied by Nash equilibrium, or a weak-dominance refinement;
-- qualify the cost-floor result by the symmetric, foreclosed, pure-strategy class;
-- do not say that Proposition 3 is robust to all Nash equilibria;
-- do not claim that Proposition 3 reverses without solving the government stage;
-- at `c=3`, describe a branch boundary rather than strict slack;
-- do not overstate Lean as a full formalization of the Salop game.
+- no claim that the original game's post-foreclosure equilibrium is unique;
+- no claim that member price `3/2` is impossible in equilibrium;
+- no description of the cost floor as WLOG, Nash-implied, or a weak-dominance refinement;
+- cost-floor results qualified by the symmetric, foreclosed, pure-strategy class;
+- no claim that Proposition 3 is robust to all Nash equilibria;
+- no claim that Proposition 3 reverses without solving the government stage;
+- `c=3` treated as a branch boundary rather than strict slack;
+- Lean certification described only at its actual algebraic/quantified-inequality scope.
+
+**Result:** PASS. No cross-document substantive-scope conflict remains known at Stage 13R2.
 
 ## 5. Journal-package discipline
 
 The Stage-12 requirements ledger remains an integration input, not permanent truth. Stage 13R2 keeps the working manuscript identified and retains provisional title-page/highlight/declaration artifacts without treating any unresolved anonymity, article-type, source-package, declaration-placement, or portal rule as verified.
 
-All such unresolved items remain explicitly delegated to Stage 14 after Astra-2.
+All such unresolved items remain explicitly delegated to Stage 14 after Astra-2. No unresolved journal rule was silently converted into a definitive submission-format assumption.
 
-## 6. Verification contract
+## 6. Verification and build record
 
-Before Stage 13R2 can pass:
+The integration PR added `.github/workflows/manuscript-integration.yml` and reran the integrated package on GitHub Actions.
 
-- all revised sections must be checked against C3R/C4R scope;
-- manuscript/title/cover-letter/highlight claims must align;
-- stale pre-Astra claims must be removed;
-- symbolic/numerical and Lean evidence must remain untouched unless a theorem changes;
-- build/compile and source-package verification must be rerun where feasible;
-- any material scientific inconsistency returns to the earliest affected C-stage.
+Final successful verification run:
 
-## 7. Current status
+- workflow: `Manuscript integration`;
+- run ID: `34373368719`;
+- head: `d9fc2a60b44b867794b5f53822e9aeb24e9a8500`;
+- job: `verify-and-build`;
+- conclusion: **success**;
+- symbolic verification: **PASS**;
+- numerical falsification/regression verification: **PASS**;
+- manuscript LaTeX build: **PASS**;
+- flat LaTeX source build: **PASS**;
+- title-page build: **PASS**;
+- final LaTeX clean-log gate: **PASS** — no final undefined citation/reference or overfull-box failure;
+- generated artifact existence checks: **PASS**;
+- build artifact: `stage13r2-build`, artifact ID `10112910001`, digest `sha256:9c342cc3616623edeb2d66d44e40f7a6b3a5078683c623c8fe57b1c28049722c`.
 
-**ACTIVE.** The paper has not yet been cleared for Astra-2 or Stage 14.
+The final integrated manuscript is **9 pages**. The modular and flat-source builds were independently rendered and compared at 150 dpi, with **9/9 pages pixel-identical**. All nine manuscript pages and the one-page title page were visually inspected; no clipping, overlap, broken equation, broken citation, or reference-layout defect was identified.
+
+Previously computed Stage-13R2 manuscript metrics are retained for integration QA:
+
+- text words: `2790`;
+- `texcount` sum count: `3044`;
+- figures/tables: `0`;
+- inline math: `144`;
+- displayed math: `21`;
+- Abstract: `190` words.
+
+These counts are integration diagnostics, not a substitute for the fresh journal-rule audit required at Stage 14.
+
+## 7. Section-role audit
+
+- **Introduction:** states the international-standards problem before technical details and frames the contribution as correction plus continuation-selection analysis rather than generic novelty.
+- **Section 2:** isolates the published quadratic long-arc inconsistency and the exact failure of the complete Appendix-B profile.
+- **Section 3:** presents unrestricted multiplicity before the separate cost-floor benchmark and states the equilibrium class in the proposition itself.
+- **Section 4:** separates common-continuation welfare robustness from market-specific continuation dependence.
+- **Conclusion:** answers the research question without adding a new theory or policy result.
+
+**Result:** PASS.
+
+## 8. Contribution-claim and literature audit
+
+The integrated contribution is bounded to four claims: correction of the published complete profile/equilibrium claim; characterization of unrestricted symmetric-foreclosed pure-strategy multiplicity; characterization of the separate cost-floor benchmark within the same class; and qualification of the welfare comparison by continuation selection.
+
+`Limit pricing` is not presented as the paper's primary novelty. The manuscript does not claim general novelty for foreclosure, potential competition, or limit pricing. Existing standards/trade and limit-pricing references remain supporting context rather than evidence for an inflated novelty claim.
+
+**Result:** PASS for Stage 13 integration. Prior-art freshness remains subject to Astra-2 attack and any later submission-stage source refresh that becomes material.
+
+## 9. Abstract / Introduction / Conclusion alignment
+
+The title, Abstract, Introduction, two propositions, welfare section, Conclusion, highlights, and cover letter all use the same contribution hierarchy:
+
+`published continuation claim fails`
+→ `unrestricted symmetric-foreclosed continuation is multiple`
+→ `explicit cost floor yields a separate piecewise benchmark`
+→ `welfare robustness is continuation-selection conditional`.
+
+**Result:** PASS.
+
+## 10. Figure/Table Architecture reconciliation
+
+No visual is required to communicate the headline result. There is no unresolved Stage-10 exposition requirement that forces a figure or table, and no quantitative visual requires a generator audit.
+
+**Result:** PASS — zero figures/tables is a documented design decision, not an omission.
+
+## 11. Known journal requirements implemented versus carried forward
+
+Implemented only as provisional package structure where already operationally useful:
+
+- identified working manuscript;
+- separate title-page draft;
+- highlights draft;
+- cover-letter draft;
+- CRediT draft;
+- flat editable LaTeX source package;
+- reproducibility package containing Python checks and the pinned Lean project.
+
+Carried forward as **UNVERIFIED / portal-dependent** for Stage 14:
+
+- exact article-type label;
+- review/anonymity model and author-information placement;
+- separate-title-page requirement;
+- initial PDF/editable-source upload requirements and file designations;
+- LaTeX archive/folder rules;
+- abstract/keyword/JEL/highlight requirements;
+- declaration placement and exact CRediT/data/code/AI wording;
+- reviewer-suggestion and portal-attestation fields;
+- current mandatory-charge status;
+- portal-generated PDF behavior.
+
+No Stage-14 item is declared resolved by inference from the Stage-13 build.
+
+## 12. Changes made
+
+Stage 13R2 revised the full manuscript and submission package, including Sections 1–5, title/Abstract/keywords/JEL, cover letter, highlights, title page, package README, reproducibility builder, project README/workflow records, and manuscript-integration CI. The scientific rewrite follows C3R/C4R without introducing a new theoretical extension.
+
+## 13. Remaining blockers
+
+There is **no known Stage-13R2 integration blocker**.
+
+Submission QA remains blocked for one deliberate reason: **Astra-2, the second independent hostile referee gate, has not yet been completed.** Astra-2 must attack the revised manuscript's correction validity, U1/U2 characterization, cost-floor scope, welfare-selection statement, terminology, Lean scope, and publication significance before Stage 14 begins.
+
+## 14. Final verdict and next-stage contract
+
+### Executive integration verdict
+
+**PASS.** The revised paper is internally coherent, scope-disciplined, reproducible, and build-clean at the full-paper integration level.
+
+### Final Stage-13R2 verdict
+
+`REVISED INTEGRATED MANUSCRIPT READY FOR ASTRA-2`
+
+### Next-stage contract
+
+Proceed to **Astra-2 — Second Independent Hostile Referee Gate**.
+
+Do **not** begin Stage 14 until Astra-2 returns `ACCEPTABLE FOR SUBMISSION`, or a bounded `MINOR EXPOSITION REPAIR` has been repaired and re-cleared. Any substantive mathematical defect found by Astra-2 returns the project to the earliest affected scientific stage. Stage 14 must then freshly verify all material *International Economics* requirements from current official sources and the authenticated portal and remain fail-closed on any material `UNVERIFIED` or `CONFLICT`.
