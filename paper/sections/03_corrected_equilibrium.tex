@@ -13,7 +13,7 @@ At the outsider's ideal location, either member product is delivered at price $s
 \begin{proposition}[Post-foreclosure pricing and multiplicity]\label{prop:equilibrium}
 Consider the published quadratic-transport price game in the strict post-foreclosure range $5/2<c<5$.
 
-\begin{enumerate}[(i)]
+\begin{enumerate}
 \item The Appendix-B profile $(3/2,3/2,c)$ is not a Nash equilibrium.
 
 \item Within symmetric, foreclosed, pure-strategy profiles $(s,s,r)$, the unrestricted original price game has a Nash equilibrium if and only if either
@@ -40,7 +40,7 @@ For $5/2<c<3$, the complete symmetric foreclosed profile is $(c-1,c-1,c)$. For $
 \end{proposition}
 
 \begin{proof}
-Part (i) follows from \eqref{eq:published-profile-gain}. We prove part (ii) by necessity and sufficiency within the stated symmetric foreclosed class.
+Part 1 follows from \eqref{eq:published-profile-gain}. We prove part 2 by necessity and sufficiency within the stated symmetric foreclosed class.
 
 For U1, fix $p_2=s$ and $p_3=s+1$ with $3/2\leq s<2$ and $c\geq s+1$. The outsider has no profitable deviation: any quote that attracts positive-measure demand must fall below $s+1\leq c$, while a zero-demand quote yields zero profit. Consider a deviation $p$ by firm 1. Negative prices cannot improve profit. If $0\leq p\leq s-1$, total demand is at most three, so profit is at most $3(s-1)\leq3s/2$, the candidate profit. If $s-1<p\leq s$, the outsider remains foreclosed and \eqref{eq:duodemand} applies, giving
 \[
@@ -54,9 +54,9 @@ On the positive-demand part, profit is $p(s+3/2-p)$. Its unconstrained maximizer
 
 For U2, take $(2,2,r)$ with $r\geq3$ and $c\geq3$. The outsider cannot earn positive profit by attracting demand because positive demand requires a quote below three, weakly below its marginal cost. For a member deviation, removing the outsider can only weakly increase the deviator's demand and therefore gives an upper envelope for profit. Against the other member's price $2$, the two-member problem is globally maximized at $p=2$: for low prices profit is bounded by total market demand, on the interior two-member branch profit is the concave expression $p(3-3p/4)$ with unique maximizer $2$, and sufficiently high prices yield no gain. Hence U2 is sufficient.
 
-Now let $(s,s,r)$ be any symmetric foreclosed Nash equilibrium of the unrestricted game. Foreclosure requires $r\geq s+1$, and outsider optimality requires $c\geq s+1$. A member price $s>2$ is impossible because a sufficiently small downward deviation remains on the regular foreclosed branch and raises profit. If $s<2$ and $r>s+1$, a sufficiently small upward member deviation also remains foreclosed and raises profit, so $r=s+1$ is necessary whenever $s<2$. Given $r=s+1$, a price $s<3/2$ is impossible because the right derivative after the outsider becomes relevant is $3/2-s>0$. Thus $3/2\leq s<2$ implies U1. If $s=2$, foreclosure and outsider optimality require $r\geq3$ and $c\geq3$, which is U2. These conditions exhaust the stated class and prove part (ii).
+Now let $(s,s,r)$ be any symmetric foreclosed Nash equilibrium of the unrestricted game. Foreclosure requires $r\geq s+1$, and outsider optimality requires $c\geq s+1$. A member price $s>2$ is impossible because a sufficiently small downward deviation remains on the regular foreclosed branch and raises profit. If $s<2$ and $r>s+1$, a sufficiently small upward member deviation also remains foreclosed and raises profit, so $r=s+1$ is necessary whenever $s<2$. Given $r=s+1$, a price $s<3/2$ is impossible because the right derivative after the outsider becomes relevant is $3/2-s>0$. Thus $3/2\leq s<2$ implies U1. If $s=2$, foreclosure and outsider optimality require $r\geq3$ and $c\geq3$, which is U2. These conditions exhaust the stated class and prove part 2.
 
-For part (iii), the cost-floor game imposes $p_1,p_2\geq0$ and $p_3\geq c$. Intersect U1 with $r\geq c$. Since U1 also requires $r=s+1$ and $c\geq s+1$, both inequalities bind: $r=c=s+1$, so $s=c-1$. The conditions $3/2\leq s<2$ give $5/2\leq c<3$. Intersect U2 with $r\geq c$: the member price remains $2$, while the outsider may choose any $r\geq c$ for $c\geq3$. Restricting to $5/2<c<5$ yields \eqref{eq:piecewise-price}.
+For part 3, the cost-floor game imposes $p_1,p_2\geq0$ and $p_3\geq c$. Intersect U1 with $r\geq c$. Since U1 also requires $r=s+1$ and $c\geq s+1$, both inequalities bind: $r=c=s+1$, so $s=c-1$. The conditions $3/2\leq s<2$ give $5/2\leq c<3$. Intersect U2 with $r\geq c$: the member price remains $2$, while the outsider may choose any $r\geq c$ for $c\geq3$. Restricting to $5/2<c<5$ yields \eqref{eq:piecewise-price}.
 \end{proof}
 
 The cost floor is an explicit modification of the strategy set, not a condition stated in \citet{gandalshy2001}, not an implication of Nash equilibrium, and not a claim that below-cost prices can be removed without loss of generality. Its role is narrower: within the symmetric foreclosed pure-strategy class, it removes the below-cost zero-sales outsider quotes that support the lower-price continuum and thereby pins down the member price in \eqref{eq:piecewise-price}.
