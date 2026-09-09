@@ -35,6 +35,21 @@ jobs:
       - name: Build manuscript and submission packages
         run: make all
 
+      - name: Enforce clean final LaTeX logs
+        run: |
+          if grep -E 'Overfull \\hbox|There were undefined references|There were undefined citations' paper/main.log; then
+            echo 'Final manuscript log contains a blocking LaTeX warning.'
+            exit 1
+          fi
+          if grep -E 'Overfull \\hbox|There were undefined references|There were undefined citations' output/international-economics-flat/main.log; then
+            echo 'Flat-source manuscript log contains a blocking LaTeX warning.'
+            exit 1
+          fi
+          if grep -E 'Overfull \\hbox|There were undefined references|There were undefined citations' submission/title_page.log; then
+            echo 'Title-page log contains a blocking LaTeX warning.'
+            exit 1
+          fi
+
       - name: Check generated artifacts
         run: |
           test -s output/international-economics-manuscript.pdf
@@ -43,3 +58,14 @@ jobs:
           test -s submission/title_page.pdf
           unzip -l output/international-economics-submission-source.zip
           unzip -l output/reproducibility-supplement.zip
+
+      - name: Upload Stage 13R2 build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage13r2-build
+          path: |
+            output/international-economics-manuscript.pdf
+            output/international-economics-flat/main.pdf
+            output/international-economics-submission-source.zip
+            output/reproducibility-supplement.zip
+            submission/title_page.pdf
