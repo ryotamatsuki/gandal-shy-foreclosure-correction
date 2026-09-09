@@ -1,64 +1,32 @@
 # Revision-to-Resubmission Workflow
 
 **Project:** Gandal–Shy Foreclosure Correction  
-**Status date:** 2026-09-09  
+**Status date:** 2026-09-10  
 **Canonical generic workflow:** `ryotamatsuki/research-paper-workflow` v2.1  
 **Pre-reopening manuscript baseline:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`  
-**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → **NEXT: `Stage 12R2`**
+**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → `Stage 12R2 PASS` → **NEXT: `Stage 13R2`**
 
-This file is the authoritative project-specific route from the Astra-1 scientific reopening to a new submission. Stage 14 remains blocked until Stage 12R2, Stage 13R2, and Astra-2 have passed.
+This file is the authoritative project-specific route from the Astra-1 reopening to a new submission. Stage 14 remains blocked until Stage 13R2 and Astra-2 have passed.
 
 ---
 
-## 1. Governing scientific rules
+## 1. Controlling scientific rules
 
-### 1.1 Correction target
+1. The correction concerns the complete Appendix-B profile `(3/2,3/2,c)`, not a claim that member price `3/2` can never occur.
+2. Keep the **unrestricted original price game** and the separate **cost-floor game** `p_i >= marginal cost` distinct. The cost floor is not WLOG, Nash-implied, weak-dominance elimination, or a condition stated by Gandal and Shy (2001).
+3. Current equilibrium characterization is limited to **symmetric, foreclosed, pure-strategy price equilibria in one union-member market**.
+4. Always distinguish existence, Nash status, characterization within a stated class, and uniqueness within a stated class.
+5. The `1/2` welfare gap holds under a common symmetric continuation price. It is not selection-free across arbitrary unrestricted market-by-market continuations.
+6. Lean certifies the proof-critical algebraic and quantified-inequality core, not the complete Salop game or all Nash equilibria from primitives.
+7. C4R clarification controls all downstream prose: the no-below-cost restriction collapses member-price multiplicity **within symmetric, foreclosed, pure-strategy equilibria**; it is not a global equilibrium-selection result.
 
-The correction concerns the complete Appendix-B price profile claimed by Gandal and Shy (2001), not the isolated proposition that member price `3/2` can never occur.
+Scientific authorities:
 
-Permitted statement:
-
-> Appendix B's claimed profile `(3/2,3/2,c)` is not a Nash equilibrium under the published quadratic-transport specification in the strict post-foreclosure range.
-
-Prohibited statement:
-
-> Member price `3/2` cannot occur in equilibrium.
-
-### 1.2 Keep two price games separate
-
-1. **Unrestricted original game:** price strategies as stated in the published model, including zero-sales below-cost outsider quotes when not explicitly excluded.
-2. **Cost-floor game:** explicit modified strategy set `p_i >= marginal cost in that market`.
-
-The cost floor is not WLOG, is not implied by Nash equilibrium, is not generic weak-dominance elimination, and is not attributed to the published paper.
-
-### 1.3 Exact equilibrium class
-
-The current characterization is limited to:
-
-> **symmetric, foreclosed, pure-strategy price equilibria in one union-member market.**
-
-No current theorem characterizes all asymmetric pure equilibria, mixed equilibria, or the government-stage equilibrium under continuation multiplicity.
-
-### 1.4 Logical strength
-
-Always distinguish:
-
-- existence;
-- Nash equilibrium status;
-- characterization within a stated class;
-- uniqueness within a stated class.
-
-Never upgrade an existence proof into characterization or a restricted-class characterization into global uniqueness.
-
-### 1.5 Welfare scope
-
-The `1/2` welfare gap is valid under a common symmetric continuation price across the two union markets. It is not selection-free across arbitrary market-by-market continuations in the unrestricted game.
-
-Do not claim that Proposition 3 reverses without solving the relevant government-stage equilibrium/selection problem.
-
-### 1.6 Lean scope
-
-Lean certifies the proof-critical algebraic and quantified-inequality core. It does not independently reconstruct the entire continuum Salop demand game or all Nash equilibria from consumer primitives.
+- `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`
+- `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`
+- `docs/C2R_L_LEAN_CERTIFICATION.md`
+- `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`
+- `docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md`
 
 ---
 
@@ -75,9 +43,9 @@ C3R     Revised Canonical Theory Freeze                   [PASS]
    ↓
 C4R     Hostile Scientific Self-Audit                     [PASS]
    ↓
-Stage 12R2  Journal Significance / Fit Recheck            [NEXT]
+Stage 12R2  Journal Significance / Fit Recheck            [PASS]
    ↓
-Stage 13R2  Revised Full-Paper Integration
+Stage 13R2  Revised Full-Paper Integration                [NEXT]
    ↓
 Astra-2     Second Independent Hostile Referee Gate
    ↓
@@ -90,174 +58,149 @@ No stage may be skipped merely because an earlier manuscript version once passed
 
 ---
 
-## 3. Scientific recovery already completed
+## 3. Scientific result entering Stage 13R2
 
-### C0–C1R — PASS
+### Original published profile
 
-Authority: `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`
+Under quadratic transportation,
 
-Frozen analytic results:
+`x^L = 1 + (p_2-p_1)/4`.
 
-- long-arc coefficient `1/4` under quadratic transportation;
-- published profile `(3/2,3/2,c)` is non-Nash in the strict post-foreclosure range;
-- unrestricted symmetric foreclosed pure equilibria:
-  - U1: `3/2 <= s < 2`, `r=s+1`, `c>=s+1`;
-  - U2: `s=2`, `r>=3`, `c>=3`;
-- cost-floor symmetric foreclosed pure equilibria:
-  - F1: `5/2 <= c < 3`, `(c-1,c-1,c)`;
-  - F2: `c>=3`, member prices `(2,2)`, outsider quote `r>=c`;
-- common-price welfare `TS_M^SU=3V+1/4`;
-- market-specific welfare `TS_A^SU=3V+1/4+(3/2)(s_B-s_A)`.
+The complete Appendix-B profile `(3/2,3/2,c)` is not Nash for every strict `c>5/2` in the paper's post-foreclosure range.
 
-### C2R — PASS
+### Unrestricted original game
 
-Authority: `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`
+Within symmetric foreclosed pure-strategy profiles `(s,s,r)`:
 
-The verifier now varies all three posted prices, uses unrestricted and cost-floor modes, searches global unilateral deviations from primitive delivered-price thresholds, retains the published and Astra counterexamples as regressions, and treats numerics as falsification rather than proof of completeness.
+- **U1:** `3/2 <= s < 2`, `r=s+1`, `c>=s+1`;
+- **U2:** `s=2`, `r>=3`, `c>=3`.
 
-### C2R-L — PASS
+Thus the unrestricted game has genuine member-price multiplicity.
 
-Authority: `docs/C2R_L_LEAN_CERTIFICATION.md`  
-Formal source: `GandalShy/Certification.lean`
+### Explicit cost-floor game
 
-Lean certifies the long-arc algebra, exact `c=4` counterexample, global-deviation inequality core, necessity signs, encoded multiplicity, cost-floor logical reduction, and welfare identities. GitHub Actions run `34291397450` passed `lake build GandalShy` and the admitted-proof scan.
+Impose `p_i >= marginal cost in that market`.
 
-### C3R — PASS
+Within the same symmetric foreclosed pure-strategy class:
 
-Authority: `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`
+- `5/2 <= c < 3`: `(p_1,p_2,p_3)=(c-1,c-1,c)`;
+- `c>=3`: `p_1=p_2=2`, with `p_3>=c`.
 
-C3R freezes the exact game definitions, parameter domain, equilibrium class, U1/U2 and F1/F2 claims, welfare-selection scope, boundary treatment, permitted limit-pricing terminology, Lean scope, and prohibited stronger claims.
+For the manuscript's strict domain `5/2<c<5`, the member price is `c-1` below `3` and `2` from `3` onward. This is a restricted-class characterization, not global uniqueness.
 
-### C4R — PASS
+### Welfare
 
-Authority: `docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md`
+For common symmetric continuation price `s`:
 
-C4R attacked:
+`TS_M^SU=3V+1/4`, `TS^MR=3V-1/4`, gap `1/2`.
 
-- the full `c>5/2` quantifier on the published-profile failure;
-- hidden outsider-price equilibria and below-cost zero-sales quotes;
-- global member deviations and demand-region leakage;
-- the cost-floor/original-game distinction;
-- `c=5/2` and `c=3` boundaries;
-- tie-breaking and zero-measure consumers;
-- asymmetric/mixed-equilibrium scope;
-- welfare continuation selection;
-- limit-pricing terminology;
-- Lean-scope drift.
+For market-specific symmetric continuation prices:
 
-No counterexample was found inside the exact C3R theorem class.
+`TS_A^SU=3V+1/4+(3/2)(s_B-s_A)`.
 
-C4R adds one controlling wording clarification:
-
-> **Within symmetric, foreclosed, pure-strategy equilibria, an explicit no-below-cost price restriction collapses the unrestricted member-price multiplicity to the piecewise member-price formula.**
-
-Do not shorten this into a global claim that the cost floor "restores uniqueness" or "selects the equilibrium".
+Hence welfare robustness is continuation-selection conditional in the unrestricted game.
 
 ---
 
-## 4. Stage 12R2 — Journal Significance / Fit Recheck — NEXT
+## 4. Stage 12R2 — PASS
 
-### Objective
+Authority: `docs/STAGE_12R2_JOURNAL_SIGNIFICANCE_FIT_RECHECK.md`
 
-Reassess from scratch whether the revised scientific contribution clears the publication threshold of *International Economics* and whether that journal remains the best zero-fee target.
+### Journal decision
 
-The contribution entering Stage 12R2 is now:
+**Primary target remains `International Economics`, direct short-paper / short-communication route.**
 
-`published claimed equilibrium profile is false`
-→ `unrestricted game has symmetric-foreclosed equilibrium multiplicity`
-→ `explicit cost-floor restriction characterizes member prices only within the stated symmetric class`
-→ `welfare robustness is continuation-selection conditional`.
+The revised contribution is stronger than at the first Stage 12R because it is now an equilibrium-set and equilibrium-selection correction, not merely a replacement price formula.
 
-### Mandatory questions
+Current positioning hierarchy:
 
-1. Is this more than an algebraic corrigendum?
-2. Does equilibrium multiplicity/selection create a sufficiently meaningful international-economics contribution?
-3. Does stopping at the symmetric foreclosed pure-strategy class create an editorial objection?
-4. Is the explicit cost-floor modification useful enough to retain as a main result?
-5. Should the paper emphasize correction, multiplicity, equilibrium selection, or limit pricing in its title and positioning?
-6. Does *International Economics* remain the best fit under the zero-fee hard gate?
+1. correction of the published post-foreclosure equilibrium and uniqueness claim;
+2. unrestricted symmetric-foreclosed equilibrium multiplicity;
+3. conditional piecewise member-price characterization in a separate cost-floor game;
+4. continuation-selection dependence of the welfare comparison;
+5. zero-sales outsider strategic relevance / static limit-pricing mechanism as supporting interpretation, not the headline.
 
-### Required outputs
+### Preferred title direction
 
-- updated contribution statement;
-- strongest acceptance argument;
-- strongest desk-reject argument;
-- updated *International Economics* fit assessment;
-- revised title direction;
-- zero-fee target ladder if needed;
-- verdict: `GO TO STAGE 13R2`, `REPOSITION`, or `CHANGE JOURNAL TARGET`.
+**`Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)`**
 
-Do not rewrite the manuscript at Stage 12R2.
+Title wording may be polished at Stage 13R2 after Sections 2–4 are integrated, but `limit pricing` should not return as the primary headline.
+
+### Main editorial risk
+
+The remaining risk is **publication significance / narrowness**, not an unresolved mathematical defect. The paper corrects a 2001 benchmark and does not solve all asymmetric/mixed equilibria or the government stage under unrestricted multiplicity. This risk should be handled by precise short-paper positioning, not by adding a new model extension before submission.
+
+### Zero-fee gate
+
+Submission fee `0` and mandatory standard-route publication/page/APC charge `0` remain hard constraints. Public-page evidence supports continuing with International Economics at Stage 12R2, but Stage 14 must recheck the current Guide and authenticated portal and fail closed if a mandatory charge appears.
+
+Fallback ladder remains:
+
+1. International Economics;
+2. Journal of Industry, Competition and Trade;
+3. Bulletin of Economic Research after current fee/format recheck;
+4. Economics Bulletin after current fee/format recheck.
 
 ---
 
-## 5. Stage 13R2 — Revised Full-Paper Integration
+## 5. Stage 13R2 — Revised Full-Paper Integration — NEXT
 
-Begin only after Stage 12R2 gives a target/positioning decision.
+Begin from the frozen C3R/C4R theory and the Stage-12R2 positioning decision. Do **not** start with the Introduction.
 
-Revise in this order:
+Required order:
 
-1. Section 2 — published quadratic specification, long-arc error, exact failure of the published complete profile;
-2. Section 3 — unrestricted U1/U2 multiplicity first, then the separate cost-floor F1/F2 characterization;
-3. Section 4 — welfare under common versus market-specific continuation selection;
-4. only then Abstract, Introduction, Conclusion, title, keywords/JEL, highlights, cover letter, and submission materials.
+1. **Section 2:** published quadratic specification, correct long-arc geometry, exact failure of the published complete profile;
+2. **Section 3:** unrestricted U1/U2 multiplicity first, then the separate cost-floor F1/F2 characterization;
+3. **Section 4:** welfare under common versus market-specific continuation selection;
+4. only after Sections 2–4 are stable: title, Abstract, Introduction, Conclusion, keywords/JEL, highlights, cover letter, title page and other submission materials.
 
 Mandatory writing rules:
 
-- multiplicity stays in the main text;
-- the cost floor must visibly appear as a separate modified strategy set before its result;
-- always qualify the cost-floor characterization by the symmetric, foreclosed, pure-strategy class;
-- do not write "the equilibrium price" where only a restricted-class characterization is proved;
+- put multiplicity in the main text;
+- state the equilibrium class in Proposition 1 itself;
+- introduce the cost-floor game visibly as a separate strategy space before stating its result;
+- never call the cost-floor result global equilibrium uniqueness;
+- never imply asymmetric or mixed equilibria are characterized;
+- do not say member price `3/2` can never occur;
+- do not call the cost floor WLOG, Nash-implied, or a weak-dominance refinement;
 - at `c=3`, describe a branch boundary, not strict slack;
-- use "limit pricing" only in the static exclusion-maintenance sense authorized by C3R/C4R;
-- describe Lean only at its actual certification scope.
+- use `limit pricing` only as a supporting static exclusion-maintenance interpretation;
+- state Lean certification only at its actual scope;
+- do not add a theoretical extension solely for journal fit.
+
+Stage 13R2 must exit with:
+
+`REVISED INTEGRATED MANUSCRIPT READY FOR ASTRA-2`
+
+or return to the earliest affected scientific stage if integration reveals a true inconsistency.
 
 ---
 
-## 6. Astra-2 — Second Independent Hostile Referee Gate
+## 6. Astra-2 — mandatory after Stage 13R2
 
-Run only after the complete Stage-13R2 manuscript exists.
+Astra-2 is the final independent scientific gate before submission QA. It must attack the complete revised manuscript for:
 
-Astra-2 must independently attack:
-
-- published-profile correction validity;
+- original-paper correction validity;
 - unrestricted U1/U2 characterization;
-- cost-floor F1/F2 scope and necessity;
-- existence/characterization/uniqueness wording;
+- cost-floor F1/F2 scope;
+- existence/characterization/uniqueness drift;
 - asymmetric/mixed-equilibrium scope leakage;
-- welfare-selection scope;
+- welfare-selection overclaim;
 - limit-pricing terminology;
 - Lean-certification scope;
-- publication significance for the selected journal.
+- publication significance for International Economics.
 
-Proceed only on:
+Proceed only on `ACCEPTABLE FOR SUBMISSION` or after bounded repair of `MINOR EXPOSITION REPAIR`.
 
-- `ACCEPTABLE FOR SUBMISSION`; or
-- `MINOR EXPOSITION REPAIR`, after bounded repair and recheck.
-
-A substantive theory defect returns to the earliest affected scientific stage.
+A substantive mathematical problem returns to the earliest affected scientific stage.
 
 ---
 
 ## 7. Stage 14 — Submission QA
 
-Begin only after Astra-2 scientific clearance.
+Begin only after Astra-2 clearance. Refresh current official journal and authenticated-portal requirements. Any material `UNVERIFIED` or unresolved `CONFLICT` blocks PASS.
 
-Refresh current official journal and authenticated-portal requirements. Any material `UNVERIFIED` or unresolved `CONFLICT` blocks PASS.
-
-Mandatory checks include:
-
-- exact article type;
-- anonymity/title-page rules;
-- editable source and LaTeX packaging;
-- abstract, keywords, JEL, highlights;
-- funding, competing interests, CRediT, generative-AI declaration;
-- data/code/supplement requirements;
-- reviewer fields and attestations;
-- submission fee and mandatory publication/page/color charges;
-- portal-generated PDF behavior.
-
-**Zero-fee hard gate:** submission fee `0` and mandatory standard-route publication/page/APC charge `0`. If violated, stop and move to the next verified zero-fee journal.
+Mandatory checks include article type, anonymity/title-page rules, editable sources/LaTeX packaging, abstract/keywords/JEL/highlights, funding/competing interests/CRediT/AI declaration, data/code handling, reviewer fields, fees and charges, and portal-generated PDF behavior.
 
 ---
 
@@ -265,16 +208,14 @@ Mandatory checks include:
 
 Only after Stage 14 passes:
 
-1. freeze exact manuscript and submission artifacts;
-2. record commit/tag/SHA provenance;
-3. reconcile portal metadata with the frozen source;
-4. upload exact frozen files;
-5. generate the portal PDF where available;
-6. inspect the generated PDF page by page;
-7. verify equations, citations, author/anonymity information, declarations, and supplements;
-8. confirm the zero-fee hard gate;
-9. submit;
-10. record journal confirmation and submission ID.
+1. freeze exact artifacts and record commit/tag/SHA;
+2. reconcile portal metadata;
+3. upload the exact frozen files;
+4. generate and inspect the portal PDF where available;
+5. recheck equations, citations, identity/anonymity, declarations and supplements;
+6. confirm the zero-fee hard gate;
+7. submit;
+8. record journal confirmation and submission ID.
 
 Do not declare `SUBMITTED` before journal confirmation is received.
 
@@ -294,41 +235,21 @@ Do not declare `SUBMITTED` before journal confirmation is received.
 | Submission-format/metadata issue only | Stage 14 |
 | Portal-only mismatch | Stage 14/15 preflight |
 
-Do not repair a scientific defect only in prose when the theorem or quantifier must change.
-
 ---
 
 ## 10. Current checklist
 
-- [x] RIO submission closed with editorial audience-fit rejection.
-- [x] Initial International Economics Stage 12R positioning completed.
-- [x] Initial Stage 13R integration completed.
-- [x] Astra-1 identified the equilibrium-characterization defect.
-- [x] Published Gandal–Shy (2001) PDF directly checked.
-- [x] Stage 14 halted.
-- [x] C0–C1R Targeted Equilibrium-Set Reaudit.
-- [x] C2R Symbolic/Numerical Audit.
-- [x] C2R-L Lean Formal Certification.
-- [x] C3R Revised Canonical Theory Freeze.
-- [x] C4R Hostile Scientific Self-Audit.
-- [ ] **Stage 12R2 Journal Significance/Fit Recheck — NEXT.**
-- [ ] Stage 13R2 Revised Full-Paper Integration.
-- [ ] Astra-2 Independent Hostile Referee Gate.
-- [ ] Stage 14 Submission QA.
-- [ ] Stage 15 Submission Freeze / Portal Preflight / Submit.
-
----
-
-## 11. Definition of recovery success
-
-The project is ready for submission QA only when it can answer without qualification drift:
-
-1. exactly which published profile is false and why;
-2. exactly what symmetric foreclosed pure equilibria exist in the unrestricted original game;
-3. exactly what the explicit cost-floor restriction does and does not select;
-4. exactly when the member-country welfare gap remains `1/2`;
-5. exactly what Lean certifies and what remains analytic;
-6. why the revised contribution is publishable in the selected journal;
-7. whether Astra-2 finds any remaining substantive defect.
-
-The goal is not to erase the Astra counterexample. The goal is to make the counterexample, the resulting multiplicity, and the exact limits of every correction claim part of the paper's reproducible scientific record.
+- [x] RIO editorial audience-fit rejection recorded.
+- [x] Initial International Economics Stage 12R positioning.
+- [x] Initial Stage 13R integration.
+- [x] Astra-1 scientific defect discovery.
+- [x] C0–C1R targeted equilibrium-set reaudit.
+- [x] C2R symbolic/numerical audit.
+- [x] C2R-L Lean certification.
+- [x] C3R revised theory freeze.
+- [x] C4R hostile scientific self-audit.
+- [x] **Stage 12R2 journal significance/fit recheck.**
+- [ ] **Stage 13R2 revised full-paper integration — NEXT.**
+- [ ] Astra-2 independent hostile referee gate.
+- [ ] Stage 14 submission QA.
+- [ ] Stage 15 submission freeze / portal preflight / submit.
