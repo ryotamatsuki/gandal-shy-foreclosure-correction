@@ -3,14 +3,14 @@
 Research repository for a short theory note revisiting the post-foreclosure equilibrium in Gandal and Shy (2001).
 
 > **CURRENT SCIENTIFIC STATUS — 2026-09-10**  
-> The pre-Astra Stage-13R manuscript is **not cleared for submission**. Stage 14 remains blocked.  
-> `C0–C1R`: **PASS**.  
-> `C2R`: **PASS**.  
-> `C2R-L Lean`: **PASS**.  
-> `C3R Revised Canonical Theory Freeze`: **PASS**.  
-> `C4R Hostile Scientific Self-Audit`: **PASS**.  
-> `Stage 12R2 Journal Significance / Fit Recheck`: **PASS**.  
-> **Next stage:** `Stage 13R2 — Revised Full-Paper Integration`.
+> `C0–C1R`: **PASS**  
+> `C2R`: **PASS**  
+> `C2R-L Lean`: **PASS**  
+> `C3R Revised Canonical Theory Freeze`: **PASS**  
+> `C4R Hostile Scientific Self-Audit`: **PASS**  
+> `Stage 12R2 Journal Significance / Fit Recheck`: **PASS**  
+> `Stage 13R2 Revised Full-Paper Integration`: **ACTIVE**  
+> Stage 14 remains blocked. The complete Stage-13R2 manuscript must pass **Astra-2** first.
 
 Authoritative records:
 
@@ -21,6 +21,7 @@ Authoritative records:
 - [`docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`](docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md)
 - [`docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md`](docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md)
 - [`docs/STAGE_12R2_JOURNAL_SIGNIFICANCE_FIT_RECHECK.md`](docs/STAGE_12R2_JOURNAL_SIGNIFICANCE_FIT_RECHECK.md)
+- [`docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`](docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md)
 
 Key provenance:
 
@@ -28,6 +29,7 @@ Key provenance:
 - C2R-L merge: `19630342fec2fc0a4b0ba4e900d3d8358581f74c`
 - C3R merge: `5f0a57fe99b94deb51f229254a7f5882ac21ad49`
 - C4R merge: `20a05cb9499eb8865e1ca3df77a5758b62765864`
+- Stage 12R2 merge: `a312babe551c87afd203678215bb2467b36a1bff`
 
 ## Frozen scientific result
 
@@ -39,7 +41,7 @@ The published model uses quadratic transportation cost. On the long arc,
 
 not the coefficient used in Appendix B. The complete published profile `(3/2,3/2,c)` is not Nash for every strict `c>5/2` in the paper's post-foreclosure range.
 
-The correction is to the complete profile and associated uniqueness/equilibrium claim. It is **not** a claim that member price `3/2` can never occur in another equilibrium.
+The correction is to the complete profile and associated equilibrium/uniqueness claim. It is **not** a claim that member price `3/2` can never occur in another equilibrium.
 
 ### 2. Unrestricted original game
 
@@ -61,11 +63,11 @@ Within the same symmetric, foreclosed, pure-strategy class:
 - `5/2 <= c < 3`: `(p_1,p_2,p_3)=(c-1,c-1,c)`;
 - `c>=3`: `p_1=p_2=2`, with `p_3>=c`.
 
-Hence, for `5/2<c<5`, the member price is `c-1` below `3` and `2` from `3` onward **within this stated class only**. This is not global equilibrium uniqueness.
+For `5/2<c<5`, the member price is therefore `c-1` below `3` and `2` from `3` onward **within this stated class only**. This is not a global equilibrium-uniqueness result.
 
 ### 4. Welfare scope
 
-If both union markets use the same symmetric member price `s`, then
+If both union markets use the same symmetric member price `s`,
 
 `TS_M^SU=3V+1/4`, `TS^MR=3V-1/4`,
 
@@ -81,22 +83,22 @@ Therefore welfare robustness is continuation-selection conditional in the unrest
 
 C2R varies all three posted prices and performs global unilateral-deviation falsification in unrestricted and cost-floor modes. Known published and Astra counterexamples are permanent regressions.
 
-The repository also contains a pinned Lean/mathlib project. `GandalShy/Certification.lean` formally certifies the proof-critical algebraic and quantified-inequality core, including the long-arc correction, exact `c=4` counterexample, global-deviation inequalities, encoded multiplicity, cost-floor logical reduction, and welfare identities. Lean does not claim to reconstruct the entire Salop demand game or all Nash equilibria from primitives.
+The pinned Lean/mathlib project in `GandalShy/Certification.lean` certifies the proof-critical algebraic and quantified-inequality core, including the long-arc correction, exact `c=4` counterexample, global-deviation inequalities, encoded multiplicity, cost-floor logical reduction, and welfare identities. Lean does not claim to reconstruct the entire Salop demand game or all Nash equilibria from primitives.
 
-## Stage 12R2 journal decision
+Stage 13R2 adds `.github/workflows/manuscript-integration.yml` to rerun symbolic/numerical verification and build the manuscript, flat source package, title page, and reproducibility package on the integration PR. The reproducibility package now includes the pinned Lean source/project files as well as the Python checks.
 
-**Primary target remains International Economics, direct short-paper / short-communication route.**
+## Journal positioning
 
-The revised paper is now positioned as:
+**Primary target: International Economics, direct short-paper / short-communication route.**
 
-`published claimed unique continuation fails`
+The revised paper is positioned as:
+
+`published claimed continuation fails`
 → `unrestricted symmetric-foreclosed continuations are multiple`
 → `a separate cost-floor game yields the piecewise member-price benchmark within the stated class`
 → `welfare robustness depends on continuation selection`.
 
-This is stronger than the pre-Astra “corrected price formula + unchanged welfare” story and is treated as a correction-plus-equilibrium-selection contribution.
-
-Preferred title direction:
+Integrated working title:
 
 > **Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)**
 
@@ -114,28 +116,26 @@ Fallback ladder remains:
 ## Recovery route
 
 ```text
-C0–C1R  [PASS]
+C0–C1R      [PASS]
    ↓
-C2R     [PASS]
+C2R         [PASS]
    ↓
-C2R-L   [PASS]
+C2R-L       [PASS]
    ↓
-C3R     [PASS]
+C3R         [PASS]
    ↓
-C4R     [PASS]
+C4R         [PASS]
    ↓
 Stage 12R2  [PASS]
    ↓
-Stage 13R2  Revised Full-Paper Integration  [NEXT]
+Stage 13R2  Revised Full-Paper Integration  [ACTIVE]
    ↓
 Astra-2     Independent Hostile Referee Gate
    ↓
-Stage 14   Submission QA
+Stage 14    Submission QA
    ↓
-Stage 15   Submission Freeze / Portal Preflight / Submit
+Stage 15    Submission Freeze / Portal Preflight / Submit
 ```
-
-Stage 13R2 must rewrite Sections 2–4 first, then title/Abstract/Introduction/Conclusion and submission materials. Multiplicity must be in the main text, the cost-floor result must be visibly separated from the original game, and all existence/characterization/uniqueness qualifiers must follow C3R/C4R exactly.
 
 ## Build and verification
 
@@ -152,4 +152,8 @@ Lean:
 lake build GandalShy
 ```
 
-The current `paper/` and `submission/` files remain the pre-Astra baseline until Stage 13R2 replaces them with the revised integrated manuscript.
+Full integrated package:
+
+```bash
+make all
+```
