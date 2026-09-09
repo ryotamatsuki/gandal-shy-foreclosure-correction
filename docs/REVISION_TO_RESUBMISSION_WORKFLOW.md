@@ -4,9 +4,9 @@
 **Status date:** 2026-09-10  
 **Canonical generic workflow:** `ryotamatsuki/research-paper-workflow` v2.1  
 **Pre-reopening manuscript baseline:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`  
-**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → `Stage 12R2 PASS` → `Stage 13R2 PASS` → **NEXT: `Astra-2`**
+**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → `Stage 12R2 PASS` → `Stage 13R2 PASS` → `Astra-2 CLEARED` → **NEXT: `Stage 14`**
 
-This file is the authoritative project-specific route from the Astra-1 reopening to a new submission. Stage 14 remains blocked until Astra-2 has cleared the Stage-13R2 manuscript.
+This file is the authoritative project-specific route from the Astra-1 reopening to a new submission. The scientific reopening cycle and Astra-2 gate are now closed. Stage 14 is the next mandatory stage.
 
 ---
 
@@ -16,9 +16,10 @@ This file is the authoritative project-specific route from the Astra-1 reopening
 2. Keep the **unrestricted original price game** and the separate **cost-floor game** `p_i >= marginal cost` distinct. The cost floor is not WLOG, Nash-implied, weak-dominance elimination, or a condition stated by Gandal and Shy (2001).
 3. Current equilibrium characterization is limited to **symmetric, foreclosed, pure-strategy price equilibria in one union-member market**.
 4. Always distinguish existence, Nash status, characterization within a stated class, and uniqueness within a stated class.
-5. The `1/2` welfare gap holds under a common symmetric continuation price. It is not selection-free across arbitrary unrestricted market-by-market continuations.
+5. The `1/2` welfare gap holds under a common symmetric continuation price. It is not selection-free across arbitrary unrestricted market-by-market continuations, and a common price is not claimed to be necessary for preserving the welfare ranking.
 6. Lean certifies the proof-critical algebraic and quantified-inequality core, not the complete Salop game or all Nash equilibria from primitives.
 7. C4R clarification controls all downstream prose: the no-below-cost restriction collapses member-price multiplicity **within symmetric, foreclosed, pure-strategy equilibria**; it is not a global equilibrium-selection result.
+8. Astra-2 clarification: the written cost-floor proof must justify why deleted below-cost deviations cannot create additional restricted-game equilibria in the stated class. The repaired manuscript now does so.
 
 Scientific authorities:
 
@@ -29,6 +30,7 @@ Scientific authorities:
 - `docs/C4R_HOSTILE_SCIENTIFIC_AUDIT.md`
 - `docs/STAGE_12R2_JOURNAL_SIGNIFICANCE_FIT_RECHECK.md`
 - `docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`
+- `docs/ASTRA_2_HOSTILE_REFEREE_GATE.md`
 
 ---
 
@@ -49,9 +51,9 @@ Stage 12R2  Journal Significance / Fit Recheck            [PASS]
    ↓
 Stage 13R2  Revised Full-Paper Integration                [PASS]
    ↓
-Astra-2     Second Independent Hostile Referee Gate       [NEXT]
+Astra-2     Second Independent Hostile Referee Gate       [CLEARED]
    ↓
-Stage 14   Submission QA
+Stage 14   Submission QA                                  [NEXT]
    ↓
 Stage 15   Submission Freeze / Portal Preflight / Submit
 ```
@@ -60,7 +62,7 @@ No stage may be skipped merely because an earlier manuscript version once passed
 
 ---
 
-## 3. Scientific result controlling the post-Stage-13R2 manuscript
+## 3. Scientific result controlling Stage 14
 
 ### Original published profile
 
@@ -90,6 +92,8 @@ Within the same symmetric foreclosed pure-strategy class:
 
 For the manuscript's strict domain `5/2<c<5`, the member price is `c-1` below `3` and `2` from `3` onward. This is a restricted-class characterization, not global uniqueness.
 
+The repaired proof now closes the strategy-restriction bridge: cost-floor-feasible candidate profits are nonnegative, while deleted below-cost deviations have `(p_i-mc_i)q_i <= 0`. Hence deleted deviations cannot strictly improve upon the candidate and the restricted equilibrium set in the stated class is legitimately obtained from the unrestricted U1/U2 set plus the floor.
+
 ### Welfare
 
 For common symmetric continuation price `s`:
@@ -100,7 +104,7 @@ For market-specific symmetric continuation prices:
 
 `TS_A^SU=3V+1/4+(3/2)(s_B-s_A)`.
 
-Hence welfare robustness is continuation-selection conditional in the unrestricted game.
+Hence welfare robustness is continuation-selection conditional in the unrestricted game. The common-price condition recovers the exact original `1/2` gap; it is not claimed to be the necessary condition for preserving the sign of the welfare comparison.
 
 ---
 
@@ -120,76 +124,95 @@ Integrated title:
 
 **`Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)`**
 
-The principal remaining editorial risk is publication significance/narrowness, not an unresolved mathematical defect. No new model extension is authorized solely to improve journal fit.
+Astra-2 assessed publication significance as **MODERATE**. The principal remaining editorial risk is publication significance/narrowness, not a known scientific defect.
 
 The zero-fee hard gate remains in force and must be refreshed from current official sources and the authenticated portal at Stage 14.
 
 ---
 
-## 5. Stage 13R2 — Revised Full-Paper Integration — PASS
+## 5. Stage 13R2 — PASS after bounded Astra-2 repair
 
-Authority: `docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`  
-Canonical template: `research-paper-workflow/templates/STAGE_13_FULL_PAPER_INTEGRATION.md`  
-Integration PR: `#13`
+Initial integration PR: `#13`  
+Initial Stage-13R2 merge: `ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`  
+Bounded repair branch: `stage13r2/astra2-minor-repair`  
+Bounded repair PR: `#14`
 
-Stage 13R2 completed the required order:
+Initial Stage 13R2 completed the full-paper integration and passed manuscript CI, package build, clean-log, and visual QA. Astra-2 then returned the manuscript to Stage 13R2 for three bounded repairs only.
 
-1. Section 2 — published quadratic specification, correct long-arc geometry, exact failure of the published complete profile;
-2. Section 3 — unrestricted U1/U2 multiplicity first, then separate cost-floor F1/F2 characterization;
-3. Section 4 — welfare under common versus market-specific continuation selection;
-4. title, Abstract, Introduction, Conclusion, keywords/JEL, highlights, cover letter, title page and other submission materials only after Sections 2–4 were aligned.
+Implemented repair set:
 
-Stage 13R2 also:
+1. **Cost-floor proof bridge:** added the argument showing that deleted below-cost deviations cannot create additional restricted-game equilibria within the stated class.
+2. **Highlights:** qualified the cost-floor benchmark by the symmetric, foreclosed, pure-strategy class.
+3. **Cover letter:** removed the overly strong `exact continuation conditions` wording and distinguished the exact common-price `1/2` gap from the market-specific transfer term.
 
-- retains two headline propositions;
-- keeps multiplicity in the main text;
-- removes `limit pricing` from the headline title and retains it only as a bounded supporting interpretation;
-- expands the reproducibility package to include the pinned Lean project alongside symbolic/numerical checks;
-- adds manuscript-integration CI to rerun verification and build manuscript/package artifacts on the PR;
-- preserves unresolved journal requirements for Stage 14 rather than guessing them.
+Repair verification:
 
-Final integration verification:
-
-- GitHub Actions run `34373368719`: **success**;
-- symbolic verification: **PASS**;
-- numerical verification/regressions: **PASS**;
-- manuscript/flat-source/title-page/package build: **PASS**;
+- repaired manuscript CI head: `72ed861e3460cbcaf5eaf0a763f789c70ed07332`;
+- manuscript-integration run `34379361638`: **success**;
+- symbolic/numerical verification: **PASS**;
+- manuscript/package build: **PASS**;
 - final LaTeX clean-log gate: **PASS**;
-- nine-page modular and flat builds: **pixel-identical 9/9 pages at 150 dpi**;
-- manuscript and title-page visual QA: **PASS**;
-- known Stage-13 integration blockers: **none**.
+- generated-artifact checks/upload: **PASS**.
 
-Stage 13R2 exit verdict:
-
-`REVISED INTEGRATED MANUSCRIPT READY FOR ASTRA-2`
+No theorem statement, numerical verifier, Lean theorem, title, abstract, or journal target changed.
 
 ---
 
-## 6. Astra-2 — NEXT and mandatory before Stage 14
+## 6. Astra-2 — CLEARED
 
-Astra-2 is the final independent scientific gate before submission QA. It must attack the complete revised manuscript for:
+Initial Astra-2 audited baseline:
 
-- original-paper correction validity;
-- unrestricted U1/U2 characterization;
-- cost-floor F1/F2 scope;
-- existence/characterization/uniqueness drift;
-- asymmetric/mixed-equilibrium scope leakage;
-- welfare-selection overclaim;
-- limit-pricing terminology;
-- Lean-certification scope;
-- publication significance for *International Economics*.
+`main@ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6`
 
-Proceed only on `ACCEPTABLE FOR SUBMISSION` or after bounded repair and re-clearance of `MINOR EXPOSITION REPAIR`.
+Initial verdict:
 
-A substantive mathematical problem returns to the earliest affected scientific stage. Stage 14 must not begin merely because Stage 13R2 has passed.
+`B. MINOR EXPOSITION REPAIR`
+
+Initial headline findings:
+
+- U1/U2 characterization: **PASS**;
+- welfare proposition: **PASS**;
+- published-profile correction: **PASS**;
+- cost-floor result: **CONDITIONAL PASS** pending the proof bridge;
+- no new equilibrium counterexample found;
+- publication significance: **MODERATE**;
+- workflow return: **Stage 13R2 only**.
+
+After the bounded repair and successful CI, Astra-2 performed a limited recheck on head:
+
+`abe2706ca824790c00a6c21cc01dd1b8ef8decbc`.
+
+Limited-recheck result:
+
+1. Repair 1 — **PASS**;
+2. Repair 2 — **PASS**;
+3. Repair 3 — **PASS**;
+4. new defect introduced by repairs — **NO**;
+5. final verdict — **A. ASTRA-2 CLEARED — GO TO STAGE 14**.
+
+Astra-2 is closed. No additional hostile-referee cycle is required before Stage 14 unless Stage 14 itself triggers a substantive scientific change.
 
 ---
 
-## 7. Stage 14 — Submission QA
+## 7. Stage 14 — Submission QA — NEXT
 
-Begin only after Astra-2 clearance. Refresh current official journal and authenticated-portal requirements. Any material `UNVERIFIED` or unresolved `CONFLICT` blocks PASS.
+Stage 14 must now refresh the current *International Economics* requirements from official sources and, where required, the authenticated submission portal. Any material `UNVERIFIED` or unresolved `CONFLICT` blocks PASS.
 
-Mandatory checks include article type, anonymity/title-page rules, editable sources/LaTeX packaging, abstract/keywords/JEL/highlights, funding/competing interests/CRediT/AI declaration, data/code handling, reviewer fields, fees and charges, and portal-generated PDF behavior.
+Mandatory checks include:
+
+- exact article-type label and short-paper route;
+- review/anonymity model and author-information placement;
+- title-page requirement;
+- initial PDF versus editable-source upload requirements and file designations;
+- LaTeX archive/folder rules;
+- abstract, keyword, JEL and highlight requirements;
+- funding, competing interests, CRediT, data/code and AI declaration wording/placement;
+- reviewer-suggestion and portal-attestation fields;
+- current submission fee and mandatory standard-route publication/page/APC status;
+- portal-generated PDF behavior;
+- consistency of exact manuscript/submission-package artifacts after any format-only repair.
+
+Stage 14 is a submission-quality stage, not a theory-development stage. If a journal-format change would alter a theorem or scientific claim, return to the earliest affected scientific stage rather than silently modifying the frozen result.
 
 ---
 
@@ -220,8 +243,8 @@ Do not declare `SUBMITTED` before journal confirmation is received.
 | Freeze wording exceeds valid theory only | C3R/C4R clarification |
 | Journal significance/fit issue only | Stage 12R2 |
 | Exposition/organization issue only | Stage 13R2 |
-| Astra-2 finds mathematical defect | earliest affected C-stage |
 | Submission-format/metadata issue only | Stage 14 |
+| Stage-14 change introduces a scientific issue | earliest affected scientific stage |
 | Portal-only mismatch | Stage 14/15 preflight |
 
 ---
@@ -238,7 +261,9 @@ Do not declare `SUBMITTED` before journal confirmation is received.
 - [x] C3R revised theory freeze.
 - [x] C4R hostile scientific self-audit.
 - [x] Stage 12R2 journal significance/fit recheck.
-- [x] **Stage 13R2 revised full-paper integration — PASS.**
-- [ ] **Astra-2 independent hostile referee gate — NEXT.**
-- [ ] Stage 14 submission QA.
+- [x] Initial Stage 13R2 revised full-paper integration.
+- [x] Astra-2 first pass — `B. MINOR EXPOSITION REPAIR`.
+- [x] Stage 13R2 bounded Astra-2 repair.
+- [x] Astra-2 limited recheck — `CLEARED`.
+- [ ] **Stage 14 submission QA — NEXT.**
 - [ ] Stage 15 submission freeze / portal preflight / submit.
