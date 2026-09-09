@@ -1,4 +1,4 @@
-name: Manuscript integration
+name: Stage 14 submission QA
 
 on:
   pull_request:
@@ -6,6 +6,8 @@ on:
       - "paper/**"
       - "submission/**"
       - "code/**"
+      - "docs/JOURNAL_REQUIREMENTS_LEDGER.md"
+      - "docs/STAGE_14_SUBMISSION_QA.md"
       - "requirements.txt"
       - "Makefile"
       - ".github/workflows/manuscript-integration.yml"
@@ -35,6 +37,9 @@ jobs:
       - name: Build manuscript and submission packages
         run: make all
 
+      - name: Run Stage 14 submission-package audit
+        run: python code/stage14_submission_audit.py
+
       - name: Enforce clean final LaTeX logs
         run: |
           if grep -E 'Overfull \\hbox|There were undefined references|There were undefined citations' paper/main.log; then
@@ -59,10 +64,10 @@ jobs:
           unzip -l output/international-economics-submission-source.zip
           unzip -l output/reproducibility-supplement.zip
 
-      - name: Upload Stage 13R2 build artifacts
+      - name: Upload Stage 14 build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: stage13r2-build
+          name: stage14-build
           path: |
             output/international-economics-manuscript.pdf
             output/international-economics-flat/main.pdf
