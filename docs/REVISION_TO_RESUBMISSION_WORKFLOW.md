@@ -4,9 +4,9 @@
 **Status date:** 2026-09-10  
 **Canonical generic workflow:** `ryotamatsuki/research-paper-workflow` v2.1  
 **Pre-reopening manuscript baseline:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`  
-**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → `Stage 12R2 PASS` → **`Stage 13R2 ACTIVE`**
+**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → `Stage 12R2 PASS` → `Stage 13R2 PASS` → **NEXT: `Astra-2`**
 
-This file is the authoritative project-specific route from the Astra-1 reopening to a new submission. Stage 14 remains blocked until Stage 13R2 and Astra-2 have passed.
+This file is the authoritative project-specific route from the Astra-1 reopening to a new submission. Stage 14 remains blocked until Astra-2 has cleared the Stage-13R2 manuscript.
 
 ---
 
@@ -47,9 +47,9 @@ C4R     Hostile Scientific Self-Audit                     [PASS]
    ↓
 Stage 12R2  Journal Significance / Fit Recheck            [PASS]
    ↓
-Stage 13R2  Revised Full-Paper Integration                [ACTIVE]
+Stage 13R2  Revised Full-Paper Integration                [PASS]
    ↓
-Astra-2     Second Independent Hostile Referee Gate
+Astra-2     Second Independent Hostile Referee Gate       [NEXT]
    ↓
 Stage 14   Submission QA
    ↓
@@ -60,7 +60,7 @@ No stage may be skipped merely because an earlier manuscript version once passed
 
 ---
 
-## 3. Scientific result controlling Stage 13R2
+## 3. Scientific result controlling the post-Stage-13R2 manuscript
 
 ### Original published profile
 
@@ -104,7 +104,7 @@ Hence welfare robustness is continuation-selection conditional in the unrestrict
 
 ---
 
-## 4. Stage 12R2 journal decision
+## 4. Journal decision carried forward
 
 **Primary target remains `International Economics`, direct short-paper / short-communication route.**
 
@@ -116,7 +116,7 @@ Current positioning hierarchy:
 4. continuation-selection dependence of the welfare comparison;
 5. zero-sales outsider strategic relevance / static limit-pricing mechanism as supporting interpretation, not the headline.
 
-Integrated title direction:
+Integrated title:
 
 **`Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)`**
 
@@ -126,19 +126,20 @@ The zero-fee hard gate remains in force and must be refreshed from current offic
 
 ---
 
-## 5. Stage 13R2 — Revised Full-Paper Integration — ACTIVE
+## 5. Stage 13R2 — Revised Full-Paper Integration — PASS
 
 Authority: `docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`  
-Canonical template: `research-paper-workflow/templates/STAGE_13_FULL_PAPER_INTEGRATION.md`
+Canonical template: `research-paper-workflow/templates/STAGE_13_FULL_PAPER_INTEGRATION.md`  
+Integration PR: `#13`
 
-Required integration order:
+Stage 13R2 completed the required order:
 
 1. Section 2 — published quadratic specification, correct long-arc geometry, exact failure of the published complete profile;
 2. Section 3 — unrestricted U1/U2 multiplicity first, then separate cost-floor F1/F2 characterization;
 3. Section 4 — welfare under common versus market-specific continuation selection;
-4. then title, Abstract, Introduction, Conclusion, keywords/JEL, highlights, cover letter, title page and other submission materials.
+4. title, Abstract, Introduction, Conclusion, keywords/JEL, highlights, cover letter, title page and other submission materials only after Sections 2–4 were aligned.
 
-Current Stage-13R2 integration also:
+Stage 13R2 also:
 
 - retains two headline propositions;
 - keeps multiplicity in the main text;
@@ -147,15 +148,24 @@ Current Stage-13R2 integration also:
 - adds manuscript-integration CI to rerun verification and build manuscript/package artifacts on the PR;
 - preserves unresolved journal requirements for Stage 14 rather than guessing them.
 
-Stage 13R2 may exit only with:
+Final integration verification:
+
+- GitHub Actions run `34373368719`: **success**;
+- symbolic verification: **PASS**;
+- numerical verification/regressions: **PASS**;
+- manuscript/flat-source/title-page/package build: **PASS**;
+- final LaTeX clean-log gate: **PASS**;
+- nine-page modular and flat builds: **pixel-identical 9/9 pages at 150 dpi**;
+- manuscript and title-page visual QA: **PASS**;
+- known Stage-13 integration blockers: **none**.
+
+Stage 13R2 exit verdict:
 
 `REVISED INTEGRATED MANUSCRIPT READY FOR ASTRA-2`
 
-or return to the earliest affected scientific stage if integration reveals a true inconsistency.
-
 ---
 
-## 6. Astra-2 — mandatory after Stage 13R2
+## 6. Astra-2 — NEXT and mandatory before Stage 14
 
 Astra-2 is the final independent scientific gate before submission QA. It must attack the complete revised manuscript for:
 
@@ -167,11 +177,11 @@ Astra-2 is the final independent scientific gate before submission QA. It must a
 - welfare-selection overclaim;
 - limit-pricing terminology;
 - Lean-certification scope;
-- publication significance for International Economics.
+- publication significance for *International Economics*.
 
-Proceed only on `ACCEPTABLE FOR SUBMISSION` or after bounded repair of `MINOR EXPOSITION REPAIR`.
+Proceed only on `ACCEPTABLE FOR SUBMISSION` or after bounded repair and re-clearance of `MINOR EXPOSITION REPAIR`.
 
-A substantive mathematical problem returns to the earliest affected scientific stage.
+A substantive mathematical problem returns to the earliest affected scientific stage. Stage 14 must not begin merely because Stage 13R2 has passed.
 
 ---
 
@@ -228,7 +238,7 @@ Do not declare `SUBMITTED` before journal confirmation is received.
 - [x] C3R revised theory freeze.
 - [x] C4R hostile scientific self-audit.
 - [x] Stage 12R2 journal significance/fit recheck.
-- [ ] **Stage 13R2 revised full-paper integration — ACTIVE.**
-- [ ] Astra-2 independent hostile referee gate.
+- [x] **Stage 13R2 revised full-paper integration — PASS.**
+- [ ] **Astra-2 independent hostile referee gate — NEXT.**
 - [ ] Stage 14 submission QA.
 - [ ] Stage 15 submission freeze / portal preflight / submit.
