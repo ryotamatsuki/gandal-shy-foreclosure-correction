@@ -13,7 +13,9 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 > `Stage 13R2 Revised Full-Paper Integration`: **PASS**  
 > `Astra-2`: **CLEARED**  
 > `Stage 14 Submission QA`: **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED**  
-> `Stage 15 Submission Freeze / Authenticated Portal Preflight`: **IN PROGRESS**.
+> `Stage 15`: **SUBMITTED — AUTHENTICATED PORTAL CONFIRMATION VERIFIED; SUBMISSION ID PENDING**.
+
+The Elsevier portal confirmed submission to **International Economics** as a **Short Paper** at **23:54, September 10, 2026**. The confirmation page lists Ryota Matsuki as the corresponding author and Independent Researcher as the affiliation. The journal-generated submission/manuscript ID is not shown on that confirmation page and remains pending the confirmation email/tracking record.
 
 Authoritative records:
 
@@ -55,9 +57,7 @@ Thus the original game has genuine member-price multiplicity.
 
 ### Explicit cost-floor game
 
-Define a separate restricted game with
-
-`p_i >= marginal cost in that market`.
+Define a separate restricted game with `p_i >= marginal cost in that market`.
 
 Within the same symmetric, foreclosed, pure-strategy class:
 
@@ -86,45 +86,23 @@ C2R varies all three posted prices and performs global unilateral-deviation fals
 
 The pinned Lean/mathlib project in `GandalShy/Certification.lean` certifies the proof-critical algebraic and quantified-inequality core, including the long-arc correction, exact `c=4` counterexample, global-deviation inequalities, encoded multiplicity, cost-floor logical reduction, and welfare identities. Lean does not claim to reconstruct the entire Salop demand game or all Nash equilibria from primitives.
 
-The bespoke recovery route has now been explicitly mapped back to the canonical workflow through `docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md`, including the candidate-vs-characterization, cost-floor-bridge, and Astra-bookkeeping certification regressions.
+The bespoke recovery route is mapped back to the canonical workflow through `docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md`. Stage 6R re-killed novelty using the final Proposition 1/2 set and found no located prior source that already states the combined correction package.
 
-Stage 6R also re-killed novelty using the final Proposition 1/2 set. No located prior source was found that already states the combined published-profile correction, U1/U2 multiplicity, explicit cost-floor benchmark, and market-specific welfare-transfer result. This is a bounded search conclusion, not an absolute nonexistence claim.
+The canonical final technical Stage-14 CI was `34425892795` on head `9634ee92beb650db03bb9b89db6195b2ddf44278`, which passed Lean rebuild, admitted-proof rejection, symbolic/numerical verification, manuscript/package build, Python package audit, clean LaTeX-log gate, and artifact checks. The Stage-15 ancillary compliance changes subsequently passed the submission-QA workflow again (`34487836179` — SUCCESS).
 
-Stage 14 strengthened the submission-QA workflow to rebuild the frozen Lean target and reject `sorry` / `admit` before the ordinary symbolic/numerical and manuscript/package checks. The **canonical final technical Stage-14 CI run is `34425892795` on head `9634ee92beb650db03bb9b89db6195b2ddf44278`**, and it passed in full. That head and merged Stage-14 main share the identical Git tree `c723990f31d1d15bb534cdc9794a23ba709dbab1`.
+## Journal submission
 
-Stage-14 package diagnostics:
+**Journal:** International Economics  
+**Article type:** Short Paper  
+**Title:** *Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)*  
+**Submitted:** 23:54, September 10, 2026  
+**Author:** Ryota Matsuki  
+**Corresponding author:** Ryota Matsuki  
+**Affiliation:** Independent Researcher  
+**Publication route:** subscription  
+**Submission ID:** pending confirmation email/tracking record
 
-- abstract: 201 words;
-- keywords: 6;
-- highlights: 4, with 73 / 75 / 82 / 72 characters;
-- manuscript: 9 pages;
-- flat LaTeX source archive: 8 files, no subdirectories;
-- ordinary manuscript PDF vs flat-source rebuild: 9/9 pages pixel-identical at 180 dpi;
-- manuscript and title-page visual QA: PASS.
-
-## Journal positioning
-
-**Primary target: International Economics, direct short-paper / short-communication route.**
-
-Integrated title:
-
-> **Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)**
-
-Astra-2 assessed publication significance as **MODERATE** and found no remaining scientific blocker after the bounded repair and limited recheck. The principal editorial risk remains publication significance/narrowness.
-
-Author-cost hard gate remains:
-
-- submission fee = 0;
-- mandatory standard subscription-route publication/page/APC charge = 0.
-
-These and the exact article type, anonymity/title-page setup, upload designations, portal metadata/attestations, and portal-generated PDF remain authenticated-portal items. Stage 14 therefore exits only with `CONDITIONAL PASS`, and Stage 15 must close them before final submit.
-
-Fallback ladder remains:
-
-1. International Economics;
-2. Journal of Industry, Competition and Trade;
-3. Bulletin of Economic Research after current fee/format recheck;
-4. Economics Bulletin after current fee/format recheck.
+The authenticated Elsevier terminal page states `Your manuscript has now been submitted` and confirms that the manuscript and other files were sent to *International Economics*.
 
 ## Recovery route
 
@@ -147,10 +125,12 @@ Stage 13R2  [PASS]
    ↓
 Astra-2     [CLEARED]
    ↓
-Stage 14    [CONDITIONAL PASS — PORTAL PREFLIGHT REQUIRED]
+Stage 14    [CONDITIONAL PASS]
    ↓
-Stage 15    [IN PROGRESS — SUBMISSION FREEZE / AUTHENTICATED PORTAL PREFLIGHT]
+Stage 15    [SUBMITTED — PORTAL CONFIRMED; SUBMISSION ID PENDING]
 ```
+
+Final route closure occurs when the Elsevier manuscript/submission ID is recorded from the confirmation email or tracking record.
 
 ## Build and verification
 
