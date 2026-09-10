@@ -12,7 +12,6 @@ on:
       - "lakefile.toml"
       - "lake-manifest.json"
       - "docs/JOURNAL_REQUIREMENTS_LEDGER.md"
-      - "docs/STAGE_14_SUBMISSION_QA.md"
       - "requirements.txt"
       - "Makefile"
       - ".github/workflows/manuscript-integration.yml"
