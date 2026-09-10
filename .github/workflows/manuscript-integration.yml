@@ -1,4 +1,4 @@
-name: Manuscript integration
+name: Stage 14 submission QA
 
 on:
   pull_request:
@@ -6,6 +6,12 @@ on:
       - "paper/**"
       - "submission/**"
       - "code/**"
+      - "GandalShy/**"
+      - "GandalShy.lean"
+      - "lean-toolchain"
+      - "lakefile.toml"
+      - "lake-manifest.json"
+      - "docs/JOURNAL_REQUIREMENTS_LEDGER.md"
       - "requirements.txt"
       - "Makefile"
       - ".github/workflows/manuscript-integration.yml"
@@ -16,6 +22,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Rebuild frozen Lean proof-critical certificate
+        uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          auto-config: false
+          build: true
+          build-args: GandalShy
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          leanchecker: false
+
+      - name: Reject admitted Lean proofs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -R -nE '(^|[^A-Za-z])(sorry|admit)([^A-Za-z]|$)' GandalShy.lean GandalShy/; then
+            echo 'Admitted proof token found.' >&2
+            exit 1
+          fi
 
       - uses: actions/setup-python@v5
         with:
@@ -34,6 +60,9 @@ jobs:
 
       - name: Build manuscript and submission packages
         run: make all
+
+      - name: Run Stage 14 submission-package audit
+        run: python code/stage14_submission_audit.py
 
       - name: Enforce clean final LaTeX logs
         run: |
@@ -59,10 +88,10 @@ jobs:
           unzip -l output/international-economics-submission-source.zip
           unzip -l output/reproducibility-supplement.zip
 
-      - name: Upload Stage 13R2 build artifacts
+      - name: Upload Stage 14 build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: stage13r2-build
+          name: stage14-build
           path: |
             output/international-economics-manuscript.pdf
             output/international-economics-flat/main.pdf
