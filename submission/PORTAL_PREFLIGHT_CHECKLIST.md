@@ -6,26 +6,33 @@ Use this checklist in the actual Elsevier Editorial Manager submission record af
 
 ## 1. Article identity
 
-- [ ] Confirm journal is **International Economics**, ISSN 2110-7017.
-- [ ] Inspect the complete article-type drop-down.
-- [ ] Select the live short-format label that corresponds to the journal's 7,000-word Short paper route; do not infer whether the portal calls it `Short paper` or `Short communication`.
+- [x] Confirm journal is **International Economics**, ISSN 2110-7017.
+- [x] Inspect the complete article-type drop-down.
+- [x] Select the live short-format label that corresponds to the journal's 7,000-word Short paper route: **`Short Paper`**.
 - [ ] Confirm title exactly: `Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)`.
+
+**Live portal evidence, 2026-09-10:** the article-type screen offered `Short Paper`, `Data, Tools and Replication`, `Research Paper`, and VSI routes. `Short Paper` is therefore the controlling portal label for this submission.
 
 ## 2. Review/anonymity and title page
 
 - [ ] Read the live review/anonymity instruction shown for this submission.
 - [ ] Confirm whether the main manuscript must contain author name/affiliation/email.
-- [ ] Confirm whether a separate title-page item is required or merely accepted.
+- [x] Confirm a separate **Title page with author details** is required by the live upload screen.
 - [ ] Upload/use only the manuscript/title-page configuration that the live instruction requires.
 - [ ] If anonymization is required, also inspect PDF metadata and source files for identifying information before upload.
 
+**Live upload-screen evidence, 2026-09-10:** the title page should include article title, author name(s), affiliation(s), acknowledgements, and corresponding-author email address. The current prepared title page contains title, author, affiliation, corresponding email, funding and competing-interest statements, but does not yet contain an acknowledgements field. Treat this as a bounded Stage-14 compliance item before title-page upload.
+
 ## 3. Files and designations
 
-- [ ] Inspect every required file type marked by the portal.
-- [ ] Confirm whether initial submission accepts the manuscript PDF, requires LaTeX source, or requires both.
-- [ ] If LaTeX source is uploaded, use the Stage-14 flat source archive and map it to the actual `Manuscript`/source designation offered.
+- [x] Inspect every required file type marked by the live upload screen.
+- [x] Confirm initial LaTeX submission accepts the **manuscript PDF**; the live instruction explicitly says that if the manuscript was written using LaTeX, upload a PDF and LaTeX source files are not needed until revision.
+- [x] Required upload categories shown by the live screen: **Manuscript; Cover letter; Declaration of competing interests; Title page with author details**.
+- [x] Live screen permits the author to satisfy the no-competing-interests requirement by ticking the confirmation box stating that no authors have competing financial or non-financial interests; use that route unless the portal nevertheless requests a declaration file after confirmation.
+- [ ] Confirm exact upload file type/designation selected for the manuscript PDF.
+- [ ] Convert/upload the prepared cover-letter content in a portal-accepted file format.
+- [ ] Repair the title page to include the live-required acknowledgements field, rerun affected Stage-14 title-page QA, then upload under the exact title-page designation.
 - [ ] Confirm `Highlights` designation and accepted file format; convert the current content without changing wording if the portal requires Word rather than text.
-- [ ] Confirm whether `title_page.pdf` is required and choose the exact title-page item type.
 - [ ] Map `reproducibility-supplement.zip` to the appropriate supplementary/code/research-data item only if the live system accepts or requires it.
 - [ ] Confirm no internal audit documents, workflow records or private files are included in the submission upload.
 
@@ -52,6 +59,8 @@ Use this checklist in the actual Elsevier Editorial Manager submission record af
 - [ ] Originality/concurrent-submission attestation matches the cover letter.
 - [ ] Prior-publication/preprint questions answered from actual history, not by default.
 - [ ] Suggested/opposed reviewer fields completed only as required by the portal.
+
+**Live upload-screen evidence, 2026-09-10:** for manuscripts prepared using generative AI or AI-assisted technology, the portal instructs that the disclosure statement be included directly before the references. The frozen manuscript already contains a dedicated manuscript-preparation AI disclosure before the bibliography; verify rendered placement in the uploaded PDF.
 
 ## 6. Cost hard gates
 
