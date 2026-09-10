@@ -1,0 +1,11 @@
+# Stage 15 submission-freeze candidate manifest
+# Source content: main@3f34a1a77a14e65a91aa2ecda7e169c40052374c
+# Source tree: c723990f31d1d15bb534cdc9794a23ba709dbab1
+# Final Stage-14 CI: run 34425892795 on head 9634ee92beb650db03bb9b89db6195b2ddf44278
+# GitHub artifact: stage14-build / id 10132717858
+0de9fc0daf05bd98a1bb2394082dded547a7cc54b07d44fca4419b8e8c2f9313  stage15-freeze-source-artifact.zip
+9b20d2a661bdec42a7bb27a7054ad71ef87232079c3a287f185e1ec1cf31c935  output/international-economics-manuscript.pdf
+198fe86fbf3c099a941063d1ef489c320f960a31bef15a1c3628b72f1b56cc49  output/international-economics-submission-source.zip
+676a2d67a753c05d0ecf3570cbeef574c6acfa0c8caaabbb058af70569ca6d9a  output/international-economics-flat/main.pdf
+58de8276d5f6af703d3b807c1141932b3c3fe39ceb7c7ce8d9d345bda20f8718  output/reproducibility-supplement.zip
+75e9ddb37cde2009b8625957ebe102bacd1bf469d77c25514acc08cf0afcb019  submission/title_page.pdf
