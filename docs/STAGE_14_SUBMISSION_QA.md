@@ -8,157 +8,215 @@
 **Theory authority:** `docs/C3R_REVISED_CANONICAL_THEORY_FREEZE.md`  
 **Hostile-review authority:** `docs/ASTRA_2_HOSTILE_REFEREE_GATE.md`  
 **Journal ledger:** `docs/JOURNAL_REQUIREMENTS_LEDGER.md`  
-**Current status:** **ACTIVE — CI / local visual QA pending**
+**Canonical verdict:** **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED**
 
-## 1. Executive QA status
+## 1. Executive QA result
 
-Astra-2 has cleared the scientific manuscript. Stage 14 therefore treats the theory and substantive interpretation as frozen and performs only submission-quality, reproducibility, disclosure, source-package, and journal-rule work.
-
-Fresh official-source research on 2026-09-10 confirms the journal's short-paper architecture and several publisher-wide operational rules. It also confirms that a number of item types and metadata choices remain live-portal dependent. Those unknowns are recorded explicitly rather than inferred.
-
-Stage 14 has made only compliance-level changes:
-
-1. added a synchronized sole-author CRediT statement to the manuscript;
-2. separated generative-AI research/verification use from manuscript-preparation use and aligned the disclosure language with current Elsevier policy;
-3. created an auditable journal-requirements ledger;
-4. added an authenticated portal preflight checklist;
-5. added a Python Stage-14 package audit and integrated it into CI.
+Astra-2 cleared the scientific manuscript before Stage 14. Stage 14 therefore treated the theory and substantive interpretation as frozen and performed only submission-quality, reproducibility, disclosure, source-package, journal-rule, formal-verification-rebuild, and visual QA.
 
 No theorem statement, equation, equilibrium characterization, welfare claim, title, abstract, citation claim, numerical verifier, or Lean theorem was changed.
 
+The non-portal submission package now passes all locally executable Stage-14 checks. The only remaining blockers are authenticated Editorial Manager / journal-Guide items that cannot be established reliably from the public or unauthenticated surfaces available here.
+
 ## 2. Current journal-rule refresh
 
-Current official *International Economics* information states that the journal publishes applied international economics including trade and trade policy. The journal page calls one additional submission form `Short communication` while separately describing a `Short paper` section. The Short paper section allows at most 7,000 words, subtracts 200 words per table/figure, permits at most five exhibits, and requires the contribution to be assessable from the main text without reliance on appendices.
+Current official *International Economics* information uses both `Short communication` and `Short paper` terminology. The public Short paper description allows at most 7,000 words, subtracts 200 words per table/figure, permits at most five exhibits, and requires the contribution to be assessable from the main text without reliance on appendices.
 
-The current paper has no figures, no tables, and no appendix. Its theory/results are in the main text. The exact article-type label in Editorial Manager must nevertheless be taken from the live portal because the public journal page itself uses both labels.
+The current paper has no figures, no tables, and no appendix. Its theory/results are in the main text. The exact article-type label must nevertheless be taken from the authenticated live submission system because the public journal surface itself uses both labels.
 
-The journal-specific ScienceDirect Guide target was opened from the current journal page but returned HTTP 403 in the Stage-14 retrieval environment. Requirements that cannot be established from another current official surface are therefore not guessed. They are carried to authenticated preflight.
+The journal-specific ScienceDirect Guide target returned HTTP 403 in the Stage-14 retrieval environment. Requirements not established from another current official surface remain `UNVERIFIED` rather than guessed.
 
-## 3. Manuscript-format and length result
+## 3. Stage-14 CI and reproducibility result
 
-The Stage-13R2 integrated manuscript was nine pages with a `texcount` sum count of 3,044 before the Stage-14 disclosure additions. The only Stage-14 manuscript additions are disclosure/CRediT prose; the scientific body is unchanged. The 7,000-word short-paper ceiling therefore has very large margin.
+Final Stage-14 head used for the strengthened QA workflow:
 
-A fresh Stage-14 Python audit is run in CI to report abstract words, keyword count and highlight character counts. It also checks for stale `TODO`/`TBD`/`PLACEHOLDER`/`FIXME` markers.
+`a227b461fcf7287c27456c2697454334fce550dd`
 
-**Status:** pending the Stage-14 CI record; no known length blocker.
+GitHub Actions:
 
-## 4. Highlights / keywords / JEL
+- workflow: `Stage 14 submission QA`;
+- run: `34425158086`;
+- result: **SUCCESS**.
 
-Current general Elsevier guidance limits keywords to six. The manuscript contains six.
+The final workflow passed all of the following:
 
-Current Elsevier highlights support specifies 3–5 highlights, each at most 85 characters including spaces. The package contains four; the automated Stage-14 check enforces both count and character limit. The exact portal item/file format remains a live-system matter.
+1. checkout;
+2. rebuild of the frozen Lean proof-critical certificate with the pinned Lean/mathlib project;
+3. explicit rejection of `sorry` / `admit` tokens in certified Lean source;
+4. Python dependency setup;
+5. LaTeX toolchain setup;
+6. symbolic and numerical verification;
+7. manuscript and submission-package build;
+8. Python Stage-14 submission-package audit;
+9. clean final LaTeX-log gate;
+10. generated-artifact checks;
+11. artifact upload.
 
-JEL codes are F13, L13, and L15. Their content is stable; exact live classification fields remain portal-dependent.
+This final CI update implements the post-v2.1 generic-workflow Formal Verification Gate at submission QA: applicable formal artifacts are rebuilt rather than merely copied into the package. It does not expand the certified Lean scope. Lean still certifies the proof-critical algebraic and quantified-inequality core, not the complete Salop demand correspondence or all Nash equilibria from primitives.
 
-## 5. Review/anonymity and author identification
+## 4. Automated package diagnostics
 
-The Stage-14 package retains both:
+The successful Stage-14 Python audit reported:
 
-- an identified `paper/main.tex`; and
-- a separate identified `submission/title_page.tex`.
+- abstract: **201 words**;
+- manuscript source-token diagnostic: **3,820**;
+- keywords: **6**;
+- highlights: **4**;
+- highlight character counts: **73 / 75 / 82 / 72**;
+- flat LaTeX archive: **8 files**, no subdirectories.
 
-The current journal-specific Guide could not be directly retrieved in this environment, so Stage 14 does not infer the review/anonymity model or title-page designation from memory. The authenticated portal must determine which combination is uploaded. If anonymization is required, Stage 14 must generate and inspect the corresponding anonymous artifact before final submit.
+The final manuscript build is **9 pages**. The title page is **1 page**.
+
+The source archive contains exactly the flat manuscript source set required by the project build: `main.tex`, `preamble.tex`, `references.bib`, and the five section files. The reproducibility archive contains the symbolic/numerical scripts, requirements file, Lean source, pinned toolchain, Lake configuration, and lock manifest.
+
+## 5. Symbolic / numerical regression result
+
+The Stage-14 run re-executed the frozen symbolic and numerical falsification suite. All checks passed, including:
+
+- corrected long-arc coefficient;
+- cost-floor and boundary identities;
+- welfare identities;
+- exact published-profile counterexample checks;
+- 91 valid-family equilibrium-regression profiles;
+- Astra counterexample retention;
+- necessity regressions;
+- asymmetric-perturbation diagnostics;
+- grid-convergence check.
+
+No numerical result is treated as proof; these remain falsification/regression diagnostics supporting the analytic theorem.
+
+## 6. Lean formal-verification status
+
+The project already passed C2R-L formal certification. Stage 14 now additionally rebuilt that frozen formal source inside the submission-QA workflow and reran the admitted-proof gate.
+
+**Formal-verification state:** `FORMAL VERIFICATION PASS — PROOF-CRITICAL CORE`.
+
+The certified scope remains bounded to the recorded algebraic / quantified-inequality core. In particular, the proof assistant is not claimed to derive the complete economic demand correspondence, the full Nash-equilibrium correspondence, asymmetric/mixed equilibria, or the government stage from primitives.
+
+No Lean theorem or encoded hypothesis changed in Stage 14, so no scientific/formal rollback was triggered.
+
+## 7. PDF parity and visual QA
+
+The Stage-14 CI artifact contained both:
+
+- the ordinary manuscript PDF; and
+- the PDF rebuilt from the flat source archive.
+
+Both PDFs were rendered independently at 180 dpi and compared page by page. Result:
+
+- pages compared: **9 / 9**;
+- changed pages: **0**;
+- pixel difference: **0.0% on every page**.
+
+The 9-page manuscript was also visually inspected page by page after the Stage-14 disclosure additions. No clipping, overlap, malformed glyphs, broken equations, missing text, unreadable references, or other visible layout defect was found.
+
+The 1-page title-page PDF was separately rendered and visually inspected. No visible layout defect was found.
+
+**Visual QA:** PASS.  
+**Flat-source rebuild parity:** PASS.
+
+## 8. Highlights / keywords / JEL
+
+Current Elsevier highlights guidance requires 3–5 highlights and at most 85 characters each. The four submitted highlights pass the automated character-count gate.
+
+The manuscript contains six keywords. JEL codes remain F13, L13, and L15. Their content is frozen; any exact portal classification fields are live-system matters.
+
+## 9. Review/anonymity and author identification
+
+The package retains both an identified manuscript and a separate identified title page. The journal-specific Guide could not be directly retrieved in this environment, so the review/anonymity model and title-page upload designation are not inferred from memory.
+
+If the authenticated portal requires anonymization, that is a bounded Stage-14 compliance repair: generate the required anonymous artifact, rebuild, inspect, and refreeze before final submission.
 
 **Status:** `UNVERIFIED — AUTHENTICATED PORTAL/GUIDE`.
 
-## 6. LaTeX / editable-source package
+## 10. LaTeX / editable-source package
 
-Elsevier's current Editorial Manager LaTeX support states that ZIP and `tar.gz` archives are supported, that all required source/style files must be present, and that LaTeX submissions containing subfolders cannot be processed.
+Elsevier Editorial Manager LaTeX support requires a processable archive with all source/style files and does not support subfolders. The generated archive is flat and passes the Stage-14 package audit. It also rebuilds to a PDF pixel-identical to the ordinary manuscript build.
 
-The repository's `submission/build_flat_package.py` creates a one-level ZIP containing the `.tex`, preamble, `.bib`, and section source files. `code/stage14_submission_audit.py` fails if the generated archive contains a subdirectory or omits `main.tex`, `preamble.tex`, or `references.bib`.
+The exact upload item type and whether both PDF and editable source are required at initial submission remain portal-specific.
 
-The exact live upload item type and whether both PDF and editable source are required at initial submission remain portal-specific.
+## 11. Declarations and AI policy
 
-## 7. Declarations and AI policy
+Stage 14 synchronized:
 
-Funding wording matches Elsevier's recommended no-specific-grant sentence. Competing-interest wording is present and must be reconciled with the portal field.
+- funding statement;
+- competing-interest statement;
+- sole-author CRediT statement;
+- data/code/reproducibility description;
+- generative-AI disclosure.
 
-A sole-author CRediT statement has been placed in the manuscript and synchronized with `submission/credit_statement.md`. Elsevier's current CRediT guidance says roles should be provided during submission and that the published statement appears above acknowledgments.
+The AI disclosure distinguishes research/verification support from manuscript-preparation support, does not treat AI output as proof or primary data, and retains human responsibility for checking mathematics, sources, code, and final prose.
 
-Current Elsevier generative-AI policy requires a separate disclosure for material AI-assisted manuscript preparation and says research-process use should be transparently described rather than allowing AI output to substitute for human critical evaluation. The revised manuscript now distinguishes:
+These are disclosure/compliance changes only.
 
-- research/verification support: algebraic cross-checking and assistance in drafting portions of symbolic/numerical verification code, with no AI output treated as proof or primary data and with independent checking; and
-- manuscript preparation: source searching, organization, drafting, language and readability, followed by author review/editing and source checking.
+## 12. Figure/table and artwork QA
 
-These are disclosure changes only and do not alter the scientific result.
+No figures or tables are used by design. Figure/table regeneration, raster DPI, vector-font, color-accessibility, and separate artwork-file checks are therefore `NOT APPLICABLE`, consistent with the frozen exposition architecture rather than omitted work.
 
-## 8. Data, code, reproducibility and Lean
+## 13. Fees and access — hard gate
 
-No empirical data are used. The reproducibility package contains symbolic/numerical verification and the pinned Lean project. The substantive scope of the Lean certification remains unchanged: proof-critical algebraic and quantified-inequality core, not a complete formal derivation of the Salop demand correspondence or all Nash equilibria.
+The public journal information does not display a submission-fee flag, and Elsevier provides a standard subscription-publication route distinct from optional open access. That is sufficient to continue preflight but not sufficient to clear the project's hard zero-cost rule.
 
-Stage-14 CI reruns the existing symbolic and numerical verification before building the manuscript and packages, then runs the new package audit.
+The actual authenticated submission must confirm both:
 
-**Status:** pending fresh Stage-14 CI execution.
+1. **submission fee = 0**; and
+2. **mandatory standard subscription-route publication/page/APC charge = 0**.
 
-## 9. Figure/table and artwork QA
+Any mandatory charge shown for the actual submission blocks submission.
 
-Stage 13 deliberately selected theorem/prose exposition and no figures/tables. Stage 14 finds no reason to reverse that architecture. The journal Short paper limit allows up to five exhibits, but none is needed for the central result.
+**Status:** `UNVERIFIED — AUTHENTICATED PORTAL HARD GATE`.
 
-Therefore quantitative-figure/table regeneration, raster DPI, vector-font embedding, color accessibility, figure numbering, and separate artwork-file checks are **NOT APPLICABLE**. This is not a missing-output waiver; it follows the documented Stage-10/13 exposition choice.
+## 14. Authenticated portal preflight blockers
 
-## 10. References and cross-references
-
-The bibliography includes the original Gandal–Shy article, its working-paper version, Salop, Costinot, Klimenko, Milgrom–Roberts, and Rey–Tirole. Core bibliographic metadata and available DOIs were spot-checked during the project. Stage-14 CI must again fail on undefined citations/references or overfull boxes.
-
-No reference-style-only change is made because Elsevier initial-submission formatting is flexible where permitted and the live journal Guide must control any more specific requirement.
-
-## 11. Fees and access
-
-Elsevier states that economics journals levying submission fees flag them clearly in the journal's Guide and during the submission process. The current *International Economics* public journal page does not display a submission-fee flag. This is strong public evidence of a zero-fee submission route, but the project's zero-cost rule is a hard gate, so the authenticated submission must still be checked for any payment requirement.
-
-Elsevier distinguishes subscription publication, funded by readers, from optional open access funded by APCs, and states that subscription publishing options are available. The project will use only a no-mandatory-charge standard subscription route. Any mandatory submission, publication, page or APC charge shown for the actual submission blocks submission.
-
-**Status:** `UNVERIFIED — AUTHENTICATED PORTAL HARD GATE` until the actual record is checked.
-
-## 12. Authenticated portal preflight
-
-The exact unresolved operational set is recorded in `submission/PORTAL_PREFLIGHT_CHECKLIST.md` and includes:
+The unresolved live-operational set is recorded in `submission/PORTAL_PREFLIGHT_CHECKLIST.md` and includes:
 
 - exact short-format article-type label;
 - review/anonymity and title-page configuration;
-- initial PDF/LaTeX/source item designations;
-- journal-specific abstract cap if the live system enforces one;
-- highlights file designation;
+- initial PDF/LaTeX/source upload designations;
+- journal-specific abstract cap if enforced by the live system;
+- highlights designation;
 - ORCID/JEL/classification/editor/topic/reviewer fields;
 - funding/conflict/CRediT/data/code/AI/originality attestations;
 - portal-generated PDF compilation and page-by-page review;
 - submission-fee hard gate;
-- mandatory-publication-charge/APC hard gate.
+- mandatory-publication/page/APC-charge hard gate.
 
-These items genuinely require the authenticated journal workflow or the journal-specific Guide surface unavailable to the current retrieval environment.
+These items require the authenticated submission record or a journal-specific Guide surface unavailable to the present environment.
 
-## 13. Package inventory
+## 15. Canonical Stage-14 verdict
 
-Planned submission/preflight artifacts:
+All non-portal Stage-14 checks are complete and passed:
 
-- identified manuscript PDF/source generated from `paper/main.tex`;
-- flat LaTeX source archive `output/international-economics-submission-source.zip`;
-- `submission/title_page.pdf` if required by the live item list;
-- `submission/highlights.txt` content, converted only if the live item type requires another editable format;
-- `submission/cover_letter.md` content for the portal/file as required;
-- `output/reproducibility-supplement.zip` if accepted/required under the live supplement/code designation;
-- CRediT/data/code/AI declarations synchronized with portal metadata.
+- scientific freeze integrity: PASS;
+- symbolic/numerical regression: PASS;
+- Lean rebuild / admitted-proof gate: PASS;
+- manuscript build: PASS;
+- flat-source build: PASS;
+- Python package audit: PASS;
+- clean LaTeX-log gate: PASS;
+- source archive structure: PASS;
+- ordinary-vs-flat PDF pixel parity: PASS;
+- manuscript visual QA: PASS;
+- title-page visual QA: PASS.
 
-Internal audit reports, workflow documents, CI logs, and other repository-internal material are not submission files.
-
-## 14. Current blockers and planned verdict
-
-No known scientific blocker remains after Astra-2. No new scientific issue has been introduced in Stage 14.
-
-The current blockers are technical/procedural only:
-
-1. fresh Stage-14 CI/build/package audit;
-2. final local PDF visual QA after the Stage-14 disclosure additions;
-3. authenticated portal/Guide preflight items listed above.
-
-If (1) and (2) pass with no new issue, the canonical Stage-14 verdict will be:
+The authenticated portal requirements remain material and unverified. Therefore the strongest valid verdict is:
 
 `CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED`.
 
-A full `SUBMISSION QA PASS` is prohibited while material portal items remain unverified.
+This is a successful Stage-14 exit into Stage 15 preflight, not permission to declare the paper submitted.
 
-## 15. Next-stage contract
+## 16. Stage-15 contract
 
-After local Stage-14 QA passes, Stage 15 may create the immutable preflight freeze and open the actual authenticated submission record. Stage 15 must close every portal item, inspect the portal-generated PDF, confirm both zero-cost hard gates, and only then permit the final submit action.
+Stage 15 may now:
 
-If the portal requires a bounded file-format, anonymity, declaration-placement or metadata repair, return to Stage 14, make that compliance-only change, rerun affected checks, and create a new freeze. Any change to theorem/model/result/interpretation requires return to the earliest affected scientific stage.
+1. freeze the exact Stage-14-approved artifact set and canonical repository SHA;
+2. preserve build and formal-verification provenance;
+3. open/reconcile the authenticated Editorial Manager submission record;
+4. resolve every item in `submission/PORTAL_PREFLIGHT_CHECKLIST.md`;
+5. upload only the frozen artifacts or bounded compliance-only descendants;
+6. inspect the portal-generated submission PDF page by page;
+7. confirm both zero-cost hard gates;
+8. permit final submit only after all material portal items are PASS;
+9. record journal confirmation and submission ID before declaring `SUBMITTED`.
+
+A portal-requested file-format, anonymity, declaration-placement, or metadata repair returns to Stage 14 for bounded compliance repair and fresh affected QA. Any scientific change returns to the earliest affected scientific stage.
