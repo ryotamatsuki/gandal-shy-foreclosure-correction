@@ -8,15 +8,18 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 > `C2R-L Lean`: **PASS**  
 > `C3R Revised Canonical Theory Freeze`: **PASS**  
 > `C4R Hostile Scientific Self-Audit`: **PASS**  
+> `Stage 6R Final-Proposition Novelty Re-Kill`: **PASS**  
 > `Stage 12R2 Journal Significance / Fit Recheck`: **PASS**  
 > `Stage 13R2 Revised Full-Paper Integration`: **PASS**  
 > `Astra-2`: **CLEARED**  
 > `Stage 14 Submission QA`: **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED**  
-> **Next:** `Stage 15 — Submission Freeze / Authenticated Portal Preflight`.
+> `Stage 15 Submission Freeze / Authenticated Portal Preflight`: **IN PROGRESS**.
 
 Authoritative records:
 
 - [`docs/REVISION_TO_RESUBMISSION_WORKFLOW.md`](docs/REVISION_TO_RESUBMISSION_WORKFLOW.md)
+- [`docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md`](docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md)
+- [`docs/STAGE_06R_FINAL_PROPOSITION_NOVELTY_REKILL.md`](docs/STAGE_06R_FINAL_PROPOSITION_NOVELTY_REKILL.md)
 - [`docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`](docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md)
 - [`docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`](docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md)
 - [`docs/C2R_L_LEAN_CERTIFICATION.md`](docs/C2R_L_LEAN_CERTIFICATION.md)
@@ -27,6 +30,7 @@ Authoritative records:
 - [`docs/ASTRA_2_HOSTILE_REFEREE_GATE.md`](docs/ASTRA_2_HOSTILE_REFEREE_GATE.md)
 - [`docs/STAGE_14_SUBMISSION_QA.md`](docs/STAGE_14_SUBMISSION_QA.md)
 - [`docs/JOURNAL_REQUIREMENTS_LEDGER.md`](docs/JOURNAL_REQUIREMENTS_LEDGER.md)
+- [`docs/STAGE_15_SUBMISSION_FREEZE.md`](docs/STAGE_15_SUBMISSION_FREEZE.md)
 
 ## Frozen scientific result
 
@@ -82,7 +86,11 @@ C2R varies all three posted prices and performs global unilateral-deviation fals
 
 The pinned Lean/mathlib project in `GandalShy/Certification.lean` certifies the proof-critical algebraic and quantified-inequality core, including the long-arc correction, exact `c=4` counterexample, global-deviation inequalities, encoded multiplicity, cost-floor logical reduction, and welfare identities. Lean does not claim to reconstruct the entire Salop demand game or all Nash equilibria from primitives.
 
-Stage 14 strengthened the submission-QA workflow to rebuild the frozen Lean target and reject `sorry` / `admit` before the ordinary symbolic/numerical and manuscript/package checks. Final Stage-14 CI run `34425158086` passed in full.
+The bespoke recovery route has now been explicitly mapped back to the canonical workflow through `docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md`, including the candidate-vs-characterization, cost-floor-bridge, and Astra-bookkeeping certification regressions.
+
+Stage 6R also re-killed novelty using the final Proposition 1/2 set. No located prior source was found that already states the combined published-profile correction, U1/U2 multiplicity, explicit cost-floor benchmark, and market-specific welfare-transfer result. This is a bounded search conclusion, not an absolute nonexistence claim.
+
+Stage 14 strengthened the submission-QA workflow to rebuild the frozen Lean target and reject `sorry` / `admit` before the ordinary symbolic/numerical and manuscript/package checks. The **canonical final technical Stage-14 CI run is `34425892795` on head `9634ee92beb650db03bb9b89db6195b2ddf44278`**, and it passed in full. That head and merged Stage-14 main share the identical Git tree `c723990f31d1d15bb534cdc9794a23ba709dbab1`.
 
 Stage-14 package diagnostics:
 
@@ -131,6 +139,8 @@ C3R         [PASS]
    ↓
 C4R         [PASS]
    ↓
+Stage 6R    [PASS — FINAL-PROPOSITION NOVELTY RE-KILL BACKFILL]
+   ↓
 Stage 12R2  [PASS]
    ↓
 Stage 13R2  [PASS]
@@ -139,7 +149,7 @@ Astra-2     [CLEARED]
    ↓
 Stage 14    [CONDITIONAL PASS — PORTAL PREFLIGHT REQUIRED]
    ↓
-Stage 15    [NEXT — SUBMISSION FREEZE / AUTHENTICATED PORTAL PREFLIGHT]
+Stage 15    [IN PROGRESS — SUBMISSION FREEZE / AUTHENTICATED PORTAL PREFLIGHT]
 ```
 
 ## Build and verification
