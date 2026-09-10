@@ -1,6 +1,6 @@
 Dear Editor,
 
-Please consider the manuscript **“Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)”** for the short-format route at *International Economics*.
+Please consider the manuscript **“Equilibrium Multiplicity and Welfare in Standardization Unions: Revisiting Gandal and Shy (2001)”** as a Short Paper at *International Economics*.
 
 The paper revisits the standardization-union benchmark of Gandal and Shy (2001), in which international product-standard recognition and conversion costs determine foreign-market access. The published quadratic-transport specification correctly identifies the outsider-foreclosure threshold at $c=5/2$, but Appendix B uses an inconsistent long-arc price response. The complete post-foreclosure profile it reports, $(3/2,3/2,c)$, is not a Nash equilibrium in the strict foreclosure range.
 
