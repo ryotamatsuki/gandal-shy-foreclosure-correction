@@ -4,7 +4,7 @@
 **Status date:** 2026-09-10  
 **Canonical generic workflow:** `ryotamatsuki/research-paper-workflow` v2.1 plus merged post-v2.1 Formal Verification Gate refinement (`main@f48984013898696f010f0437a8cfed6b5b54bdc2`)  
 **Pre-reopening manuscript baseline:** `main@75afb554cac868d804e8a99ec93c00fe39dda6f2`  
-**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → `Stage 12R2 PASS` → `Stage 13R2 PASS` → `Astra-2 CLEARED` → `Stage 14 CONDITIONAL PASS` → **NEXT: `Stage 15 Submission Freeze / Authenticated Portal Preflight`**
+**Current execution status:** `C0–C1R PASS` → `C2R PASS` → `C2R-L PASS` → `C3R PASS` → `C4R PASS` → `Stage 6R PASS (backfill)` → `Stage 12R2 PASS` → `Stage 13R2 PASS` → `Astra-2 CLEARED` → `Stage 14 CONDITIONAL PASS` → **ACTIVE: `Stage 15 Submission Freeze / Authenticated Portal Preflight`**
 
 This file is the authoritative project-specific route from the Astra-1 reopening to a new submission.
 
@@ -21,9 +21,13 @@ This file is the authoritative project-specific route from the Astra-1 reopening
 7. C4R clarification controls downstream prose: the no-below-cost restriction collapses member-price multiplicity **within symmetric, foreclosed, pure-strategy equilibria**; it is not a global equilibrium-selection result.
 8. Astra-2 clarification controls the cost-floor proof: deleted below-cost deviations cannot create additional restricted-game equilibria in the stated class because candidate profits are nonnegative while any deleted deviation yields nonpositive profit.
 9. The generic Formal Verification Gate now also governs this bespoke recovery route. Because this project already has C2R-L, the relevant formal state is `FORMAL VERIFICATION PASS — PROOF-CRITICAL CORE`. Stage 14 rebuilt that frozen Lean artifact and reran the admitted-proof gate.
+10. The bespoke route inherits canonical certification obligations through `docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md`; route labels do not waive candidate-vs-characterization, multiplicity/indifference, welfare-selection, theorem-scope, formal-verification, or evidence-bearing PASS requirements.
+11. Final-proposition novelty has been re-killed in `docs/STAGE_06R_FINAL_PROPOSITION_NOVELTY_REKILL.md`. No located source absorbs the final correction package; this remains a bounded search conclusion rather than a proof of global absence.
 
 Scientific authorities:
 
+- `docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md`
+- `docs/STAGE_06R_FINAL_PROPOSITION_NOVELTY_REKILL.md`
 - `docs/C0_C1R_TARGETED_EQUILIBRIUM_AUDIT.md`
 - `docs/C2R_SYMBOLIC_NUMERICAL_AUDIT.md`
 - `docs/C2R_L_LEAN_CERTIFICATION.md`
@@ -33,6 +37,7 @@ Scientific authorities:
 - `docs/STAGE_13R2_REVISED_FULL_PAPER_INTEGRATION.md`
 - `docs/ASTRA_2_HOSTILE_REFEREE_GATE.md`
 - `docs/STAGE_14_SUBMISSION_QA.md`
+- `docs/STAGE_15_SUBMISSION_FREEZE.md`
 
 ---
 
@@ -49,6 +54,8 @@ C3R     Revised Canonical Theory Freeze                   [PASS]
    ↓
 C4R     Hostile Scientific Self-Audit                     [PASS]
    ↓
+Stage 6R    Final-Proposition Novelty Re-Kill             [PASS — BACKFILLED]
+   ↓
 Stage 12R2  Journal Significance / Fit Recheck            [PASS]
    ↓
 Stage 13R2  Revised Full-Paper Integration                [PASS]
@@ -57,8 +64,10 @@ Astra-2     Independent Hostile Referee Gate              [CLEARED]
    ↓
 Stage 14    Submission QA                                 [CONDITIONAL PASS]
    ↓
-Stage 15    Submission Freeze / Authenticated Preflight   [NEXT]
+Stage 15    Submission Freeze / Authenticated Preflight   [ACTIVE]
 ```
+
+Stage 6R is shown at the point where its canonical obligation logically belongs. It was executed as a bounded backfill during Stage 15 and changed no theory or manuscript claim.
 
 No stage may be skipped merely because an earlier manuscript version once passed a corresponding gate.
 
@@ -108,7 +117,42 @@ Hence welfare levels are continuation-selection dependent in the unrestricted ga
 
 ---
 
-## 4. Journal decision carried forward
+## 4. Certification inheritance and regressions
+
+The route-certification mapping is now explicit in `docs/ROUTE_CERTIFICATION_INHERITANCE_AND_REGRESSION.md`.
+
+The three material process regressions retained as permanent workflow evidence are:
+
+1. **candidate-versus-characterization regression:** fixing `p_3=c` verified a preferred candidate but missed alternative zero-sales outsider quotes and member-price multiplicity;
+2. **cost-floor intersection regression:** a strategy restriction was intersected with the unrestricted set before explicitly proving that deleted below-cost deviations cannot create new restricted equilibria;
+3. **Astra bookkeeping regression:** clearance was briefly recorded before an actual limited recheck existed, then reverted and closed only after the real recheck.
+
+All three are closed, with permanent tests or records. No strong current scientific claim sits behind a material `NOT TESTED` item.
+
+---
+
+## 5. Stage 6R — FINAL-PROPOSITION NOVELTY RE-KILL
+
+Stage 6R was executed as a bounded backfill against the final Proposition 1/2 set after the workflow cross-check identified that the earlier prior-art work had not been packaged as a canonical final-proposition re-kill.
+
+Fresh targeted searches covered:
+
+- the exact Gandal–Shy title plus `erratum` / `corrigendum` / correction terms;
+- the published-profile `3/2` continuation;
+- U1/U2 / equilibrium multiplicity in standardization unions;
+- zero-sales / below-cost outsider support;
+- the explicit `c-1` / `2` cost-floor benchmark;
+- market-specific welfare continuation selection and the cross-market transfer term.
+
+No located source states the present correction package or absorbs the final propositions. The original 2001 paper remains the exact source being corrected; the 1996 working-paper genealogy and later standards/trade work are related but non-absorptive.
+
+**Verdict:** `GO — FINAL PROPOSITION SET SURVIVES NOVELTY RE-KILL`.
+
+The strongest residual novelty threat remains editorial significance/narrowness, not identified exact prior art.
+
+---
+
+## 6. Journal decision carried forward
 
 **Primary target: `International Economics`, direct short-paper / short-communication route.**
 
@@ -128,7 +172,7 @@ Astra-2 assessed publication significance as **MODERATE**. No scientific blocker
 
 ---
 
-## 5. Astra-2 — CLOSED
+## 7. Astra-2 — CLOSED
 
 Astra-2 first audited `main@ad506bec2e8c787dcb7d7ab4e08b3e120cf26bf6` and returned `B. MINOR EXPOSITION REPAIR` with exactly three bounded repairs: the cost-floor strategy-restriction bridge, highlight scope, and cover-letter welfare wording.
 
@@ -144,7 +188,7 @@ No further hostile-referee cycle is required unless a later stage changes or con
 
 ---
 
-## 6. Stage 14 — CONDITIONAL PASS
+## 8. Stage 14 — CONDITIONAL PASS
 
 Stage-14 branch: `stage14/submission-qa`  
 Stage-14 PR: `#17`  
@@ -154,11 +198,13 @@ Stage 14 refreshed journal requirements, created the journal-requirements ledger
 
 After the generic Formal Verification Gate was merged into `research-paper-workflow`, the Stage-14 workflow was strengthened further to rebuild the frozen Lean target and reject admitted proofs before the usual verification/build checks.
 
-Final strengthened Stage-14 CI:
+**Canonical final technical Stage-14 CI:**
 
-- head: `a227b461fcf7287c27456c2697454334fce550dd`;
-- workflow run: `34425158086`;
+- head: `9634ee92beb650db03bb9b89db6195b2ddf44278`;
+- workflow run: `34425892795`;
 - result: **SUCCESS**;
+- artifact: `stage14-build`, ID `10132717858`;
+- artifact digest: `sha256:0de9fc0daf05bd98a1bb2394082dded547a7cc54b07d44fca4419b8e8c2f9313`;
 - Lean rebuild: PASS;
 - `sorry` / `admit` gate: PASS;
 - symbolic/numerical verification: PASS;
@@ -166,6 +212,8 @@ Final strengthened Stage-14 CI:
 - Python Stage-14 audit: PASS;
 - clean final LaTeX logs: PASS;
 - generated artifacts: PASS.
+
+The earlier successful strengthened run `34425158086` on `a227b461...` is retained only as intermediate provenance. The canonical final technical head `9634ee92...` and the merged Stage-14 main `3f34a1a77a14e65a91aa2ecda7e169c40052374c` share Git tree `c723990f31d1d15bb534cdc9794a23ba709dbab1`, so the validated source tree is exactly the merged tree.
 
 Automated diagnostics:
 
@@ -202,30 +250,42 @@ Any mandatory charge blocks submission.
 
 ---
 
-## 7. Stage 15 — NEXT
+## 9. Stage 15 — ACTIVE
 
-Stage 15 is the next active stage. Its contract is:
+Stage 15 branch: `stage15/submission-freeze`  
+Stage 15 PR: `#18`  
+Submission-content candidate: `main@3f34a1a77a14e65a91aa2ecda7e169c40052374c`  
+Source tree: `c723990f31d1d15bb534cdc9794a23ba709dbab1`
 
-1. freeze the exact Stage-14-approved repository state and artifact set;
-2. preserve manuscript/source/reproducibility/Lean/build provenance;
-3. open and reconcile the authenticated Editorial Manager record;
-4. resolve every item in `submission/PORTAL_PREFLIGHT_CHECKLIST.md`;
-5. upload only the frozen artifacts or a bounded Stage-14 compliance-only descendant;
-6. inspect the portal-generated PDF page by page;
-7. confirm both zero-cost hard gates;
-8. submit only after every material portal item is PASS;
-9. record journal confirmation and submission ID before declaring `SUBMITTED`.
+Stage 15 has already:
+
+1. identified the exact Stage-14-approved repository state and artifact set;
+2. preserved manuscript/source/reproducibility/Lean/build provenance;
+3. hashed the final artifact archive and submission candidates in `submission/FREEZE_MANIFEST.sha256`;
+4. backfilled the canonical route-certification inheritance/regression record;
+5. completed Stage 6R final-proposition novelty re-kill;
+6. reconciled the canonical final Stage-14 CI provenance.
+
+The remaining Stage-15 contract is authenticated portal reconciliation:
+
+1. resolve every item in `submission/PORTAL_PREFLIGHT_CHECKLIST.md`;
+2. upload only the frozen artifacts or a bounded Stage-14 compliance-only descendant;
+3. inspect the portal-generated PDF page by page;
+4. confirm both zero-cost hard gates;
+5. submit only after every material portal item is PASS;
+6. record journal confirmation and submission ID before declaring `SUBMITTED`.
 
 A bounded anonymity/file-designation/declaration-placement repair returns to Stage 14 and requires fresh affected QA. Any theorem/model/result/interpretation change returns to the earliest affected scientific stage.
 
 ---
 
-## 8. Return rules
+## 10. Return rules
 
 | New problem | Return to |
 |---|---|
 | New equilibrium counterexample / false theorem | C0–C1R |
 | Falsification code misses a material strategy region | C2R |
+| Exact prior art absorbs final contribution | Stage 6R / Stage 12R2 as appropriate |
 | Mathematical quantifier or Lean-certified theorem changes | analytic repair, then C2R-L / formal recertification |
 | Freeze wording exceeds valid theory only | C3R/C4R clarification |
 | Journal significance/fit issue only | Stage 12R2 |
@@ -237,7 +297,7 @@ A bounded anonymity/file-designation/declaration-placement repair returns to Sta
 
 ---
 
-## 9. Current checklist
+## 11. Current checklist
 
 - [x] RIO editorial audience-fit rejection recorded.
 - [x] C0–C1R targeted equilibrium-set reaudit.
@@ -245,9 +305,12 @@ A bounded anonymity/file-designation/declaration-placement repair returns to Sta
 - [x] C2R-L Lean certification.
 - [x] C3R revised theory freeze.
 - [x] C4R hostile scientific self-audit.
+- [x] Paper-specific route-certification inheritance mapping and certification-regression record.
+- [x] Stage 6R final-proposition novelty re-kill.
 - [x] Stage 12R2 journal significance/fit recheck.
 - [x] Stage 13R2 revised full-paper integration.
 - [x] Astra-2 hostile referee gate and bounded recheck.
 - [x] Stage 14 submission QA — `CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED`.
-- [ ] **Stage 15 submission freeze / authenticated portal preflight — NEXT.**
+- [x] Stage-14 canonical final technical CI provenance reconciled to `9634ee92...` / run `34425892795`.
+- [ ] **Stage 15 authenticated portal preflight — ACTIVE.**
 - [ ] Final submit and journal confirmation.
