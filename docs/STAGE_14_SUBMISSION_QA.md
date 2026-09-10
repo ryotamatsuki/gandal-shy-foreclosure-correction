@@ -28,17 +28,21 @@ The journal-specific ScienceDirect Guide target returned HTTP 403 in the Stage-1
 
 ## 3. Stage-14 CI and reproducibility result
 
-Final Stage-14 head used for the strengthened QA workflow:
+The **canonical final technical Stage-14 head** is:
 
-`a227b461fcf7287c27456c2697454334fce550dd`
+`9634ee92beb650db03bb9b89db6195b2ddf44278`.
 
 GitHub Actions:
 
 - workflow: `Stage 14 submission QA`;
-- run: `34425158086`;
-- result: **SUCCESS**.
+- run: `34425892795`;
+- result: **SUCCESS**;
+- artifact: `stage14-build`, artifact ID `10132717858`;
+- artifact digest: `sha256:0de9fc0daf05bd98a1bb2394082dded547a7cc54b07d44fca4419b8e8c2f9313`.
 
-The final workflow passed all of the following:
+The earlier strengthened run `34425158086` on `a227b461fcf7287c27456c2697454334fce550dd` also passed, but it is superseded for final-freeze provenance by run `34425892795`. The final technical head `9634ee92...` and the Stage-14 merged main `3f34a1a77a14e65a91aa2ecda7e169c40052374c` share the identical Git tree `c723990f31d1d15bb534cdc9794a23ba709dbab1`; therefore the exact source tree validated by the final technical run is the source tree merged to `main`.
+
+The canonical final workflow passed all of the following:
 
 1. checkout;
 2. rebuild of the frozen Lean proof-critical certificate with the pinned Lean/mathlib project;
@@ -52,7 +56,7 @@ The final workflow passed all of the following:
 10. generated-artifact checks;
 11. artifact upload.
 
-This final CI update implements the post-v2.1 generic-workflow Formal Verification Gate at submission QA: applicable formal artifacts are rebuilt rather than merely copied into the package. It does not expand the certified Lean scope. Lean still certifies the proof-critical algebraic and quantified-inequality core, not the complete Salop demand correspondence or all Nash equilibria from primitives.
+This final CI state implements the post-v2.1 generic-workflow Formal Verification Gate at submission QA: applicable formal artifacts are rebuilt rather than merely copied into the package. It does not expand the certified Lean scope. Lean still certifies the proof-critical algebraic and quantified-inequality core, not the complete Salop demand correspondence or all Nash equilibria from primitives.
 
 ## 4. Automated package diagnostics
 
