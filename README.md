@@ -4,19 +4,20 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 
 > **CURRENT STATUS — 2026-10-01 JST**  
 > **International Economics:** DESK REJECT — decision received 00:43 JST; `INTECO-D-26-00855`.  
-> **BER revision:** KICKOFF / CHANGE CONTROL COMPLETE — next: TARGETED STAGE 4.  
-> **New scientific/journal clearance:** PENDING. Historical PASS records apply to the pinned September submission.
+> **BER revision:** TARGETED STAGE 4 COMPLETE — analytic GO; next: independent STAGE 4A.  
+> **New scientific/journal clearance:** Stage-4 dominance/cost-floor claims have analytic GO only; independent/formal and downstream journal gates remain pending.
 
 Current BER records:
 - [Change control and baseline](docs/BER_CHANGE_CONTROL.md)
 - [Editorial objections and response plan](docs/EDITORIAL_OBJECTION_RESPONSE.md)
 - [Revision plan and next-stage contract](docs/BER_REVISION_PLAN.md)
+- [Stage-4 targeted dominance/cost-floor recheck](docs/BER_STAGE_04_TARGETED_THEORY_RECHECK.md)
 - [Certification inheritance / reopening map](docs/BER_CERTIFICATION_INHERITANCE.md)
 - [Initial BER requirements ledger](docs/BER_JOURNAL_REQUIREMENTS_LEDGER.md)
 - [Protected baseline manifest](docs/BER_BASELINE_MANIFEST.json)
 - [AI provenance log](docs/AI_PROVENANCE_LOG.md)
 
-The archived source/closeout commit is `fff18e6165e5801de2ab6770ed78d27592d9b510`, retained on `archive/inteco-submitted-20260910`. The active revision branch is `revision/ber-change-control-20261001`. The kickoff changes planning/status records; theoretical additions remain for the next research gates.
+The archived source/closeout commit is `fff18e6165e5801de2ab6770ed78d27592d9b510`, retained on `archive/inteco-submitted-20260910`. Stage 4 has now established the narrow below-cost weak-dominance lemma, the exact cost-floor deletion bridge, and the limiting fact that an at-cost quote is itself weakly dominated. No manuscript/code/Lean integration occurs until Stage 4A independently attacks those results.
 
 > **HISTORICAL SUBMISSION CLOSEOUT — 2026-09-10/11**  
 > `C0–C1R`: **PASS**  

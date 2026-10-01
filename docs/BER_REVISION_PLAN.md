@@ -1,8 +1,10 @@
 # BER revision plan
 
 **Date:** 2026-10-01 JST  
-**Kickoff:** COMPLETE — GO TO TARGETED STAGE 4  
-**New scientific gates:** NOT YET EXECUTED  
+**Kickoff:** COMPLETE  
+**Targeted Stage 4:** COMPLETE — GO TO STAGE 4A  
+**Stage 4A:** NOT YET EXECUTED  
+**New scientific gates:** STAGE-4 ANALYTIC GO ONLY; independent attack pending  
 **Baseline:** `fff18e6165e5801de2ab6770ed78d27592d9b510`  
 **Workflow authority:** `research-paper-workflow@7d754032f292205264bd404116b561366836c7fd`  
 **Target:** Bulletin of Economic Research; correction/note exposition profile
@@ -74,7 +76,10 @@ Tasks:
 7. Preserve the c=4 unrestricted equilibrium regression (3/2,3/2,5/2), the failing published profile (3/2,3/2,4), and the cost-floor profile (2,2,4).
 8. Produce the analytic claim/proof map, unresolved questions, proposed symbolic/numerical/formal targets and a GO / CONDITIONAL GO / NO-GO verdict. An unfavorable result narrows the contribution; it is not repaired silently in prose.
 
-Expected report: `docs/BER_STAGE_04_TARGETED_THEORY_RECHECK.md` (not created as a completed audit by this kickoff).
+Stage-4 report: `docs/BER_STAGE_04_TARGETED_THEORY_RECHECK.md` — **COMPLETE; GO TO STAGE 4A**.
+
+Stage 4 established that every strictly below-cost quote is weakly dominated by the at-cost quote and that deleting exactly those strategies yields the cost-floor game without creating new Nash equilibria. It also established the binding limitation that an at-cost quote is itself weakly dominated by any fixed strictly above-cost quote. Therefore the cost-floor result is a partial-deletion result, not full admissibility, iterated weak-dominance, perfection, or properness.
+
 Stage 4A must use a logically different attack path; rerunning the production verifier alone is not independence.
 
 ## 5. Planned manuscript architecture

@@ -1,9 +1,9 @@
 # BER revision kickoff and change control
 
 **Date:** 2026-10-01 JST  
-**Phase:** 改稿開始・変更管理  
-**Phase decision:** GO TO TARGETED STAGE 4 — change-control records established  
-**Scientific certification of new claims:** PENDING  
+**Phase:** Targeted Stage 4 completed  
+**Phase decision:** GO TO STAGE 4A — independent attack required  
+**Scientific certification of new claims:** STAGE-4 ANALYTIC GO; independent/formal certification pending  
 **Primary target:** Bulletin of Economic Research (BER), correction/note route; exact portal type unverified  
 **Working branch:** `revision/ber-change-control-20261001`
 
@@ -54,9 +54,9 @@ The manuscript, verification code, Lean project, dependencies and frozen submiss
 
 | ID | Proposed change | Earliest gate | Current state |
 |---|---|---|---|
-| CC-01 | Add a below-marginal-cost weak-dominance lemma with exact strategy quantifiers | Stage 4 → 4A | PLANNED; not added to paper |
-| CC-02 | Establish the exact relation between deleting those prices and the existing cost-floor game | Stage 4 → 4A | PLANNED |
-| CC-03 | Examine the status of an outsider quote exactly at marginal cost and the limits of any admissibility/refinement interpretation | Stage 4 → 4A / 7.5A | OPEN QUESTION |
+| CC-01 | Add a below-marginal-cost weak-dominance lemma with exact strategy quantifiers | Stage 4 → 4A | STAGE-4 ANALYTIC GO; independent attack pending; not added to paper |
+| CC-02 | Establish the exact relation between deleting those prices and the existing cost-floor game | Stage 4 → 4A | STAGE-4 ANALYTIC GO; restricted NE = feasible unrestricted NE under the model payoff sign structure; Stage 4A pending |
+| CC-03 | Examine the status of an outsider quote exactly at marginal cost and the limits of any admissibility/refinement interpretation | Stage 4 → 4A / 7.5A | STAGE-4 RESOLVED: at-cost quote is weakly dominated by any fixed strictly above-cost quote; full weak-dominance/admissibility interpretation prohibited; independent attack pending |
 | CC-04 | Make corrected prices and distributional consequences central; downgrade unrestricted multiplicity as a headline | Stages 6, 7, 7.5A → 8 | PROPOSED; contribution not refrozen |
 | CC-05 | Move unrestricted U1/U2 and market-specific transfer analysis to auditable appendices | Stage 10 → 11 → 13 | PLANNED; proof bridges must survive |
 | CC-06 | Reconcile title, abstract, keywords, conclusion and cover letter with the certified scope | Stage 10 → 12 → 13 → 14 | PLANNED |
@@ -92,7 +92,7 @@ In particular:
 
 This phase closes when the decision summaries, source references, proposed changes, inheritance states, next-stage tasks and requirements unknowns are committed and the diff is verified to contain only planning/status documentation.
 
-Next: execute [the targeted Stage-4 contract](BER_REVISION_PLAN.md#4-next-stage-contract-targeted-stage-4). Stage 4A follows only after Stage 4 provides an evidence-bearing GO. No submission action or external correspondence is authorized by this kickoff.
+Stage 4 is recorded in [the targeted theory recheck](BER_STAGE_04_TARGETED_THEORY_RECHECK.md) with an evidence-bearing **GO TO STAGE 4A**. Next: execute Stage 4A using an independent primitive/attack path. No manuscript integration, submission action, or external correspondence is authorized by the Stage-4 result.
 
 ## 8. Kickoff verification
 
