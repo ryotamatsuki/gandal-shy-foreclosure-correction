@@ -4,20 +4,21 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 
 > **CURRENT STATUS — 2026-10-01 JST**  
 > **International Economics:** DESK REJECT — decision received 00:43 JST; `INTECO-D-26-00855`.  
-> **BER revision:** TARGETED STAGE 4 COMPLETE — analytic GO; next: independent STAGE 4A.  
-> **New scientific/journal clearance:** Stage-4 dominance/cost-floor claims have analytic GO only; independent/formal and downstream journal gates remain pending.
+> **BER revision:** STAGE 4A COMPLETE — independent primitive attack PASS; next: STAGE 6 novelty/contribution re-kill.  
+> **New scientific/journal clearance:** Narrow dominance/cost-floor mapping has Stage-4/4A mathematical GO; formal closure and downstream contribution/journal gates remain pending.
 
 Current BER records:
 - [Change control and baseline](docs/BER_CHANGE_CONTROL.md)
 - [Editorial objections and response plan](docs/EDITORIAL_OBJECTION_RESPONSE.md)
 - [Revision plan and next-stage contract](docs/BER_REVISION_PLAN.md)
 - [Stage-4 targeted dominance/cost-floor recheck](docs/BER_STAGE_04_TARGETED_THEORY_RECHECK.md)
+- [Stage-4A independent primitive attack](docs/BER_STAGE_04A_INDEPENDENT_ATTACK.md)
 - [Certification inheritance / reopening map](docs/BER_CERTIFICATION_INHERITANCE.md)
 - [Initial BER requirements ledger](docs/BER_JOURNAL_REQUIREMENTS_LEDGER.md)
 - [Protected baseline manifest](docs/BER_BASELINE_MANIFEST.json)
 - [AI provenance log](docs/AI_PROVENANCE_LOG.md)
 
-The archived source/closeout commit is `fff18e6165e5801de2ab6770ed78d27592d9b510`, retained on `archive/inteco-submitted-20260910`. Stage 4 has now established the narrow below-cost weak-dominance lemma, the exact cost-floor deletion bridge, and the limiting fact that an at-cost quote is itself weakly dominated. No manuscript/code/Lean integration occurs until Stage 4A independently attacks those results.
+The archived source/closeout commit is `fff18e6165e5801de2ab6770ed78d27592d9b510`, retained on `archive/inteco-submitted-20260910`. Stage 4A independently reconstructed primitive demand and confirmed the narrow below-cost weak-dominance lemma, the cost-floor deletion bridge, and the at-cost limitation. The independent verifier is `code/ber_stage4a_independent_attack.py`. No manuscript or Lean integration occurs before downstream certification.
 
 > **HISTORICAL SUBMISSION CLOSEOUT — 2026-09-10/11**  
 > `C0–C1R`: **PASS**  

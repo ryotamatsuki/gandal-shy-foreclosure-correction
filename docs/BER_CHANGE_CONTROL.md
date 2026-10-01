@@ -1,9 +1,9 @@
 # BER revision kickoff and change control
 
 **Date:** 2026-10-01 JST  
-**Phase:** Targeted Stage 4 completed  
-**Phase decision:** GO TO STAGE 4A — independent attack required  
-**Scientific certification of new claims:** STAGE-4 ANALYTIC GO; independent/formal certification pending  
+**Phase:** Stage 4A independent attack completed  
+**Phase decision:** PASS — GO TO STAGE 6  
+**Scientific certification of new claims:** Stage 4/4A mathematical GO; formal closure and downstream contribution/journal certification pending  
 **Primary target:** Bulletin of Economic Research (BER), correction/note route; exact portal type unverified  
 **Working branch:** `revision/ber-change-control-20261001`
 
@@ -54,13 +54,13 @@ The manuscript, verification code, Lean project, dependencies and frozen submiss
 
 | ID | Proposed change | Earliest gate | Current state |
 |---|---|---|---|
-| CC-01 | Add a below-marginal-cost weak-dominance lemma with exact strategy quantifiers | Stage 4 → 4A | STAGE-4 ANALYTIC GO; independent attack pending; not added to paper |
-| CC-02 | Establish the exact relation between deleting those prices and the existing cost-floor game | Stage 4 → 4A | STAGE-4 ANALYTIC GO; restricted NE = feasible unrestricted NE under the model payoff sign structure; Stage 4A pending |
-| CC-03 | Examine the status of an outsider quote exactly at marginal cost and the limits of any admissibility/refinement interpretation | Stage 4 → 4A / 7.5A | STAGE-4 RESOLVED: at-cost quote is weakly dominated by any fixed strictly above-cost quote; full weak-dominance/admissibility interpretation prohibited; independent attack pending |
+| CC-01 | Add a below-marginal-cost weak-dominance lemma with exact strategy quantifiers | Stage 4 → 4A | STAGE-4A PASS; independently reconstructed from primitive delivered prices; formal closure pending; not added to paper |
+| CC-02 | Establish the exact relation between deleting those prices and the existing cost-floor game | Stage 4 → 4A | STAGE-4A PASS; restricted NE = feasible unrestricted NE via independent best-response partition; formal closure pending |
+| CC-03 | Examine the status of an outsider quote exactly at marginal cost and the limits of any admissibility/refinement interpretation | Stage 4 → 4A / 7.5A | STAGE-4A PASS: at-cost quote is weakly dominated by any fixed strictly above-cost quote; full weak-dominance/admissibility interpretation prohibited; wording/formal gate remains |
 | CC-04 | Make corrected prices and distributional consequences central; downgrade unrestricted multiplicity as a headline | Stages 6, 7, 7.5A → 8 | PROPOSED; contribution not refrozen |
 | CC-05 | Move unrestricted U1/U2 and market-specific transfer analysis to auditable appendices | Stage 10 → 11 → 13 | PLANNED; proof bridges must survive |
 | CC-06 | Reconcile title, abstract, keywords, conclusion and cover letter with the certified scope | Stage 10 → 12 → 13 → 14 | PLANNED |
-| CC-07 | Update claim/formal mapping and formalize new proof-critical objects as warranted | Stage 4A → 7.5A → 14 | PENDING applicability/target assessment |
+| CC-07 | Update claim/formal mapping and formalize new proof-critical objects as warranted | Stage 4A → 7.5A → 14 | FORMAL TARGET MAP ESTABLISHED in Stage 4A; implementation/closure pending Stage 7.5A |
 | CC-08 | Reconcile actual AI assistance and author verification with current Wiley/BER policy | Cross-stage log; Stages 7.5A, 14, 15 | PENDING later author/policy records |
 
 ## 5. State semantics and inheritance
@@ -92,7 +92,7 @@ In particular:
 
 This phase closes when the decision summaries, source references, proposed changes, inheritance states, next-stage tasks and requirements unknowns are committed and the diff is verified to contain only planning/status documentation.
 
-Stage 4 is recorded in [the targeted theory recheck](BER_STAGE_04_TARGETED_THEORY_RECHECK.md) with an evidence-bearing **GO TO STAGE 4A**. Next: execute Stage 4A using an independent primitive/attack path. No manuscript integration, submission action, or external correspondence is authorized by the Stage-4 result.
+Stage 4 is recorded in [the targeted theory recheck](BER_STAGE_04_TARGETED_THEORY_RECHECK.md). Stage 4A is recorded in [the independent primitive attack](BER_STAGE_04A_INDEPENDENT_ATTACK.md) with **PASS — GO TO STAGE 6**. Next: re-kill the revised novelty/contribution. No manuscript integration, submission action, or external correspondence is authorized by the Stage-4A result.
 
 ## 8. Kickoff verification
 
