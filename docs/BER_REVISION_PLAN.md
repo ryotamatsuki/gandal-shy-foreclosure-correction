@@ -2,9 +2,9 @@
 
 **Date:** 2026-10-01 JST  
 **Kickoff:** COMPLETE  
-**Targeted Stage 4:** COMPLETE — GO TO STAGE 4A  
-**Stage 4A:** NOT YET EXECUTED  
-**New scientific gates:** STAGE-4 ANALYTIC GO ONLY; independent attack pending  
+**Targeted Stage 4:** COMPLETE  
+**Stage 4A:** COMPLETE — PASS; GO TO STAGE 6  
+**New scientific gates:** Stage 4/4A mathematical GO; formal closure and downstream contribution/journal gates pending  
 **Baseline:** `fff18e6165e5801de2ab6770ed78d27592d9b510`  
 **Workflow authority:** `research-paper-workflow@7d754032f292205264bd404116b561366836c7fd`  
 **Target:** Bulletin of Economic Research; correction/note exposition profile
@@ -80,7 +80,9 @@ Stage-4 report: `docs/BER_STAGE_04_TARGETED_THEORY_RECHECK.md` — **COMPLETE; G
 
 Stage 4 established that every strictly below-cost quote is weakly dominated by the at-cost quote and that deleting exactly those strategies yields the cost-floor game without creating new Nash equilibria. It also established the binding limitation that an at-cost quote is itself weakly dominated by any fixed strictly above-cost quote. Therefore the cost-floor result is a partial-deletion result, not full admissibility, iterated weak-dominance, perfection, or properness.
 
-Stage 4A must use a logically different attack path; rerunning the production verifier alone is not independence.
+Stage 4A report: `docs/BER_STAGE_04A_INDEPENDENT_ATTACK.md` — **PASS; GO TO STAGE 6**. The independent verifier reconstructs demand consumer-by-consumer from delivered prices and brute-force price deviations without importing or calling the production C2R verifier. It confirms the narrow below-cost dominance lemma, the restricted/unrestricted equilibrium bridge, the at-cost limitation, the disappearance of the lower branch under `r>c`, survival of the `s=2` branch from `c=3`, and all mandatory `c=4` regressions.
+
+Formal obligations identified by Stage 4A remain to be closed at Stage 7.5A before the new theory freeze.
 
 ## 5. Planned manuscript architecture
 
@@ -104,4 +106,4 @@ At Stage 10/13 retain short bridge equations that connect primitives to demand, 
 - BER significance mismatch after certified scope: record NO-GO for that journal route rather than enlarging the theory to protect the target.
 - Material fees/portal/disclosure unknowns: remain unresolved before submission QA closure.
 
-The current kickoff authorizes the next research gate's preparation. It does not itself clear any of those gates.
+Stage 4 and Stage 4A are now closed. Next: Stage 6 novelty/contribution re-kill on the revised, narrower claim set. No manuscript integration or BER-fit clearance is implied by the Stage-4A PASS.
