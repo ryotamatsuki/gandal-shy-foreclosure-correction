@@ -6,6 +6,7 @@ LATEXMK ?= latexmk
 verify:
 	$(PYTHON) code/verify_symbolic.py
 	$(PYTHON) code/verify_numerical.py
+	$(PYTHON) code/ber_stage4a_independent_attack.py
 
 pdf:
 	cd paper && $(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
