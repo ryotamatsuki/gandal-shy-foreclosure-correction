@@ -2,7 +2,23 @@
 
 Research repository for a short theory note revisiting the post-foreclosure equilibrium in Gandal and Shy (2001).
 
-> **CURRENT STATUS — 2026-09-10**  
+> **CURRENT STATUS — 2026-10-01 JST**  
+> **International Economics:** DESK REJECT — decision received 00:43 JST; `INTECO-D-26-00855`.  
+> **BER revision:** KICKOFF / CHANGE CONTROL COMPLETE — next: TARGETED STAGE 4.  
+> **New scientific/journal clearance:** PENDING. Historical PASS records apply to the pinned September submission.
+
+Current BER records:
+- [Change control and baseline](docs/BER_CHANGE_CONTROL.md)
+- [Editorial objections and response plan](docs/EDITORIAL_OBJECTION_RESPONSE.md)
+- [Revision plan and next-stage contract](docs/BER_REVISION_PLAN.md)
+- [Certification inheritance / reopening map](docs/BER_CERTIFICATION_INHERITANCE.md)
+- [Initial BER requirements ledger](docs/BER_JOURNAL_REQUIREMENTS_LEDGER.md)
+- [Protected baseline manifest](docs/BER_BASELINE_MANIFEST.json)
+- [AI provenance log](docs/AI_PROVENANCE_LOG.md)
+
+The archived source/closeout commit is `fff18e6165e5801de2ab6770ed78d27592d9b510`, retained on `archive/inteco-submitted-20260910`. The active revision branch is `revision/ber-change-control-20261001`. The kickoff changes planning/status records; theoretical additions remain for the next research gates.
+
+> **HISTORICAL SUBMISSION CLOSEOUT — 2026-09-10/11**  
 > `C0–C1R`: **PASS**  
 > `C2R`: **PASS**  
 > `C2R-L Lean`: **PASS**  
@@ -15,7 +31,7 @@ Research repository for a short theory note revisiting the post-foreclosure equi
 > `Stage 14 Submission QA`: **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED**  
 > `Stage 15`: **SUBMITTED — AUTHENTICATED PORTAL CONFIRMATION VERIFIED; SUBMISSION ID PENDING**.
 
-The Elsevier portal confirmed submission to **International Economics** as a **Short Paper** at **23:54, September 10, 2026**. The confirmation page lists Ryota Matsuki as the corresponding author and Independent Researcher as the affiliation. The journal-generated submission/manuscript ID is not shown on that confirmation page and remains pending the confirmation email/tracking record.
+The Elsevier portal confirmed submission to **International Economics** as a **Short Paper** at **23:54, September 10, 2026**. The confirmation page lists Ryota Matsuki as the corresponding author and Independent Researcher as the affiliation. The journal-generated submission/manuscript ID is not shown on that confirmation page. The later decision identifies it as `INTECO-D-26-00855`; see the current decision record.
 
 Authoritative records:
 
@@ -34,7 +50,7 @@ Authoritative records:
 - [`docs/JOURNAL_REQUIREMENTS_LEDGER.md`](docs/JOURNAL_REQUIREMENTS_LEDGER.md)
 - [`docs/STAGE_15_SUBMISSION_FREEZE.md`](docs/STAGE_15_SUBMISSION_FREEZE.md)
 
-## Frozen scientific result
+## September submission's frozen scientific result
 
 ### Published profile
 
@@ -90,7 +106,7 @@ The bespoke recovery route is mapped back to the canonical workflow through `doc
 
 The canonical final technical Stage-14 CI was `34425892795` on head `9634ee92beb650db03bb9b89db6195b2ddf44278`, which passed Lean rebuild, admitted-proof rejection, symbolic/numerical verification, manuscript/package build, Python package audit, clean LaTeX-log gate, and artifact checks. The Stage-15 ancillary compliance changes subsequently passed the submission-QA workflow again (`34487836179` — SUCCESS).
 
-## Journal submission
+## Historical International Economics submission
 
 **Journal:** International Economics  
 **Article type:** Short Paper  
@@ -100,11 +116,11 @@ The canonical final technical Stage-14 CI was `34425892795` on head `9634ee92beb
 **Corresponding author:** Ryota Matsuki  
 **Affiliation:** Independent Researcher  
 **Publication route:** subscription  
-**Submission ID:** pending confirmation email/tracking record
+**Submission ID:** `INTECO-D-26-00855` (recorded from the 2026-10-01 decision)
 
 The authenticated Elsevier terminal page states `Your manuscript has now been submitted` and confirms that the manuscript and other files were sent to *International Economics*.
 
-## Recovery route
+## Historical recovery route to International Economics
 
 ```text
 C0–C1R      [PASS]
@@ -130,7 +146,7 @@ Stage 14    [CONDITIONAL PASS]
 Stage 15    [SUBMITTED — PORTAL CONFIRMED; SUBMISSION ID PENDING]
 ```
 
-Final route closure occurs when the Elsevier manuscript/submission ID is recorded from the confirmation email or tracking record.
+The historical Stage-15 closeout establishes completed submission. The later decision closes the International Economics route; the current BER route is governed by the records above.
 
 ## Build and verification
 

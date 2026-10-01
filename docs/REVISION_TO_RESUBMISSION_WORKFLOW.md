@@ -1,5 +1,8 @@
 # Revision-to-Resubmission Workflow
 
+> **Historical record — superseded for the BER edition on 2026-10-01.** This file records the September recovery/submission route and its bounded certification evidence. Current execution, proposed changes and reopening states are governed by [BER_CHANGE_CONTROL.md](BER_CHANGE_CONTROL.md), [BER_REVISION_PLAN.md](BER_REVISION_PLAN.md) and [BER_CERTIFICATION_INHERITANCE.md](BER_CERTIFICATION_INHERITANCE.md). The historical manuscript did not derive its cost floor from weak dominance; the proposed new lemma and interpretation remain pending targeted certification.
+
+
 **Project:** Gandal–Shy Foreclosure Correction  
 **Status date:** 2026-09-10  
 **Canonical generic workflow:** `ryotamatsuki/research-paper-workflow` v2.1 plus merged post-v2.1 Formal Verification Gate refinement (`main@f48984013898696f010f0437a8cfed6b5b54bdc2`)  
