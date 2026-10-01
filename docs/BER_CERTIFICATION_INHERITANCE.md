@@ -12,8 +12,8 @@
 | Long-arc correction and complete-profile non-Nash result | C0–C1R; C2R; C2R-L; Astra-2 | Same published primitives and strict domain; Lean is proof-critical core only | REUSE INPUT + manuscript consistency / Stage-4A regression |
 | Unrestricted symmetric foreclosed pure U1/U2 | C0–C1R global deviations; C2R; C4R; Astra-2 | Not all asymmetric/mixed equilibria; formal UCond encoding is not primitive-to-Nash equivalence | REUSE INPUT + retained analytic proof and appendix verifiability |
 | Cost-floor F1/F2 and deleted-deviation bridge | C0–C1R; C2R-L bounded logic; actual Astra-2 limited recheck | Restricted game distinct from original; nonnegative candidate profit is necessary to the bridge | REUSE INPUT + new strategy-deletion/dominance mapping audit |
-| Below-cost weak-dominance lemma | Not certified in the submitted manuscript | New quantifiers over rivals' strategies; strict witness required | NEW / Stage 4 → 4A; formal applicability pending |
-| At-cost quote / all-dominated-strategy interpretation | Not certified by old floor proof | Floor feasibility alone establishes neither full admissibility nor perfection | OPEN QUESTION / Stage 4 → 4A → 7.5A |
+| Below-cost weak-dominance lemma | Not certified in the submitted manuscript | New quantifiers over rivals' strategies; strict witness required | STAGE-4A MATHEMATICAL PASS; primitive reconstruction + 5,780 numerical comparisons; formal applicability pending |
+| At-cost quote / all-dominated-strategy interpretation | Not certified by old floor proof | Floor feasibility alone establishes neither full admissibility nor perfection | STAGE-4A RESOLVED: at-cost quote is itself weakly dominated; full deletion/admissibility/perfection interpretation prohibited; formal/wording gate at 7.5A |
 | Consumer surplus, worldwide firm profit, transport cost and welfare identities | Submitted welfare proof; C2R/C2R-L | Original nonmember-recognition behavior and market/continuation assumptions | REUSE INPUT + Stage-7 revised comparison audit |
 | Correction significance and novelty hierarchy | Old Stage 6R and Stage 12R2 | Old package placed multiplicity/selection dependence centrally; former International Economics fit did not survive editorial decision | REOPEN Stages 6 / 7.5A / 11 / 12 |
 | Reviewer-facing proof exposition | Earlier integration and Astra-2 | Does not imply closure of newly adopted reviewer-verifiability architecture or revised supplement layout | REOPEN Stages 10 / 11 / 13 / 14 |
@@ -51,4 +51,4 @@ Moving U1/U2 to an appendix cannot delete the logical link used to obtain F1/F2.
 
 ## 4. Current verdict
 
-GO for documentation-only kickoff. New/affected scientific, novelty, significance, integration, formal-mapping and BER submission clearances remain PENDING. The next authorized research task is the targeted Stage-4 contract in [BER_REVISION_PLAN.md](BER_REVISION_PLAN.md).
+Stage 4 and Stage 4A are complete with mathematical GO on the narrow partial-deletion claim. Formal closure, novelty/significance, integration and BER submission clearances remain PENDING. The next authorized research task is Stage 6 under [BER_REVISION_PLAN.md](BER_REVISION_PLAN.md).
